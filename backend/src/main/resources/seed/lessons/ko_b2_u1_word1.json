@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "뚜렷하다", "phonetic": "tturethada", "meaning": "明显的；清晰的", "example": "매출이 뚜렷하게 늘었어요.", "translation": "销售额明显增长。" },
+    { "word": "모호하다", "phonetic": "mohohada", "meaning": "模糊的；含糊的", "example": "그의 대답은 모호했어요.", "translation": "他的回答很含糊。" },
+    { "word": "다양하다", "phonetic": "dayanghada", "meaning": "多样的", "example": "이 도시의 인구는 다양해요.", "translation": "这座城市人口多元。" },
+    { "word": "미묘하다", "phonetic": "mimyohada", "meaning": "微妙的", "example": "두 단어에는 미묘한 차이가 있어요.", "translation": "这两个词之间有微妙的差别。" },
+    { "word": "방대하다", "phonetic": "bangdahada", "meaning": "庞大的", "example": "이 계획에는 방대한 비용이 들어요.", "translation": "这个计划需要庞大的费用。" },
+    { "word": "필연적", "phonetic": "piryeonjeok", "meaning": "必然的", "example": "삶에서 변화는 필연적이에요.", "translation": "生活中变化是必然的。" },
+    { "word": "가능성", "phonetic": "ganeungseong", "meaning": "可能性", "example": "이 계획에는 가능성이 있어요.", "translation": "这个计划有可行性。" },
+    { "word": "효율", "phonetic": "hyoyul", "meaning": "效率", "example": "새 방법으로 효율이 올랐어요.", "translation": "新方法提高了效率。" },
+    { "word": "실감", "phonetic": "silgam", "meaning": "真实感受", "example": "성장을 실감하고 있어요.", "translation": "我切实感受到了成长。" },
+    { "word": "존경", "phonetic": "jongyeong", "meaning": "尊敬", "example": "저는 그녀에게 존경을 표해요.", "translation": "我向她表示尊敬。" },
+    { "word": "대처", "phonetic": "daecheo", "meaning": "应对；处理", "example": "문제에 대처할 방법을 생각해요.", "translation": "我在思考应对问题的方法。" },
+    { "word": "촉진", "phonetic": "chokjin", "meaning": "促进", "example": "운동은 건강을 촉진해요.", "translation": "运动促进健康。" },
+    { "word": "억제", "phonetic": "eokje", "meaning": "抑制；控制", "example": "지출을 억제해야 해요.", "translation": "有必要控制支出。" },
+    { "word": "우려", "phonetic": "uryeo", "meaning": "忧虑；担忧", "example": "안전성에 대한 우려가 있어요.", "translation": "我对安全性有担忧。" },
+    { "word": "견해", "phonetic": "gyeonhae", "meaning": "见解；看法", "example": "이것은 그 일에 대한 저의 견해예요.", "translation": "这是我对那件事的见解。" },
+    { "word": "치밀하다", "phonetic": "chimilhada", "meaning": "周密的；细致的", "example": "치밀한 계획을 세웠어요.", "translation": "我制定了周密的计划。" },
+    { "word": "근본", "phonetic": "geunbon", "meaning": "根本", "example": "문제의 근본을 해결해요.", "translation": "解决根本问题。" },
+    { "word": "탁월하다", "phonetic": "tagwolhada", "meaning": "卓越的", "example": "그는 탁월한 기술을 가지고 있어요.", "translation": "他拥有卓越的技术。" },
+    { "word": "광범위하다", "phonetic": "gwangbeomwihada", "meaning": "广泛的", "example": "스마트폰은 광범위하게 사용돼요.", "translation": "智能手机被广泛使用。" },
+    { "word": "경향", "phonetic": "gyeonghyang", "meaning": "倾向；趋势", "example": "재택근무의 경향이 강해지고 있어요.", "translation": "远程办公的趋势在加强。" }
+  ]
+}

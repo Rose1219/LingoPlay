@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "opportunity", "phonetic": "ˌɑːpərˈtuːnəti", "meaning": "机会；时机", "example": "This job is a great opportunity for me.", "translation": "这份工作对我是个好机会。" },
+    { "word": "challenge", "phonetic": "ˈtʃælɪndʒ", "meaning": "挑战", "example": "Learning a new language is a big challenge.", "translation": "学一门新语言是个大挑战。" },
+    { "word": "experience", "phonetic": "ɪkˈspɪriəns", "meaning": "经验；经历", "example": "She has rich teaching experience.", "translation": "她有丰富的教学经验。" },
+    { "word": "knowledge", "phonetic": "ˈnɑːlɪdʒ", "meaning": "知识", "example": "Knowledge changes your life.", "translation": "知识改变生活。" },
+    { "word": "success", "phonetic": "səkˈses", "meaning": "成功", "example": "Hard work leads to success.", "translation": "努力通向成功。" },
+    { "word": "failure", "phonetic": "ˈfeɪljər", "meaning": "失败", "example": "Failure is part of learning.", "translation": "失败是学习的一部分。" },
+    { "word": "decision", "phonetic": "dɪˈsɪʒn", "meaning": "决定", "example": "It was a difficult decision.", "translation": "那是个艰难的决定。" },
+    { "word": "ability", "phonetic": "əˈbɪləti", "meaning": "能力", "example": "He has the ability to solve problems.", "translation": "他有解决问题的能力。" },
+    { "word": "attention", "phonetic": "əˈtenʃn", "meaning": "注意力；关注", "example": "Please pay attention to the details.", "translation": "请注意细节。" },
+    { "word": "advantage", "phonetic": "ədˈvæntɪdʒ", "meaning": "优势", "example": "Speaking two languages is an advantage.", "translation": "会说两种语言是一种优势。" },
+    { "word": "purpose", "phonetic": "ˈpɜːrpəs", "meaning": "目的", "example": "What is the purpose of this meeting?", "translation": "这次会议的目的是什么？" },
+    { "word": "situation", "phonetic": "ˌsɪtʃuˈeɪʃn", "meaning": "情况；处境", "example": "The situation is getting better.", "translation": "情况正在好转。" },
+    { "word": "solution", "phonetic": "səˈluːʃn", "meaning": "解决方案", "example": "We finally found a solution.", "translation": "我们最终找到了解决方案。" },
+    { "word": "development", "phonetic": "dɪˈveləpmənt", "meaning": "发展", "example": "The city's development is fast.", "translation": "这座城市的发展很快。" },
+    { "word": "environment", "phonetic": "ɪnˈvaɪrənmənt", "meaning": "环境", "example": "We must protect the environment.", "translation": "我们必须保护环境。" },
+    { "word": "society", "phonetic": "səˈsaɪəti", "meaning": "社会", "example": "Technology changes society.", "translation": "科技改变社会。" },
+    { "word": "culture", "phonetic": "ˈkʌltʃər", "meaning": "文化", "example": "I want to learn about Japanese culture.", "translation": "我想了解日本文化。" },
+    { "word": "education", "phonetic": "ˌedʒuˈkeɪʃn", "meaning": "教育", "example": "Education opens many doors.", "translation": "教育打开许多大门。" },
+    { "word": "communication", "phonetic": "kəˌmjuːnɪˈkeɪʃn", "meaning": "交流；沟通", "example": "Good communication solves problems.", "translation": "良好的沟通能解决问题。" },
+    { "word": "confidence", "phonetic": "ˈkɑːnfɪdəns", "meaning": "信心；自信", "example": "Practice builds confidence.", "translation": "练习建立自信。" }
+  ]
+}

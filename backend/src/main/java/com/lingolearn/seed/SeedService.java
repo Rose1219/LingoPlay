@@ -52,61 +52,94 @@ public class SeedService implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        if (languageRepository.count() > 0) {
-            return; // 已初始化，幂等跳过
-        }
         SeedMeta meta = objectMapper.readValue(readResource("seed/meta.json"), SeedMeta.class);
+        boolean firstInit = languageRepository.count() == 0;
 
-        // 语种
-        for (Language lang : meta.getLanguages()) {
-            languageRepository.save(lang);
-        }
-        // 成就定义
-        List<Achievement> achievements = objectMapper.readValue(
-                readResource("seed/achievements.json"), new TypeReference<List<Achievement>>() {
-                });
-        for (Achievement a : achievements) {
-            achievementRepository.save(a);
-        }
-        // 演示账号
-        User demo = new User();
-        demo.setUsername(meta.getDemoUser().getUsername());
-        demo.setEmail(meta.getDemoUser().getEmail());
-        demo.setPassword(passwordEncoder.encode(meta.getDemoUser().getPassword()));
-        demo.setNickname(meta.getDemoUser().getNickname());
-        demo.setAvatar(meta.getDemoUser().getAvatar());
-        demo.setPreferredLanguages(meta.getDemoUser().getPreferredLanguages());
-        userRepository.save(demo);
+        if (firstInit) {
+            // 语种
+            for (Language lang : meta.getLanguages()) {
+                languageRepository.save(lang);
+            }
+            // 成就定义
+            List<Achievement> achievements = objectMapper.readValue(
+                    readResource("seed/achievements.json"), new TypeReference<List<Achievement>>() {
+                    });
+            for (Achievement a : achievements) {
+                achievementRepository.save(a);
+            }
+            // 演示账号
+            User demo = new User();
+            demo.setUsername(meta.getDemoUser().getUsername());
+            demo.setEmail(meta.getDemoUser().getEmail());
+            demo.setPassword(passwordEncoder.encode(meta.getDemoUser().getPassword()));
+            demo.setNickname(meta.getDemoUser().getNickname());
+            demo.setAvatar(meta.getDemoUser().getAvatar());
+            demo.setPreferredLanguages(meta.getDemoUser().getPreferredLanguages());
+            userRepository.save(demo);
 
-        // 课程体系
+            // 示例帖子
+            int index = 0;
+            for (PostSeed ps : meta.getPosts()) {
+                Post post = new Post();
+                post.setUser(demo);
+                if (ps.getLanguage() != null && !ps.getLanguage().isEmpty()) {
+                    post.setLanguage(languageRepository.findByCode(ps.getLanguage())
+                            .orElseThrow(() -> new IllegalStateException("未知语种: " + ps.getLanguage())));
+                }
+                post.setTitle(ps.getTitle());
+                post.setContent(ps.getContent());
+                post.setLikeCount(ps.getLikeCount());
+                post.setCommentCount(ps.getCommentCount());
+                post.setCreatedAt(LocalDateTime.now().minusDays(2).minusHours(index * 6L));
+                postRepository.save(post);
+                index++;
+            }
+        }
+
+        // 课程内容增量同步：新增的课程/单元/课时自动补齐，已有的不动（幂等）
+        syncCourses(meta);
+    }
+
+    /**
+     * 课程体系增量同步：
+     * 按「课程标题+语种」「单元标题+课程」「课时标题+单元」逐级判重，
+     * 仅插入缺失内容并刷新课程统计，保证老库升级后新词库自动生效。
+     */
+    private void syncCourses(SeedMeta meta) throws Exception {
         for (CourseSeed cs : meta.getCourses()) {
             Language lang = languageRepository.findByCode(cs.getLanguage())
                     .orElseThrow(() -> new IllegalStateException("未知语种: " + cs.getLanguage()));
-            Course course = new Course();
-            course.setLanguage(lang);
-            course.setTitle(cs.getTitle());
+            Course course = courseRepository.findByLanguageIdAndTitle(lang.getId(), cs.getTitle())
+                    .orElseGet(() -> {
+                        Course c = new Course();
+                        c.setLanguage(lang);
+                        c.setTitle(cs.getTitle());
+                        return c;
+                    });
             course.setLevel(cs.getLevel());
             course.setLevelName(cs.getLevelName());
             course.setDescription(cs.getDescription());
             course.setCover(cs.getCover());
             course.setSortOrder(cs.getSortOrder());
-            course.setUnitCount(cs.getUnits().size());
-            int lessonTotal = 0;
-            for (UnitSeed us : cs.getUnits()) {
-                lessonTotal += us.getLessons().size();
-            }
-            course.setLessonCount(lessonTotal);
-            courseRepository.save(course);
 
             for (UnitSeed us : cs.getUnits()) {
-                Unit unit = new Unit();
-                unit.setCourse(course);
-                unit.setTitle(us.getTitle());
+                Unit unit = unitRepository.findByCourseIdAndTitle(course.getId() != null ? course.getId() : -1L, us.getTitle())
+                        .orElseGet(() -> {
+                            Unit u = new Unit();
+                            u.setCourse(course);
+                            u.setTitle(us.getTitle());
+                            return u;
+                        });
                 unit.setDescription(us.getDescription());
                 unit.setSortOrder(us.getSortOrder());
                 unitRepository.save(unit);
 
                 for (LessionSeed ls : us.getLessons()) {
+                    boolean exists = unit.getId() != null
+                            && lessonRepository.existsByUnitIdAndTitle(unit.getId(), ls.getTitle());
+                    if (exists) {
+                        continue;
+                    }
                     String content = objectMapper
                             .readTree(readResource("seed/lessons/" + ls.getContentFile())).toString();
                     Lesson lesson = new Lesson();
@@ -118,24 +151,16 @@ public class SeedService implements CommandLineRunner {
                     lessonRepository.save(lesson);
                 }
             }
-        }
 
-        // 示例帖子
-        int index = 0;
-        for (PostSeed ps : meta.getPosts()) {
-            Post post = new Post();
-            post.setUser(demo);
-            if (ps.getLanguage() != null && !ps.getLanguage().isEmpty()) {
-                post.setLanguage(languageRepository.findByCode(ps.getLanguage())
-                        .orElseThrow(() -> new IllegalStateException("未知语种: " + ps.getLanguage())));
+            // 刷新课程统计（单元数与课时数以库内实际为准）
+            List<Unit> units = unitRepository.findByCourseIdOrderBySortOrderAsc(course.getId());
+            course.setUnitCount(units.size());
+            int lessonTotal = 0;
+            for (Unit u : units) {
+                lessonTotal += lessonRepository.findByUnitIdOrderBySortOrderAsc(u.getId()).size();
             }
-            post.setTitle(ps.getTitle());
-            post.setContent(ps.getContent());
-            post.setLikeCount(ps.getLikeCount());
-            post.setCommentCount(ps.getCommentCount());
-            post.setCreatedAt(LocalDateTime.now().minusDays(2).minusHours(index * 6L));
-            postRepository.save(post);
-            index++;
+            course.setLessonCount(lessonTotal);
+            courseRepository.save(course);
         }
     }
 

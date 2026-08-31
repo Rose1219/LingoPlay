@@ -12,4 +12,7 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
     List<Lesson> findByTypeAndUnitCourseLanguageCode(String type, String languageCode);
 
     long countByUnitCourseId(Long courseId);
+
+    /** 增量同步：判断课时是否已存在 */
+    boolean existsByUnitIdAndTitle(Long unitId, String title);
 }

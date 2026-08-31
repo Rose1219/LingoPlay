@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "食べる", "phonetic": "taberu", "meaning": "吃", "example": "朝七時に食べます。", "translation": "我早上七点吃饭。" },
+    { "word": "飲む", "phonetic": "nomu", "meaning": "喝", "example": "コーヒーを飲みますか。", "translation": "要喝咖啡吗？" },
+    { "word": "寝る", "phonetic": "neru", "meaning": "睡觉", "example": "十一時に寝ます。", "translation": "我十一点睡觉。" },
+    { "word": "歩く", "phonetic": "aruku", "meaning": "走路", "example": "公園を歩きます。", "translation": "我在公园里散步。" },
+    { "word": "走る", "phonetic": "hashiru", "meaning": "跑步", "example": "彼は速く走ります。", "translation": "他跑得很快。" },
+    { "word": "読む", "phonetic": "yomu", "meaning": "读", "example": "毎週本を読みます。", "translation": "我每周读书。" },
+    { "word": "書く", "phonetic": "kaku", "meaning": "写", "example": "ここに名前を書いてください。", "translation": "请在这里写名字。" },
+    { "word": "聞く", "phonetic": "kiku", "meaning": "听；问", "example": "仕事の後で音楽を聞きます。", "translation": "我下班后听音乐。" },
+    { "word": "見る", "phonetic": "miru", "meaning": "看", "example": "一緒にテレビを見ます。", "translation": "我们一起看电视。" },
+    { "word": "遊ぶ", "phonetic": "asobu", "meaning": "玩", "example": "子どもたちは庭で遊びます。", "translation": "孩子们在院子里玩。" },
+    { "word": "開ける", "phonetic": "akeru", "meaning": "打开", "example": "窓を開けてください。", "translation": "请打开窗户。" },
+    { "word": "閉める", "phonetic": "shimeru", "meaning": "关闭", "example": "ドアを閉めます。", "translation": "我把门关上。" },
+    { "word": "大きい", "phonetic": "ookii", "meaning": "大的", "example": "あれは大きい家です。", "translation": "那是一座大房子。" },
+    { "word": "小さい", "phonetic": "chiisai", "meaning": "小的", "example": "小さい猫がいます。", "translation": "我有一只小猫。" },
+    { "word": "良い", "phonetic": "yoi", "meaning": "好的", "example": "これは良い考えです。", "translation": "这是个好主意。" },
+    { "word": "悪い", "phonetic": "warui", "meaning": "坏的；不好的", "example": "今日は天気が悪いです。", "translation": "今天天气不好。" },
+    { "word": "新しい", "phonetic": "atarashii", "meaning": "新的", "example": "新しい携帯を買いました。", "translation": "我买了新手机。" },
+    { "word": "古い", "phonetic": "furui", "meaning": "旧的", "example": "これは古い写真です。", "translation": "这是一张旧照片。" },
+    { "word": "暑い", "phonetic": "atsui", "meaning": "热的（天气）", "example": "今日はとても暑いです。", "translation": "今天非常热。" },
+    { "word": "寒い", "phonetic": "samui", "meaning": "冷的（天气）", "example": "冬は寒いです。", "translation": "冬天很冷。" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "일어나다", "phonetic": "ireonada", "meaning": "起床；起来", "example": "매일 아침 여섯 시에 일어나요.", "translation": "我每天早上六点起床。" },
+    { "word": "나가다", "phonetic": "nagada", "meaning": "出去", "example": "주말에 친구와 외출해요.", "translation": "周末我和朋友外出。" },
+    { "word": "들어가다", "phonetic": "deureogada", "meaning": "进去；进入", "example": "먼저 들어가세요.", "translation": "请先进去。" },
+    { "word": "돌아오다", "phonetic": "doraoda", "meaning": "回来", "example": "저녁 전에 돌아올게요.", "translation": "我晚饭前回来。" },
+    { "word": "타다", "phonetic": "tada", "meaning": "乘坐", "example": "지하철을 타고 학교에 가요.", "translation": "我坐地铁去上学。" },
+    { "word": "내리다", "phonetic": "naerida", "meaning": "下车；下来", "example": "다음 역에서 내리세요.", "translation": "请在下一站下车。" },
+    { "word": "건너다", "phonetic": "geonnda", "meaning": "过（马路/桥）", "example": "길을 건너면 오른쪽이에요.", "translation": "过了马路就是右边。" },
+    { "word": "고치다", "phonetic": "gochida", "meaning": "修理；改正", "example": "자전거를 고쳤어요.", "translation": "我修好了自行车。" },
+    { "word": "빌리다", "phonetic": "billida", "meaning": "借入", "example": "도서관에서 책을 빌려요.", "translation": "我在图书馆借书。" },
+    { "word": "주다", "phonetic": "juda", "meaning": "给；给予", "example": "친구에게 우산을 줬어요.", "translation": "我把伞给了朋友。" },
+    { "word": "가르치다", "phonetic": "gareuchida", "meaning": "教", "example": "형이 수학을 가르쳐 줘요.", "translation": "哥哥教我数学。" },
+    { "word": "배우다", "phonetic": "baeuda", "meaning": "学习", "example": "저는 피아노를 배우고 있어요.", "translation": "我在学钢琴。" },
+    { "word": "외우다", "phonetic": "oeuda", "meaning": "背；记住", "example": "매일 단어를 외워요.", "translation": "我每天背单词。" },
+    { "word": "잊다", "phonetic": "itda", "meaning": "忘记", "example": "이름을 잊어버렸어요.", "translation": "我忘了名字。" },
+    { "word": "찾다", "phonetic": "chatda", "meaning": "寻找", "example": "열쇠를 찾고 있어요.", "translation": "我在找钥匙。" },
+    { "word": "모으다", "phonetic": "moeuda", "meaning": "收集；攒", "example": "저는 우표를 모아요.", "translation": "我集邮。" },
+    { "word": "정리하다", "phonetic": "jeongnihada", "meaning": "整理", "example": "방을 정리했어요.", "translation": "我整理了房间。" },
+    { "word": "사용하다", "phonetic": "sayonghada", "meaning": "使用", "example": "이 단어는 자주 사용해요.", "translation": "这个词经常用。" },
+    { "word": "버리다", "phonetic": "beorida", "meaning": "扔掉", "example": "오래된 신문을 버렸어요.", "translation": "我把旧报纸扔了。" },
+    { "word": "기다리다", "phonetic": "gidarida", "meaning": "等待", "example": "여기서 잠깐 기다리세요.", "translation": "请在这里稍等。" }
+  ]
+}

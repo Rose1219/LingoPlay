@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "曖昧", "phonetic": "aimai", "meaning": "模糊的；含糊的", "example": "彼の答えは曖昧でした。", "translation": "他的回答很含糊。" },
+    { "word": "著しい", "phonetic": "ichijirushii", "meaning": "显著的；明显的", "example": "売り上げは著しく伸びました。", "translation": "销售额显著增长。" },
+    { "word": "多様", "phonetic": "tayou", "meaning": "多样的", "example": "この都市の人口は多様です。", "translation": "这座城市人口多元。" },
+    { "word": "微妙", "phonetic": "bimyou", "meaning": "微妙的", "example": "二つの言葉には微妙な違いがあります。", "translation": "这两个词之间有微妙的差别。" },
+    { "word": "膨大", "phonetic": "boudai", "meaning": "庞大的", "example": "この計画には膨大な費用がかかります。", "translation": "这个计划需要庞大的费用。" },
+    { "word": "必然", "phonetic": "hitsuzen", "meaning": "必然", "example": "人生では変化が必然です。", "translation": "人生中变化是必然的。" },
+    { "word": "可能性", "phonetic": "kanousei", "meaning": "可能性", "example": "この計画には可能性があります。", "translation": "这个计划有可行性。" },
+    { "word": "効率", "phonetic": "kouritsu", "meaning": "效率", "example": "新しい方法で効率が上がりました。", "translation": "新方法提高了效率。" },
+    { "word": "実感", "phonetic": "jikkan", "meaning": "真实感受", "example": "成長を実感しています。", "translation": "我切实感受到了成长。" },
+    { "word": "敬意", "phonetic": "keii", "meaning": "敬意", "example": "彼女には敬意を持っています。", "translation": "我对她怀有敬意。" },
+    { "word": "対処", "phonetic": "taisho", "meaning": "应对；处理", "example": "問題に対処する方法を考えます。", "translation": "我要思考应对问题的方法。" },
+    { "word": "促進", "phonetic": "sokushin", "meaning": "促进", "example": "運動は健康を促進します。", "translation": "运动促进健康。" },
+    { "word": "抑制", "phonetic": "yokusei", "meaning": "抑制；控制", "example": "支出を抑制する必要があります。", "translation": "有必要控制支出。" },
+    { "word": "懸念", "phonetic": "kenen", "meaning": "忧虑；担忧", "example": "安全性について懸念があります。", "translation": "我对安全性有担忧。" },
+    { "word": "見解", "phonetic": "kenkai", "meaning": "见解；看法", "example": "それについての私の見解です。", "translation": "这是我对那件事的见解。" },
+    { "word": "緻密", "phonetic": "chimitsu", "meaning": "细致的；周密的", "example": "緻密な計画を立てました。", "translation": "我制定了周密的计划。" },
+    { "word": "根本", "phonetic": "konpon", "meaning": "根本", "example": "問題の根本を解決しましょう。", "translation": "让我们解决问题的根源。" },
+    { "word": "卓越", "phonetic": "takue", "meaning": "卓越；超群", "example": "彼は卓越した技術を持っています。", "translation": "他拥有卓越的技术。" },
+    { "word": "幅広い", "phonetic": "habahiroi", "meaning": "广泛的", "example": "スマートフォンは幅広く使われています。", "translation": "智能手机被广泛使用。" },
+    { "word": "傾向", "phonetic": "keikou", "meaning": "倾向；趋势", "example": "远程办公の傾向が強まっています。", "translation": "远程办公的趋势在加强。" }
+  ]
+}

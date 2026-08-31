@@ -3,10 +3,16 @@
     <!-- 每日单词 · 极简卡片 -->
     <div class="daily-card" :class="{ revealed }" @click="revealed = !revealed">
       <div class="daily-top">
-        <span class="daily-label">每日单词</span>
-        <el-tag v-if="daily && daily.languageName" size="small" effect="plain" class="daily-lang">
-          {{ daily.icon }} {{ daily.languageName }}
-        </el-tag>
+        <div class="daily-label-row">
+          <span class="daily-label">每日单词</span>
+          <span v-if="daily && daily.isNew" class="new-badge">NEW</span>
+        </div>
+        <div class="daily-tags" v-if="daily">
+          <el-tag v-if="daily.level" size="small" effect="dark" class="level-tag">{{ daily.level }}</el-tag>
+          <el-tag v-if="daily.languageName" size="small" effect="plain" class="daily-lang">
+            {{ daily.icon }} {{ daily.languageName }}
+          </el-tag>
+        </div>
       </div>
 
       <div v-if="daily" class="daily-body">
@@ -25,6 +31,14 @@
           </button>
         </div>
         <div class="example-trans text-muted text-sm">{{ daily.translation }}</div>
+      </div>
+
+      <!-- 词汇进度：已收入单词本的词 / 词库总量 -->
+      <div class="daily-progress" v-if="daily && daily.totalCount">
+        <div class="progress-bar">
+          <div class="progress-fill" :style="{ width: progressPercent + '%' }"></div>
+        </div>
+        <span class="progress-text">词汇进度 {{ daily.learnedCount || 0 }} / {{ daily.totalCount }}</span>
       </div>
     </div>
 
@@ -53,7 +67,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { gameApi } from '../api'
@@ -63,6 +77,11 @@ const router = useRouter()
 const daily = ref(null)
 const revealed = ref(false)
 const loadingWord = ref(false)
+
+const progressPercent = computed(() => {
+  if (!daily.value || !daily.value.totalCount) return 0
+  return Math.min(100, Math.round(((daily.value.learnedCount || 0) / daily.value.totalCount) * 100))
+})
 
 async function loadDaily(random) {
   loadingWord.value = true
@@ -142,11 +161,72 @@ onMounted(() => {
   margin-bottom: 18px;
 }
 
+.daily-label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .daily-label {
   font-size: 12px;
   letter-spacing: 3px;
   color: var(--ll-cyan);
   text-transform: uppercase;
+}
+
+/* 新词徽标 */
+.new-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  padding: 1px 7px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f43f5e, #f97316);
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.4);
+}
+
+.daily-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 难度等级徽标：随词量解锁 A1→A2→B1→B2 */
+.level-tag {
+  border: none;
+  background: linear-gradient(135deg, #4f7cff, #22d3ee);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* 词汇进度条 */
+.daily-progress {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(120, 150, 255, 0.15);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4f7cff, #22d3ee);
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--ll-text-muted);
 }
 
 .daily-body {

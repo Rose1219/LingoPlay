@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "eat", "phonetic": "iːt", "meaning": "吃", "example": "I eat breakfast at seven.", "translation": "我七点吃早餐。" },
+    { "word": "drink", "phonetic": "drɪŋk", "meaning": "喝", "example": "Do you want to drink some tea?", "translation": "你想喝点茶吗？" },
+    { "word": "sleep", "phonetic": "sliːp", "meaning": "睡觉", "example": "I sleep eight hours every night.", "translation": "我每晚睡八个小时。" },
+    { "word": "walk", "phonetic": "wɔːk", "meaning": "走路；散步", "example": "We walk in the park.", "translation": "我们在公园里散步。" },
+    { "word": "run", "phonetic": "rʌn", "meaning": "跑", "example": "He runs very fast.", "translation": "他跑得很快。" },
+    { "word": "read", "phonetic": "riːd", "meaning": "阅读", "example": "She reads a book every week.", "translation": "她每周读一本书。" },
+    { "word": "write", "phonetic": "raɪt", "meaning": "写", "example": "Please write your name here.", "translation": "请在这里写下你的名字。" },
+    { "word": "listen", "phonetic": "ˈlɪsn", "meaning": "听", "example": "I listen to music after work.", "translation": "我下班后听音乐。" },
+    { "word": "watch", "phonetic": "wɑːtʃ", "meaning": "观看", "example": "We watch TV together.", "translation": "我们一起看电视。" },
+    { "word": "play", "phonetic": "pleɪ", "meaning": "玩；播放", "example": "The kids play in the garden.", "translation": "孩子们在花园里玩。" },
+    { "word": "open", "phonetic": "ˈoʊpən", "meaning": "打开", "example": "Please open the window.", "translation": "请打开窗户。" },
+    { "word": "close", "phonetic": "kloʊz", "meaning": "关闭", "example": "Close the door, please.", "translation": "请关上门。" },
+    { "word": "big", "phonetic": "bɪɡ", "meaning": "大的", "example": "That is a big house.", "translation": "那是一座大房子。" },
+    { "word": "small", "phonetic": "smɔːl", "meaning": "小的", "example": "I have a small cat.", "translation": "我有一只小猫。" },
+    { "word": "good", "phonetic": "ɡʊd", "meaning": "好的", "example": "This is a good idea.", "translation": "这是个好主意。" },
+    { "word": "bad", "phonetic": "bæd", "meaning": "坏的", "example": "The weather is bad today.", "translation": "今天天气不好。" },
+    { "word": "new", "phonetic": "nuː", "meaning": "新的", "example": "I bought a new phone.", "translation": "我买了一部新手机。" },
+    { "word": "old", "phonetic": "oʊld", "meaning": "老的；旧的", "example": "This is an old photo.", "translation": "这是一张旧照片。" },
+    { "word": "hot", "phonetic": "hɑːt", "meaning": "热的", "example": "The soup is very hot.", "translation": "汤很烫。" },
+    { "word": "cold", "phonetic": "koʊld", "meaning": "冷的", "example": "It is cold in winter.", "translation": "冬天很冷。" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "機会", "phonetic": "kikai", "meaning": "机会", "example": "この仕事は私にとって大きな機会です。", "translation": "这份工作对我是个大机会。" },
+    { "word": "経験", "phonetic": "keiken", "meaning": "经验；经历", "example": "彼女は豊富な教師の経験があります。", "translation": "她有丰富的教学经验。" },
+    { "word": "知識", "phonetic": "chishiki", "meaning": "知识", "example": "知識は人生を変えます。", "translation": "知识改变人生。" },
+    { "word": "成功", "phonetic": "seikou", "meaning": "成功", "example": "努力は成功につながります。", "translation": "努力通向成功。" },
+    { "word": "失敗", "phonetic": "shippai", "meaning": "失败", "example": "失敗は学びの一部です。", "translation": "失败是学习的一部分。" },
+    { "word": "決定", "phonetic": "kettei", "meaning": "决定", "example": "それは難しい決定でした。", "translation": "那是个艰难的决定。" },
+    { "word": "能力", "phonetic": "nouryoku", "meaning": "能力", "example": "彼は問題を解決する能力があります。", "translation": "他有解决问题的能力。" },
+    { "word": "注意", "phonetic": "chuui", "meaning": "注意；小心", "example": "細部に注意を払ってください。", "translation": "请注意细节。" },
+    { "word": "目的", "phonetic": "mokuteki", "meaning": "目的", "example": "この会議の目的は何ですか。", "translation": "这次会议的目的是什么？" },
+    { "word": "状況", "phonetic": "joukyou", "meaning": "状况；情况", "example": "状況は良くなっています。", "translation": "状况正在好转。" },
+    { "word": "解決", "phonetic": "kaiketsu", "meaning": "解决", "example": "やっと問題を解決しました。", "translation": "问题终于解决了。" },
+    { "word": "開発", "phonetic": "kaihatsu", "meaning": "开发", "example": "この都市の開発は速いです。", "translation": "这座城市开发很快。" },
+    { "word": "環境", "phonetic": "kankyou", "meaning": "环境", "example": "環境を守らなければなりません。", "translation": "我们必须保护环境。" },
+    { "word": "社会", "phonetic": "shakai", "meaning": "社会", "example": "テクノロジーは社会を変えます。", "translation": "科技改变社会。" },
+    { "word": "文化", "phonetic": "bunka", "meaning": "文化", "example": "日本文化について学びたいです。", "translation": "我想学习日本文化。" },
+    { "word": "教育", "phonetic": "kyouiku", "meaning": "教育", "example": "教育は多くの扉を開きます。", "translation": "教育打开许多大门。" },
+    { "word": "意見", "phonetic": "iken", "meaning": "意见；看法", "example": "あなたの意見を聞かせてください。", "translation": "请说说你的看法。" },
+    { "word": "約束", "phonetic": "yakusoku", "meaning": "约定；承诺", "example": "彼との約束を忘れません。", "translation": "我不会忘记和他的约定。" },
+    { "word": "変化", "phonetic": "henka", "meaning": "变化", "example": "生活には変化があります。", "translation": "生活中有变化。" },
+    { "word": "自信", "phonetic": "jishin", "meaning": "自信", "example": "練習が自信を作ります。", "translation": "练习建立自信。" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "happy", "phonetic": "ˈhæpi", "meaning": "开心的", "example": "I am happy to see you.", "translation": "见到你我很开心。" },
+    { "word": "sad", "phonetic": "sæd", "meaning": "悲伤的", "example": "She felt sad about the news.", "translation": "这个消息让她很难过。" },
+    { "word": "angry", "phonetic": "ˈæŋɡri", "meaning": "生气的", "example": "Don't be angry with me.", "translation": "别生我的气。" },
+    { "word": "tired", "phonetic": "ˈtaɪərd", "meaning": "疲倦的", "example": "I am too tired to walk.", "translation": "我累得走不动了。" },
+    { "word": "excited", "phonetic": "ɪkˈsaɪtɪd", "meaning": "兴奋的", "example": "We are excited about the trip.", "translation": "我们对这次旅行感到兴奋。" },
+    { "word": "worried", "phonetic": "ˈwɜːrid", "meaning": "担心的", "example": "He is worried about the exam.", "translation": "他担心考试。" },
+    { "word": "bored", "phonetic": "bɔːrd", "meaning": "无聊的", "example": "The movie made me bored.", "translation": "这部电影让我觉得无聊。" },
+    { "word": "surprised", "phonetic": "sərˈpraɪzd", "meaning": "惊讶的", "example": "I was surprised by the gift.", "translation": "这份礼物让我很惊讶。" },
+    { "word": "afraid", "phonetic": "əˈfreɪd", "meaning": "害怕的", "example": "She is afraid of dogs.", "translation": "她怕狗。" },
+    { "word": "proud", "phonetic": "praʊd", "meaning": "自豪的", "example": "I am proud of my team.", "translation": "我为我的团队感到自豪。" },
+    { "word": "quiet", "phonetic": "ˈkwaɪət", "meaning": "安静的", "example": "Please be quiet in the library.", "translation": "在图书馆请保持安静。" },
+    { "word": "noisy", "phonetic": "ˈnɔɪzi", "meaning": "吵闹的", "example": "The street is very noisy.", "translation": "这条街非常吵。" },
+    { "word": "clean", "phonetic": "kliːn", "meaning": "干净的", "example": "Keep your room clean.", "translation": "保持房间干净。" },
+    { "word": "dirty", "phonetic": "ˈdɜːrti", "meaning": "脏的", "example": "My shoes are dirty.", "translation": "我的鞋子脏了。" },
+    { "word": "easy", "phonetic": "ˈiːzi", "meaning": "容易的", "example": "This question is easy.", "translation": "这个问题很容易。" },
+    { "word": "difficult", "phonetic": "ˈdɪfɪkəlt", "meaning": "困难的", "example": "English is not so difficult.", "translation": "英语没那么难。" },
+    { "word": "beautiful", "phonetic": "ˈbjuːtɪfl", "meaning": "美丽的", "example": "What a beautiful garden!", "translation": "多么美丽的花园！" },
+    { "word": "important", "phonetic": "ɪmˈpɔːrtnt", "meaning": "重要的", "example": "Health is more important than money.", "translation": "健康比金钱更重要。" },
+    { "word": "interesting", "phonetic": "ˈɪntrəstɪŋ", "meaning": "有趣的", "example": "This book is very interesting.", "translation": "这本书非常有趣。" },
+    { "word": "dangerous", "phonetic": "ˈdeɪndʒərəs", "meaning": "危险的", "example": "Swimming here is dangerous.", "translation": "在这里游泳很危险。" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "嬉しい", "phonetic": "ureshii", "meaning": "高兴的", "example": "会えてとても嬉しいです。", "translation": "见到你我很高兴。" },
+    { "word": "悲しい", "phonetic": "kanashii", "meaning": "悲伤的", "example": "その知らせで悲しくなりました。", "translation": "那个消息让我很难过。" },
+    { "word": "怒る", "phonetic": "okoru", "meaning": "生气", "example": "私を怒らないでください。", "translation": "请不要生我的气。" },
+    { "word": "疲れる", "phonetic": "tsukareru", "meaning": "疲惫", "example": "今日はとても疲れました。", "translation": "今天我很累。" },
+    { "word": "楽しい", "phonetic": "tanoshii", "meaning": "快乐的；有趣的", "example": "旅行は楽しかったです。", "translation": "旅行很愉快。" },
+    { "word": "心配", "phonetic": "shinpai", "meaning": "担心", "example": "試験が心配です。", "translation": "我担心考试。" },
+    { "word": "退屈", "phonetic": "taikutsu", "meaning": "无聊", "example": "この映画は退屈でした。", "translation": "这部电影很无聊。" },
+    { "word": "驚く", "phonetic": "odoroku", "meaning": "惊讶", "example": "プレゼントに驚きました。", "translation": "礼物让我很惊讶。" },
+    { "word": "怖い", "phonetic": "kowai", "meaning": "可怕的", "example": "私は犬が怖いです。", "translation": "我怕狗。" },
+    { "word": "誇り", "phonetic": "hokori", "meaning": "自豪；骄傲", "example": "チームを誇りに思います。", "translation": "我为团队感到自豪。" },
+    { "word": "静か", "phonetic": "shizuka", "meaning": "安静的", "example": "図書館では静かにしてください。", "translation": "在图书馆请保持安静。" },
+    { "word": "うるさい", "phonetic": "urusai", "meaning": "吵闹的", "example": "この通りはとてもうるさいです。", "translation": "这条街非常吵。" },
+    { "word": "汚い", "phonetic": "kitanai", "meaning": "脏的", "example": "部屋が汚いです。", "translation": "房间很脏。" },
+    { "word": "簡単", "phonetic": "kantan", "meaning": "简单的", "example": "この問題は簡単です。", "translation": "这个问题很简单。" },
+    { "word": "難しい", "phonetic": "muzukashii", "meaning": "困难的", "example": "日本語はそれほど難しくないです。", "translation": "日语没那么难。" },
+    { "word": "きれい", "phonetic": "kirei", "meaning": "漂亮的；干净的", "example": "きれいな庭ですね。", "translation": "好漂亮的花园啊。" },
+    { "word": "大切", "phonetic": "taisetsu", "meaning": "重要的；珍惜的", "example": "健康はお金より大切です。", "translation": "健康比金钱更重要。" },
+    { "word": "面白い", "phonetic": "omoshiroi", "meaning": "有趣的", "example": "この本はとても面白いです。", "translation": "这本书非常有趣。" },
+    { "word": "危険", "phonetic": "kiken", "meaning": "危险的", "example": "ここで泳ぐのは危険です。", "translation": "在这里游泳很危险。" },
+    { "word": "親切", "phonetic": "shinsetsu", "meaning": "热心的；和蔼的", "example": "彼はとても親切です。", "translation": "他非常热心。" }
+  ]
+}

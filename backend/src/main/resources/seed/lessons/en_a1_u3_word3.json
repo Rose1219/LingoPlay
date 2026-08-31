@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "family", "phonetic": "ˈfæməli", "meaning": "家庭；家人", "example": "I love my family very much.", "translation": "我非常爱我的家人。" },
+    { "word": "mother", "phonetic": "ˈmʌðər", "meaning": "母亲", "example": "My mother cooks dinner every day.", "translation": "我妈妈每天做晚饭。" },
+    { "word": "father", "phonetic": "ˈfɑːðər", "meaning": "父亲", "example": "My father drives to work.", "translation": "我爸爸开车上班。" },
+    { "word": "sister", "phonetic": "ˈsɪstər", "meaning": "姐妹", "example": "My sister is ten years old.", "translation": "我妹妹十岁了。" },
+    { "word": "brother", "phonetic": "ˈbrʌðər", "meaning": "兄弟", "example": "My brother plays football.", "translation": "我哥哥踢足球。" },
+    { "word": "friend", "phonetic": "frend", "meaning": "朋友", "example": "She is my best friend.", "translation": "她是我最好的朋友。" },
+    { "word": "teacher", "phonetic": "ˈtiːtʃər", "meaning": "老师", "example": "Our teacher is very kind.", "translation": "我们的老师很和善。" },
+    { "word": "student", "phonetic": "ˈstuːdnt", "meaning": "学生", "example": "I am a student.", "translation": "我是一名学生。" },
+    { "word": "doctor", "phonetic": "ˈdɑːktər", "meaning": "医生", "example": "The doctor works at the hospital.", "translation": "这位医生在医院工作。" },
+    { "word": "people", "phonetic": "ˈpiːpl", "meaning": "人们", "example": "Many people live in this city.", "translation": "很多人住在这座城市。" },
+    { "word": "name", "phonetic": "neɪm", "meaning": "名字", "example": "What is your name?", "translation": "你叫什么名字？" },
+    { "word": "home", "phonetic": "hoʊm", "meaning": "家", "example": "I go home at five.", "translation": "我五点回家。" },
+    { "word": "room", "phonetic": "ruːm", "meaning": "房间", "example": "My room is small but clean.", "translation": "我的房间小但干净。" },
+    { "word": "kitchen", "phonetic": "ˈkɪtʃɪn", "meaning": "厨房", "example": "Mom is in the kitchen.", "translation": "妈妈在厨房里。" },
+    { "word": "morning", "phonetic": "ˈmɔːrnɪŋ", "meaning": "早晨", "example": "Good morning, everyone!", "translation": "大家早上好！" },
+    { "word": "afternoon", "phonetic": "ˌæftərˈnuːn", "meaning": "下午", "example": "See you this afternoon.", "translation": "今天下午见。" },
+    { "word": "evening", "phonetic": "ˈiːvnɪŋ", "meaning": "晚上", "example": "I read books in the evening.", "translation": "我晚上看书。" },
+    { "word": "water", "phonetic": "ˈwɔːtər", "meaning": "水", "example": "I drink a lot of water.", "translation": "我喝很多水。" },
+    { "word": "food", "phonetic": "fuːd", "meaning": "食物", "example": "The food here is delicious.", "translation": "这里的食物很好吃。" },
+    { "word": "school", "phonetic": "skuːl", "meaning": "学校", "example": "I walk to school every day.", "translation": "我每天走路去上学。" }
+  ]
+}

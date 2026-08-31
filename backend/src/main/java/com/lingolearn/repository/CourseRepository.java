@@ -11,4 +11,7 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     List<Course> findByLanguageCodeOrderBySortOrderAsc(String languageCode);
 
     Optional<Course> findFirstByLanguageCodeAndLevelOrderBySortOrderAsc(String languageCode, String level);
+
+    /** 增量同步：按语种+标题定位已有课程 */
+    Optional<Course> findByLanguageIdAndTitle(Long languageId, String title);
 }

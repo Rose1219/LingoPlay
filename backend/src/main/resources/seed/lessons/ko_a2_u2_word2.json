@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "기쁘다", "phonetic": "gippeuda", "meaning": "高兴的", "example": "만나서 정말 기뻐요.", "translation": "见到你我很高兴。" },
+    { "word": "슬프다", "phonetic": "seulpeuda", "meaning": "悲伤的", "example": "그 소식이 슬퍼요.", "translation": "那个消息很难过。" },
+    { "word": "화나다", "phonetic": "hwanada", "meaning": "生气", "example": "저한테 화내지 마세요.", "translation": "请不要生我的气。" },
+    { "word": "피곤하다", "phonetic": "pigonhada", "meaning": "疲倦的", "example": "오늘은 너무 피곤해요.", "translation": "今天我很累。" },
+    { "word": "신나다", "phonetic": "sinnada", "meaning": "兴奋的；开心的", "example": "여행 생각에 신나요.", "translation": "想到旅行就很兴奋。" },
+    { "word": "걱정", "phonetic": "geokjeong", "meaning": "担心", "example": "시험이 걱정돼요.", "translation": "我担心考试。" },
+    { "word": "심심하다", "phonetic": "simsimhada", "meaning": "无聊的", "example": "이 영화는 심심해요.", "translation": "这部电影很无聊。" },
+    { "word": "놀라다", "phonetic": "nollada", "meaning": "惊讶", "example": "선물에 놀랐어요.", "translation": "礼物让我很惊讶。" },
+    { "word": "무섭다", "phonetic": "museopda", "meaning": "可怕的", "example": "저는 개가 무서워요.", "translation": "我怕狗。" },
+    { "word": "자랑스럽다", "phonetic": "jarangseureopda", "meaning": "自豪的", "example": "우리 팀이 자랑스러워요.", "translation": "我为团队感到自豪。" },
+    { "word": "조용하다", "phonetic": "joyonghada", "meaning": "安静的", "example": "도서관에서는 조용히 하세요.", "translation": "在图书馆请保持安静。" },
+    { "word": "시끄럽다", "phonetic": "sikkeureopda", "meaning": "吵闹的", "example": "이 거리는 아주 시끄러워요.", "translation": "这条街非常吵。" },
+    { "word": "더럽다", "phonetic": "deoreopda", "meaning": "脏的", "example": "방이 더러워요.", "translation": "房间很脏。" },
+    { "word": "쉽다", "phonetic": "swipda", "meaning": "容易的", "example": "이 문제는 쉬워요.", "translation": "这个问题很容易。" },
+    { "word": "어렵다", "phonetic": "eoryeopda", "meaning": "困难的", "example": "한국어는 그렇게 어렵지 않아요.", "translation": "韩语没那么难。" },
+    { "word": "아름답다", "phonetic": "areumdapda", "meaning": "美丽的", "example": "정말 아름다운 정원이네요!", "translation": "好漂亮的花园啊！" },
+    { "word": "중요하다", "phonetic": "jungyohada", "meaning": "重要的", "example": "건강이 돈보다 중요해요.", "translation": "健康比金钱更重要。" },
+    { "word": "재미있다", "phonetic": "jaemiitda", "meaning": "有趣的", "example": "이 책은 아주 재미있어요.", "translation": "这本书非常有趣。" },
+    { "word": "위험하다", "phonetic": "wiheomhada", "meaning": "危险的", "example": "여기서 수영은 위험해요.", "translation": "在这里游泳很危险。" },
+    { "word": "친절하다", "phonetic": "chinjeolhada", "meaning": "亲切的", "example": "그는 아주 친절해요.", "translation": "他非常亲切。" }
+  ]
+}

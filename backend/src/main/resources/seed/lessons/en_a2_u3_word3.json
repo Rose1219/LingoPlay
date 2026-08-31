@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "wake up", "phonetic": "weɪk ʌp", "meaning": "醒来", "example": "I wake up at six every morning.", "translation": "我每天早上六点醒来。" },
+    { "word": "get up", "phonetic": "ɡet ʌp", "meaning": "起床", "example": "Get up quickly, or you'll be late.", "translation": "快点起床，不然要迟到了。" },
+    { "word": "turn on", "phonetic": "tɜːrn ɑːn", "meaning": "打开（电器）", "example": "Please turn on the light.", "translation": "请打开灯。" },
+    { "word": "turn off", "phonetic": "tɜːrn ɔːf", "meaning": "关闭（电器）", "example": "Turn off the TV before bed.", "translation": "睡觉前关掉电视。" },
+    { "word": "look for", "phonetic": "lʊk fɔːr", "meaning": "寻找", "example": "I am looking for my keys.", "translation": "我在找我的钥匙。" },
+    { "word": "find out", "phonetic": "faɪnd aʊt", "meaning": "查明；发现", "example": "I will find out the truth.", "translation": "我会查明真相。" },
+    { "word": "give up", "phonetic": "ɡɪv ʌp", "meaning": "放弃", "example": "Never give up your dreams.", "translation": "永远不要放弃你的梦想。" },
+    { "word": "pick up", "phonetic": "pɪk ʌp", "meaning": "捡起；接人", "example": "I will pick you up at the station.", "translation": "我去车站接你。" },
+    { "word": "put on", "phonetic": "pʊt ɑːn", "meaning": "穿上", "example": "Put on your coat. It's cold outside.", "translation": "穿上外套，外面很冷。" },
+    { "word": "take off", "phonetic": "teɪk ɔːf", "meaning": "脱下；起飞", "example": "The plane takes off at nine.", "translation": "飞机九点起飞。" },
+    { "word": "grow up", "phonetic": "ɡroʊ ʌp", "meaning": "长大", "example": "I want to be a pilot when I grow up.", "translation": "我长大后想当飞行员。" },
+    { "word": "hurry up", "phonetic": "ˈhɜːri ʌp", "meaning": "赶快", "example": "Hurry up! The bus is coming.", "translation": "快点！公交车来了。" },
+    { "word": "hold on", "phonetic": "hoʊld ɑːn", "meaning": "等一下；坚持", "example": "Hold on, I'm coming.", "translation": "等一下，我马上来。" },
+    { "word": "come back", "phonetic": "kʌm bæk", "meaning": "回来", "example": "Come back before dinner.", "translation": "晚饭前回来。" },
+    { "word": "go out", "phonetic": "ɡoʊ aʊt", "meaning": "外出", "example": "Let's go out for dinner.", "translation": "我们出去吃晚饭吧。" },
+    { "word": "sit down", "phonetic": "sɪt daʊn", "meaning": "坐下", "example": "Please sit down and relax.", "translation": "请坐下休息。" },
+    { "word": "stand up", "phonetic": "stænd ʌp", "meaning": "站起来", "example": "Everyone stood up and clapped.", "translation": "所有人都起立鼓掌。" },
+    { "word": "usually", "phonetic": "ˈjuːʒuəli", "meaning": "通常", "example": "I usually go to bed at eleven.", "translation": "我通常十一点睡觉。" },
+    { "word": "sometimes", "phonetic": "ˈsʌmtaɪmz", "meaning": "有时", "example": "Sometimes I work on weekends.", "translation": "我有时周末工作。" },
+    { "word": "together", "phonetic": "təˈɡeðər", "meaning": "一起", "example": "We learn languages together.", "translation": "我们一起学语言。" }
+  ]
+}

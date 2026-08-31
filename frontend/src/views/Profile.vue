@@ -52,7 +52,7 @@ import { languageApi } from '../api'
 import { useUserStore } from '../store/user'
 import PageBack from '../components/PageBack.vue'
 
-const APP_VERSION = '1.0.3'
+const APP_VERSION = '1.0.4'
 const isNativeApp =
   typeof window !== 'undefined' &&
   !!window.Capacitor &&

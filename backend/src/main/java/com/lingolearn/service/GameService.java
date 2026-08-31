@@ -48,10 +48,53 @@ public class GameService {
         this.objectMapper = objectMapper;
     }
 
+    /** 词条候选（词 + 所属课程等级），level 为 A1/A2/B1/B2 */
+    private static class WordEntry {
+        final String word;
+        final String meaning;
+        final String phonetic;
+        final String example;
+        final String translation;
+        final Long lessonId;
+        final String level;
+
+        WordEntry(JsonNode w, Long lessonId, String level) {
+            this.word = w.path("word").asText();
+            this.meaning = w.path("meaning").asText();
+            this.phonetic = w.path("phonetic").asText("");
+            this.example = w.path("example").asText("");
+            this.translation = w.path("translation").asText("");
+            this.lessonId = lessonId;
+            this.level = level;
+        }
+    }
+
+    /** CEFR 等级 → 难度分（A1=1 … B2=4），未知按 1 处理 */
+    private static int levelDifficulty(String level) {
+        switch (level == null ? "" : level) {
+            case "A2": return 2;
+            case "B1": return 3;
+            case "B2": return 4;
+            default: return 1;
+        }
+    }
+
+    /** 按已入本词数决定难度上限：词量越多解锁越高的难度档位 */
+    private static int difficultyCap(int learnedCount) {
+        if (learnedCount < 30) return 1;   // 起步只出 A1
+        if (learnedCount < 70) return 2;   // 解锁 A2
+        if (learnedCount < 130) return 3;  // 解锁 B1
+        return 4;                          // 解锁 B2
+    }
+
     /**
-     * 每日单词：默认按日期固定，random=true 时随机抽取
+     * 每日单词（v1.0.4 重写）：
+     * 1. 优先推送从未出现过的词（未入单词本），避免来回重复；
+     * 2. 难度随已学词数递增（30/70/130 词分别解锁 A2/B1/B2）；
+     * 3. 展示的词自动收入单词本（mastery=0），全部词汇随之沉淀；
+     * 4. 非 random 时同一天稳定出同一个新词；random（换一个）随机换新词。
      */
-    @Transactional(readOnly = true)
+    @Transactional
     public Map<String, Object> dailyWord(Long userId, String langParam, boolean random) {
         Language lang = resolveLanguage(userId, langParam);
         List<Lesson> wordLessons = lessonRepository
@@ -59,38 +102,123 @@ public class GameService {
         if (wordLessons.isEmpty()) {
             throw new BusinessException(404, "该语种暂无单词内容");
         }
-        LocalDate today = LocalDate.now();
-        int daySeed = today.getDayOfYear() * 31 + today.getYear() % 100;
-        int lessonIdx = random
-                ? (int) (Math.random() * wordLessons.size())
-                : Math.abs(daySeed) % wordLessons.size();
-        Lesson lesson = wordLessons.get(lessonIdx);
+
+        // 1. 汇总全部词条并携带课程等级
+        List<WordEntry> all = new ArrayList<>();
         try {
-            JsonNode root = objectMapper.readTree(lesson.getContentJson());
-            JsonNode words = root.path("words");
-            if (!words.isArray() || words.size() == 0) {
-                throw new BusinessException(404, "该课时暂无单词内容");
+            for (Lesson lesson : wordLessons) {
+                String level = lesson.getUnit().getCourse().getLevel();
+                JsonNode words = objectMapper.readTree(lesson.getContentJson()).path("words");
+                if (!words.isArray()) continue;
+                for (JsonNode w : words) {
+                    if (w.path("word").asText("").trim().isEmpty()) continue;
+                    all.add(new WordEntry(w, lesson.getId(), level));
+                }
             }
-            int wordIdx = random
-                    ? (int) (Math.random() * words.size())
-                    : Math.abs(daySeed * 7 + lessonIdx) % words.size();
-            JsonNode w = words.get(wordIdx);
-            Map<String, Object> result = new HashMap<>();
-            result.put("lessonId", lesson.getId());
-            result.put("word", w.path("word").asText());
-            result.put("phonetic", w.path("phonetic").asText(""));
-            result.put("meaning", w.path("meaning").asText());
-            result.put("example", w.path("example").asText(""));
-            result.put("translation", w.path("translation").asText(""));
-            result.put("languageCode", lang.getCode());
-            result.put("languageName", lang.getNameCn());
-            result.put("icon", lang.getIcon());
-            return result;
-        } catch (BusinessException e) {
-            throw e;
         } catch (Exception e) {
             throw new BusinessException(500, "单词数据解析失败");
         }
+        if (all.isEmpty()) {
+            throw new BusinessException(404, "该语种暂无单词内容");
+        }
+
+        // 2. 用户该语种已入本的词（出现过的词不再重复推）
+        List<UserWord> userWords = userWordRepository.findByUserIdAndLanguageId(userId, lang.getId());
+        Set<String> learned = new HashSet<>();
+        for (UserWord uw : userWords) {
+            learned.add(uw.getWord());
+        }
+
+        // 词条索引（同词多课时时取第一个），供当天已推词直接复用
+        Map<String, WordEntry> byWord = new HashMap<>();
+        for (WordEntry e : all) {
+            byWord.putIfAbsent(e.word, e);
+        }
+
+        // 3. 非 random 模式：当天已推送过的每日词直接复用，保证同一天刷新不跳词
+        if (!random) {
+            LocalDateTime todayStart = LocalDate.now().atStartOfDay();
+            for (UserWord uw : userWords) {
+                // reviewCount==0 表示仅由每日单词入本、尚未练习过
+                if (uw.getReviewCount() == 0 && uw.getLastReviewedAt() != null
+                        && uw.getLastReviewedAt().isAfter(todayStart)) {
+                    WordEntry e = byWord.get(uw.getWord());
+                    if (e != null) {
+                        return buildDailyResult(e, lang, false, learned.size(), all.size());
+                    }
+                }
+            }
+        }
+
+        // 4. 候选池：未出现过的词，且难度不超过当前解锁档位
+        List<WordEntry> pool = new ArrayList<>();
+        for (WordEntry e : all) {
+            if (!learned.contains(e.word) && levelDifficulty(e.level) <= difficultyCap(learned.size())) {
+                pool.add(e);
+            }
+        }
+        // 档位内没有新词时放宽：允许全部未出现过的词
+        if (pool.isEmpty()) {
+            for (WordEntry e : all) {
+                if (!learned.contains(e.word)) pool.add(e);
+            }
+        }
+        // 词库全部出现过：进入复习模式，从全部词中选
+        boolean reviewMode = pool.isEmpty();
+        if (reviewMode) {
+            pool.addAll(all);
+        }
+
+        // 5. 选择：random 随机；复习模式按日期种子稳定，避免刷新跳词
+        WordEntry chosen;
+        if (random) {
+            chosen = pool.get((int) (Math.random() * pool.size()));
+        } else {
+            LocalDate today = LocalDate.now();
+            int daySeed = today.getDayOfYear() * 31 + today.getYear() % 100;
+            chosen = pool.get(Math.abs(daySeed) % pool.size());
+        }
+
+        // 6. 自动收入单词本：新词建档 mastery=0，全部词汇随之沉淀
+        boolean isNew = false;
+        UserWord existing = userWordRepository
+                .findByUserIdAndLanguageIdAndWord(userId, lang.getId(), chosen.word)
+                .orElse(null);
+        if (existing == null) {
+            UserWord uw = new UserWord();
+            uw.setUser(userRepository.getReferenceById(userId));
+            uw.setLanguage(lang);
+            uw.setWord(chosen.word);
+            uw.setMeaning(chosen.meaning);
+            uw.setMastery(0);
+            uw.setReviewCount(0);
+            uw.setCorrectStreak(0);
+            uw.setLastReviewedAt(LocalDateTime.now());
+            userWordRepository.save(uw);
+            isNew = true;
+        }
+
+        return buildDailyResult(chosen, lang, isNew, learned.size(), all.size());
+    }
+
+    /** 组装每日单词响应 */
+    private Map<String, Object> buildDailyResult(WordEntry e, Language lang,
+                                                 boolean isNew, int learnedCount, int totalCount) {
+        Map<String, Object> result = new HashMap<>();
+        result.put("lessonId", e.lessonId);
+        result.put("word", e.word);
+        result.put("phonetic", e.phonetic);
+        result.put("meaning", e.meaning);
+        result.put("example", e.example);
+        result.put("translation", e.translation);
+        result.put("languageCode", lang.getCode());
+        result.put("languageName", lang.getNameCn());
+        result.put("icon", lang.getIcon());
+        result.put("level", e.level);
+        result.put("isNew", isNew);
+        result.put("learnedCount", learnedCount);
+        result.put("totalCount", totalCount);
+        return result;
     }
 
     private Language resolveLanguage(Long userId, String langParam) {

@@ -85,6 +85,22 @@
             { "title": "口语对话 · 咖啡店点单", "type": "DIALOG", "sortOrder": 2, "contentFile": "en_a1_u2_dialog1.json" },
             { "title": "词汇 · 数字与颜色", "type": "WORD", "sortOrder": 3, "contentFile": "en_a1_u2_word2.json" }
           ]
+        },
+        {
+          "title": "Unit 3 · 家庭与日常",
+          "description": "家庭成员与日常场景词汇",
+          "sortOrder": 3,
+          "lessons": [
+            { "title": "词汇 · 家庭与日常", "type": "WORD", "sortOrder": 1, "contentFile": "en_a1_u3_word3.json" }
+          ]
+        },
+        {
+          "title": "Unit 4 · 动作与形容",
+          "description": "基础动词与形容词",
+          "sortOrder": 4,
+          "lessons": [
+            { "title": "词汇 · 基础动词与形容词", "type": "WORD", "sortOrder": 1, "contentFile": "en_a1_u4_word4.json" }
+          ]
         }
       ]
     },
@@ -105,6 +121,22 @@
             { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "en_a2_u1_word1.json" },
             { "title": "语法 · 一般现在时 vs 进行时", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "en_a2_u1_grammar1.json" }
           ]
+        },
+        {
+          "title": "Unit 2 · 情绪与感受",
+          "description": "表达情绪与评价的形容词",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "词汇 · 情感与描述", "type": "WORD", "sortOrder": 1, "contentFile": "en_a2_u2_word2.json" }
+          ]
+        },
+        {
+          "title": "Unit 3 · 动词短语",
+          "description": "高频动词短语与频度副词",
+          "sortOrder": 3,
+          "lessons": [
+            { "title": "词汇 · 动词短语与副词", "type": "WORD", "sortOrder": 1, "contentFile": "en_a2_u3_word3.json" }
+          ]
         }
       ]
     },
@@ -123,6 +155,33 @@
           "sortOrder": 1,
           "lessons": [
             { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "en_b1_u1_word1.json" }
+          ]
+        },
+        {
+          "title": "Unit 2 · 观点表达",
+          "description": "抽象名词与观点表达",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "词汇 · 抽象名词与表达", "type": "WORD", "sortOrder": 1, "contentFile": "en_b1_u2_word2.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "title": "英语 B2 · 中高级",
+      "level": "B2",
+      "levelName": "中高级",
+      "description": "高级词汇进阶，让表达精准有力。",
+      "cover": "🎓",
+      "sortOrder": 4,
+      "units": [
+        {
+          "title": "Unit 1 · 精准表达",
+          "description": "书面与口语高级词汇",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 高级词汇", "type": "WORD", "sortOrder": 1, "contentFile": "en_b2_u1_word1.json" }
           ]
         }
       ]
@@ -155,6 +214,22 @@
             { "title": "口语对话 · 便利店购物", "type": "DIALOG", "sortOrder": 2, "contentFile": "ja_a1_u2_dialog1.json" },
             { "title": "词汇 · 数字 1-10", "type": "WORD", "sortOrder": 3, "contentFile": "ja_a1_u2_word2.json" }
           ]
+        },
+        {
+          "title": "Unit 3 · 家族と日常",
+          "description": "家族与日常场景词汇",
+          "sortOrder": 3,
+          "lessons": [
+            { "title": "词汇 · 家族与日常", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a1_u3_word3.json" }
+          ]
+        },
+        {
+          "title": "Unit 4 · 動詞と形容詞",
+          "description": "基础动词与形容词",
+          "sortOrder": 4,
+          "lessons": [
+            { "title": "词汇 · 基础动词与形容词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a1_u4_word4.json" }
+          ]
         }
       ]
     },
@@ -175,6 +250,22 @@
             { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a2_u1_word1.json" },
             { "title": "语法 · て形入门", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ja_a2_u1_grammar1.json" }
           ]
+        },
+        {
+          "title": "Unit 2 · 気持ちと評価",
+          "description": "表达情绪与评价的词汇",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "词汇 · 情感与描述", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a2_u2_word2.json" }
+          ]
+        },
+        {
+          "title": "Unit 3 · 生活の動詞",
+          "description": "高频生活动词",
+          "sortOrder": 3,
+          "lessons": [
+            { "title": "词汇 · 生活动词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a2_u3_word3.json" }
+          ]
         }
       ]
     },
@@ -188,11 +279,38 @@
       "sortOrder": 3,
       "units": [
         {
-          "title": "Unit 1 · 职场の第一歩",
+          "title": "Unit 1 · 職場の第一歩",
           "description": "办公场景高频词",
           "sortOrder": 1,
           "lessons": [
             { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_b1_u1_word1.json" }
+          ]
+        },
+        {
+          "title": "Unit 2 · 意見を言う",
+          "description": "抽象名词与观点表达",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "词汇 · 抽象名词与表达", "type": "WORD", "sortOrder": 1, "contentFile": "ja_b1_u2_word2.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ja",
+      "title": "日语 B2 · 中高级",
+      "level": "B2",
+      "levelName": "中高级",
+      "description": "高级词汇进阶，让表达精准有力。",
+      "cover": "🎓",
+      "sortOrder": 4,
+      "units": [
+        {
+          "title": "Unit 1 · 的確な表現",
+          "description": "书面与口语高级词汇",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 高级词汇", "type": "WORD", "sortOrder": 1, "contentFile": "ja_b2_u1_word1.json" }
           ]
         }
       ]
@@ -225,6 +343,22 @@
             { "title": "口语对话 · 餐厅点餐", "type": "DIALOG", "sortOrder": 2, "contentFile": "ko_a1_u2_dialog1.json" },
             { "title": "词汇 · 数字 1-10", "type": "WORD", "sortOrder": 3, "contentFile": "ko_a1_u2_word2.json" }
           ]
+        },
+        {
+          "title": "Unit 3 · 가족과 일상",
+          "description": "家人与日常场景词汇",
+          "sortOrder": 3,
+          "lessons": [
+            { "title": "词汇 · 家庭与日常", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a1_u3_word3.json" }
+          ]
+        },
+        {
+          "title": "Unit 4 · 동사와 형용사",
+          "description": "基础动词与形容词",
+          "sortOrder": 4,
+          "lessons": [
+            { "title": "词汇 · 基础动词与形容词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a1_u4_word4.json" }
+          ]
         }
       ]
     },
@@ -245,6 +379,22 @@
             { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a2_u1_word1.json" },
             { "title": "语法 · 아/어요 终结词尾", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ko_a2_u1_grammar1.json" }
           ]
+        },
+        {
+          "title": "Unit 2 · 감정과 평가",
+          "description": "表达情绪与评价的词汇",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "词汇 · 情感与描述", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a2_u2_word2.json" }
+          ]
+        },
+        {
+          "title": "Unit 3 · 생활 동사",
+          "description": "高频生活动词",
+          "sortOrder": 3,
+          "lessons": [
+            { "title": "词汇 · 生活动词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a2_u3_word3.json" }
+          ]
         }
       ]
     },
@@ -263,6 +413,33 @@
           "sortOrder": 1,
           "lessons": [
             { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_b1_u1_word1.json" }
+          ]
+        },
+        {
+          "title": "Unit 2 · 의견 말하기",
+          "description": "抽象名词与观点表达",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "词汇 · 抽象名词与表达", "type": "WORD", "sortOrder": 1, "contentFile": "ko_b1_u2_word2.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ko",
+      "title": "韩语 B2 · 中高级",
+      "level": "B2",
+      "levelName": "中高级",
+      "description": "高级词汇进阶，让表达精准有力。",
+      "cover": "🎓",
+      "sortOrder": 4,
+      "units": [
+        {
+          "title": "Unit 1 · 정확한 표현",
+          "description": "书面与口语高级词汇",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 高级词汇", "type": "WORD", "sortOrder": 1, "contentFile": "ko_b2_u1_word1.json" }
           ]
         }
       ]

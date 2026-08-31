@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "家族", "phonetic": "kazoku", "meaning": "家人；家庭", "example": "私の家族は五人家族です。", "translation": "我家有五口人。" },
+    { "word": "母", "phonetic": "haha", "meaning": "母亲", "example": "母は料理が上手です。", "translation": "我妈妈擅长做菜。" },
+    { "word": "父", "phonetic": "chichi", "meaning": "父亲", "example": "父は会社に行きます。", "translation": "我爸爸去上班。" },
+    { "word": "姉", "phonetic": "ane", "meaning": "姐姐", "example": "姉は大学生です。", "translation": "我姐姐是大学生。" },
+    { "word": "兄", "phonetic": "ani", "meaning": "哥哥", "example": "兄はサッカーが好きです。", "translation": "我哥哥喜欢足球。" },
+    { "word": "友達", "phonetic": "tomodachi", "meaning": "朋友", "example": "友達と映画を見ます。", "translation": "我和朋友看电影。" },
+    { "word": "先生", "phonetic": "sensei", "meaning": "老师", "example": "先生の授業は楽しいです。", "translation": "老师的课很有趣。" },
+    { "word": "学生", "phonetic": "gakusei", "meaning": "学生", "example": "私は学生です。", "translation": "我是学生。" },
+    { "word": "医者", "phonetic": "isha", "meaning": "医生", "example": "兄は医者になります。", "translation": "哥哥将成为医生。" },
+    { "word": "人", "phonetic": "hito", "meaning": "人", "example": "この町は人が多いです。", "translation": "这个镇上人很多。" },
+    { "word": "名前", "phonetic": "namae", "meaning": "名字", "example": "お名前は何ですか。", "translation": "您叫什么名字？" },
+    { "word": "家", "phonetic": "ie", "meaning": "家；房子", "example": "五時に家に帰ります。", "translation": "我五点回家。" },
+    { "word": "部屋", "phonetic": "heya", "meaning": "房间", "example": "私の部屋は小さいです。", "translation": "我的房间很小。" },
+    { "word": "台所", "phonetic": "daidokoro", "meaning": "厨房", "example": "母は台所にいます。", "translation": "妈妈在厨房。" },
+    { "word": "朝", "phonetic": "asa", "meaning": "早晨", "example": "朝ごはんを食べます。", "translation": "我吃早饭。" },
+    { "word": "昼", "phonetic": "hiru", "meaning": "中午；白天", "example": "昼から勉強します。", "translation": "我从中午开始学习。" },
+    { "word": "夜", "phonetic": "yoru", "meaning": "夜晚", "example": "夜は本を読みます。", "translation": "我晚上看书。" },
+    { "word": "水", "phonetic": "mizu", "meaning": "水", "example": "水をください。", "translation": "请给我水。" },
+    { "word": "ご飯", "phonetic": "gohan", "meaning": "米饭；饭食", "example": "ご飯の時間です。", "translation": "到吃饭时间了。" },
+    { "word": "学校", "phonetic": "gakkou", "meaning": "学校", "example": "毎日学校へ行きます。", "translation": "我每天去上学。" }
+  ]
+}

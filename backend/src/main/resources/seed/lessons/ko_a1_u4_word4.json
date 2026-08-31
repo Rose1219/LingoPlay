@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "먹다", "phonetic": "meokda", "meaning": "吃", "example": "아침 일곱 시에 먹어요.", "translation": "我早上七点吃饭。" },
+    { "word": "마시다", "phonetic": "masida", "meaning": "喝", "example": "커피를 마실래요?", "translation": "要喝咖啡吗？" },
+    { "word": "자다", "phonetic": "jada", "meaning": "睡觉", "example": "열한 시에 자요.", "translation": "我十一点睡觉。" },
+    { "word": "걷다", "phonetic": "geotda", "meaning": "走路", "example": "공원을 걸어요.", "translation": "我在公园里散步。" },
+    { "word": "달리다", "phonetic": "dallida", "meaning": "跑步", "example": "그는 빨리 달려요.", "translation": "他跑得很快。" },
+    { "word": "읽다", "phonetic": "ilkda", "meaning": "读", "example": "매주 책을 읽어요.", "translation": "我每周读书。" },
+    { "word": "쓰다", "phonetic": "sseuda", "meaning": "写", "example": "여기에 이름을 쓰세요.", "translation": "请在这里写名字。" },
+    { "word": "듣다", "phonetic": "deutda", "meaning": "听", "example": "퇴근 후에 음악을 들어요.", "translation": "我下班后听音乐。" },
+    { "word": "보다", "phonetic": "boda", "meaning": "看", "example": "같이 텔레비전을 봐요.", "translation": "我们一起看电视。" },
+    { "word": "놀다", "phonetic": "nolda", "meaning": "玩", "example": "아이들이 마당에서 놀아요.", "translation": "孩子们在院子里玩。" },
+    { "word": "열다", "phonetic": "yeolda", "meaning": "打开", "example": "창문을 열어 주세요.", "translation": "请打开窗户。" },
+    { "word": "닫다", "phonetic": "datda", "meaning": "关闭", "example": "문을 닫아요.", "translation": "我把门关上。" },
+    { "word": "크다", "phonetic": "keuda", "meaning": "大的", "example": "그것은 큰 집이에요.", "translation": "那是一座大房子。" },
+    { "word": "작다", "phonetic": "jakda", "meaning": "小的", "example": "작은 고양이가 있어요.", "translation": "我有一只小猫。" },
+    { "word": "좋다", "phonetic": "jota", "meaning": "好的", "example": "이거 좋은 생각이에요.", "translation": "这是个好主意。" },
+    { "word": "나쁘다", "phonetic": "nappeuda", "meaning": "坏的；不好的", "example": "오늘 날씨가 나빠요.", "translation": "今天天气不好。" },
+    { "word": "새롭다", "phonetic": "saeropda", "meaning": "新的；新颖的", "example": "새 휴대폰을 샀어요.", "translation": "我买了新手机。" },
+    { "word": "낡다", "phonetic": "nakda", "meaning": "旧的；破旧的", "example": "이건 오래된 사진이에요.", "translation": "这是一张旧照片。" },
+    { "word": "덥다", "phonetic": "deopda", "meaning": "热的（天气）", "example": "오늘은 아주 더워요.", "translation": "今天非常热。" },
+    { "word": "춥다", "phonetic": "chupda", "meaning": "冷的（天气）", "example": "겨울은 추워요.", "translation": "冬天很冷。" }
+  ]
+}

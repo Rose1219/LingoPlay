@@ -11,6 +11,9 @@ public interface UserWordRepository extends JpaRepository<UserWord, Long> {
 
     Optional<UserWord> findByUserIdAndLanguageIdAndWord(Long userId, Long languageId, String word);
 
+    /** 用户某语种的全部单词本记录（用于过滤已出现过的词） */
+    List<UserWord> findByUserIdAndLanguageId(Long userId, Long languageId);
+
     long countByUserId(Long userId);
 
     long countByUserIdAndMasteryGreaterThan(Long userId, int mastery);

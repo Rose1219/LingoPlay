@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "가족", "phonetic": "gajok", "meaning": "家人；家庭", "example": "저희 가족은 다섯 명이에요.", "translation": "我家有五口人。" },
+    { "word": "어머니", "phonetic": "eomeoni", "meaning": "母亲", "example": "어머니는 요리를 잘하세요.", "translation": "我妈妈擅长做菜。" },
+    { "word": "아버지", "phonetic": "abeoji", "meaning": "父亲", "example": "아버지는 회사에 가세요.", "translation": "我爸爸去上班。" },
+    { "word": "언니", "phonetic": "eonni", "meaning": "姐姐（女性称呼）", "example": "언니는 대학생이에요.", "translation": "我姐姐是大学生。" },
+    { "word": "형", "phonetic": "hyeong", "meaning": "哥哥（男性称呼）", "example": "형은 축구를 좋아해요.", "translation": "我哥哥喜欢足球。" },
+    { "word": "친구", "phonetic": "chingu", "meaning": "朋友", "example": "친구와 영화를 봐요.", "translation": "我和朋友看电影。" },
+    { "word": "선생님", "phonetic": "seonsaengnim", "meaning": "老师", "example": "우리 선생님은 친절하세요.", "translation": "我们的老师很亲切。" },
+    { "word": "학생", "phonetic": "haksaeng", "meaning": "学生", "example": "저는 학생이에요.", "translation": "我是学生。" },
+    { "word": "의사", "phonetic": "uisa", "meaning": "医生", "example": "의사는 병원에 일하세요.", "translation": "医生在医院工作。" },
+    { "word": "사람", "phonetic": "saram", "meaning": "人", "example": "이 도시에는 사람이 많아요.", "translation": "这座城市人很多。" },
+    { "word": "이름", "phonetic": "ireum", "meaning": "名字", "example": "이름이 뭐예요?", "translation": "你叫什么名字？" },
+    { "word": "집", "phonetic": "jip", "meaning": "家；房子", "example": "다섯 시에 집에 가요.", "translation": "我五点回家。" },
+    { "word": "방", "phonetic": "bang", "meaning": "房间", "example": "제 방은 작지만 깨끗해요.", "translation": "我的房间小但干净。" },
+    { "word": "부엌", "phonetic": "bueok", "meaning": "厨房", "example": "어머니는 부엌에 계세요.", "translation": "妈妈在厨房里。" },
+    { "word": "아침", "phonetic": "achim", "meaning": "早晨", "example": "아침에 밥을 먹어요.", "translation": "我早上吃饭。" },
+    { "word": "점심", "phonetic": "jeomsim", "meaning": "中午；午饭", "example": "점심부터 공부해요.", "translation": "我从中午开始学习。" },
+    { "word": "저녁", "phonetic": "jeonyeok", "meaning": "晚上；晚饭", "example": "저녁에 책을 읽어요.", "translation": "我晚上看书。" },
+    { "word": "물", "phonetic": "mul", "meaning": "水", "example": "물 좀 주세요.", "translation": "请给我水。" },
+    { "word": "밥", "phonetic": "bap", "meaning": "饭；米饭", "example": "밥 먹을 시간이에요.", "translation": "到吃饭时间了。" },
+    { "word": "학교", "phonetic": "hakgyo", "meaning": "学校", "example": "매일 학교에 가요.", "translation": "我每天去上学。" }
+  ]
+}

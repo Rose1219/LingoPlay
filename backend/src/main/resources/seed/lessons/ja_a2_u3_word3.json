@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "起きる", "phonetic": "okiru", "meaning": "起床；醒来", "example": "毎朝六時に起きます。", "translation": "我每天早上六点起床。" },
+    { "word": "出かける", "phonetic": "dekakeru", "meaning": "出门；外出", "example": "週末は友達と出かけます。", "translation": "周末我和朋友出门。" },
+    { "word": "帰る", "phonetic": "kaeru", "meaning": "回去；回家", "example": "夕飯の前に帰ります。", "translation": "我晚饭前回家。" },
+    { "word": "乗る", "phonetic": "noru", "meaning": "乘坐", "example": "電車に乗って学校へ行きます。", "translation": "我坐电车去上学。" },
+    { "word": "降りる", "phonetic": "oriru", "meaning": "下车", "example": "次の駅で降りてください。", "translation": "请在下一站下车。" },
+    { "word": "渡る", "phonetic": "wataru", "meaning": "过（桥/马路）", "example": "その橋を渡ってください。", "translation": "请过那座桥。" },
+    { "word": "曲がる", "phonetic": "magaru", "meaning": "转弯", "example": "次の角を右に曲がってください。", "translation": "请在下一个路口右转。" },
+    { "word": "直す", "phonetic": "naosu", "meaning": "修理；改正", "example": "自転車を直してもらいました。", "translation": "我请人修了自行车。" },
+    { "word": "借りる", "phonetic": "kariru", "meaning": "借入", "example": "図書館で本を借ります。", "translation": "我在图书馆借书。" },
+    { "word": "貸す", "phonetic": "kasu", "meaning": "借出", "example": "友達に傘を貸しました。", "translation": "我把伞借给了朋友。" },
+    { "word": "教える", "phonetic": "oshieru", "meaning": "教；告诉", "example": "兄が数学を教えてくれます。", "translation": "哥哥教我数学。" },
+    { "word": "習う", "phonetic": "narau", "meaning": "学习（技艺）", "example": "私はピアノを習っています。", "translation": "我在学钢琴。" },
+    { "word": "覚える", "phonetic": "oboeru", "meaning": "记住", "example": "単語を毎日覚えます。", "translation": "我每天记单词。" },
+    { "word": "忘れる", "phonetic": "wasureru", "meaning": "忘记", "example": "名前を忘れてしまいました。", "translation": "我忘了名字。" },
+    { "word": "探す", "phonetic": "sagasu", "meaning": "寻找", "example": "鍵を探しています。", "translation": "我在找钥匙。" },
+    { "word": "見つける", "phonetic": "mitsukeru", "meaning": "找到", "example": "やっと財布を見つけました。", "translation": "我终于找到了钱包。" },
+    { "word": "集める", "phonetic": "atsumeru", "meaning": "收集", "example": "切手を集めるのが好きです。", "translation": "我喜欢集邮。" },
+    { "word": "使う", "phonetic": "tsukau", "meaning": "使用", "example": "この言葉はよく使います。", "translation": "这个词经常用。" },
+    { "word": "捨てる", "phonetic": "suteru", "meaning": "扔掉", "example": "古い新聞を捨てました。", "translation": "我把旧报纸扔了。" },
+    { "word": "待つ", "phonetic": "matsu", "meaning": "等待", "example": "ここで少し待ってください。", "translation": "请在这里稍等。" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "words": [
+    { "word": "기회", "phonetic": "gihoe", "meaning": "机会", "example": "이 일은 저에게 큰 기회예요.", "translation": "这份工作对我是个大机会。" },
+    { "word": "경험", "phonetic": "gyeongheom", "meaning": "经验；经历", "example": "그녀는 풍부한 교육 경험이 있어요.", "translation": "她有丰富的教学经验。" },
+    { "word": "지식", "phonetic": "jisik", "meaning": "知识", "example": "지식은 삶을 바꿔요.", "translation": "知识改变生活。" },
+    { "word": "성공", "phonetic": "seonggong", "meaning": "成功", "example": "노력은 성공으로 이어져요.", "translation": "努力通向成功。" },
+    { "word": "실패", "phonetic": "silpae", "meaning": "失败", "example": "실패는 배움의 일부예요.", "translation": "失败是学习的一部分。" },
+    { "word": "결정", "phonetic": "gyeoljeong", "meaning": "决定", "example": "그것은 어려운 결정이었어요.", "translation": "那是个艰难的决定。" },
+    { "word": "능력", "phonetic": "neungnyeok", "meaning": "能力", "example": "그는 문제를 해결할 능력이 있어요.", "translation": "他有解决问题的能力。" },
+    { "word": "주의", "phonetic": "juui", "meaning": "注意；小心", "example": "세부 사항에 주의하세요.", "translation": "请注意细节。" },
+    { "word": "목적", "phonetic": "mokjeok", "meaning": "目的", "example": "이 회의의 목적이 뭐예요?", "translation": "这次会议的目的是什么？" },
+    { "word": "상황", "phonetic": "sanghwang", "meaning": "状况；情况", "example": "상황이 좋아지고 있어요.", "translation": "状况正在好转。" },
+    { "word": "해결", "phonetic": "haegyeol", "meaning": "解决", "example": "드디어 문제를 해결했어요.", "translation": "问题终于解决了。" },
+    { "word": "개발", "phonetic": "gaebal", "meaning": "开发", "example": "이 도시의 개발이 빨라요.", "translation": "这座城市开发很快。" },
+    { "word": "환경", "phonetic": "hwangyeong", "meaning": "环境", "example": "환경을 보호해야 해요.", "translation": "我们必须保护环境。" },
+    { "word": "사회", "phonetic": "sahoe", "meaning": "社会", "example": "기술은 사회를 바꿔요.", "translation": "科技改变社会。" },
+    { "word": "문화", "phonetic": "munhwa", "meaning": "文化", "example": "한국 문화를 배우고 싶어요.", "translation": "我想学习韩国文化。" },
+    { "word": "교육", "phonetic": "gyoyuk", "meaning": "教育", "example": "교육은 많은 문을 열어 줘요.", "translation": "教育打开许多大门。" },
+    { "word": "의견", "phonetic": "uigyeon", "meaning": "意见；看法", "example": "당신의 의견을 듣고 싶어요.", "translation": "我想听听你的看法。" },
+    { "word": "약속", "phonetic": "yaksok", "meaning": "约定；承诺", "example": "그와의 약속을 잊지 않아요.", "translation": "我不会忘记和他的约定。" },
+    { "word": "변화", "phonetic": "byeonhwa", "meaning": "变化", "example": "삶에는 변화가 있어요.", "translation": "生活中有变化。" },
+    { "word": "자신감", "phonetic": "jasingam", "meaning": "自信", "example": "연습이 자신감을 만들어요.", "translation": "练习建立自信。" }
+  ]
+}
