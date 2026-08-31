@@ -33,6 +33,10 @@
           <el-icon><Trophy /></el-icon>
           <span>成就殿堂</span>
         </el-menu-item>
+        <el-menu-item index="/download">
+          <el-icon><Cellphone /></el-icon>
+          <span>APP 下载</span>
+        </el-menu-item>
       </el-menu>
     </el-aside>
 

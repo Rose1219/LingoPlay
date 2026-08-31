@@ -18,7 +18,8 @@ const routes = [
       { path: 'community', name: 'community', component: () => import('../views/Community.vue') },
       { path: 'community/:id', name: 'postDetail', component: () => import('../views/PostDetail.vue') },
       { path: 'achievements', name: 'achievements', component: () => import('../views/Achievements.vue') },
-      { path: 'profile', name: 'profile', component: () => import('../views/Profile.vue') }
+      { path: 'profile', name: 'profile', component: () => import('../views/Profile.vue') },
+      { path: 'download', name: 'download', component: () => import('../views/AppDownload.vue') }
     ]
   },
   { path: '/:pathMatch(.*)*', redirect: '/' }

@@ -4,7 +4,7 @@ import router from '../router'
 
 // App 原生环境（Capacitor 打包的 Android/iOS）下无 Vite 代理，
 // 直连线上后端；Web 环境继续走相对路径（开发走 Vite 代理 / 生产同源）
-const NATIVE_API_BASE = 'https://lingoplay.pocketbay.app/api'
+export const NATIVE_API_BASE = 'https://lingoplay.pocketbay.app/api'
 const isNativeApp = typeof window !== 'undefined' && window.Capacitor && window.Capacitor.isNativePlatform()
 
 const http = axios.create({
