@@ -121,9 +121,9 @@ import { onMounted, reactive } from 'vue'
 import { ElMessage } from 'element-plus'
 import { NATIVE_API_BASE } from '../api/http'
 
-const APP_VERSION = '1.0.2'
-const APK_FILE = 'LingoPlay-v1.0.2-android.apk'
-const IOS_FILE = 'LingoPlay-v1.0.2-ios-project.zip'
+const APP_VERSION = '1.0.3'
+const APK_FILE = 'LingoPlay-v1.0.3-android.apk'
+const IOS_FILE = 'LingoPlay-v1.0.3-ios-project.zip'
 
 // 原生 App 内访问时无同源服务，下载地址指向线上后端；Web 环境走同源相对路径
 const isNative = typeof window !== 'undefined' && window.Capacitor && window.Capacitor.isNativePlatform()

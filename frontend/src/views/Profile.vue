@@ -35,6 +35,13 @@
         </el-form-item>
       </el-form>
     </el-card>
+
+    <!-- 关于：显示版本与运行环境，便于问题排查 -->
+    <div class="about-box">
+      <span>LingoPlay v{{ APP_VERSION }}</span>
+      <span class="about-dot">·</span>
+      <span>{{ isNativeApp ? 'App 原生环境' : '浏览器环境' }}</span>
+    </div>
   </div>
 </template>
 
@@ -44,6 +51,12 @@ import { ElMessage } from 'element-plus'
 import { languageApi } from '../api'
 import { useUserStore } from '../store/user'
 import PageBack from '../components/PageBack.vue'
+
+const APP_VERSION = '1.0.3'
+const isNativeApp =
+  typeof window !== 'undefined' &&
+  !!window.Capacitor &&
+  window.Capacitor.isNativePlatform()
 
 const store = useUserStore()
 const languages = ref([])
@@ -107,5 +120,16 @@ onMounted(async () => {
 
 .profile-form {
   max-width: 460px;
+}
+
+.about-box {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--ll-text-muted);
+  font-size: 12px;
+}
+
+.about-dot {
+  margin: 0 6px;
 }
 </style>
