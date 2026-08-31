@@ -110,7 +110,7 @@
 
     <div class="dl-note">
       <el-icon><InfoFilled /></el-icon>
-      两个安装包均构建自本仓库当前版本的 Android / iOS 工程（versionName {{ APP_VERSION }} · versionCode 1），
+      两个安装包均构建自本仓库当前版本的 Android / iOS 工程（versionName {{ APP_VERSION }}），
       更新站点代码后重新打包即可获得最新版 App。
     </div>
   </div>
@@ -121,9 +121,9 @@ import { onMounted, reactive } from 'vue'
 import { ElMessage } from 'element-plus'
 import { NATIVE_API_BASE } from '../api/http'
 
-const APP_VERSION = '1.0'
-const APK_FILE = 'LingoPlay-v1.0-android.apk'
-const IOS_FILE = 'LingoPlay-v1.0-ios-project.zip'
+const APP_VERSION = '1.0.1'
+const APK_FILE = 'LingoPlay-v1.0.1-android.apk'
+const IOS_FILE = 'LingoPlay-v1.0.1-ios-project.zip'
 
 // 原生 App 内访问时无同源服务，下载地址指向线上后端；Web 环境走同源相对路径
 const isNative = typeof window !== 'undefined' && window.Capacitor && window.Capacitor.isNativePlatform()
