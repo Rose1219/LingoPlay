@@ -12,6 +12,7 @@ node_modules
 # ===== IDE / 系统 =====
 .vscode
 .idea
+.trae-html-share-packages
 .DS_Store
 *.suo
 *.ntvs*
