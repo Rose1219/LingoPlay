@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/courses/courses",
+    "pages/course-detail/course-detail",
+    "pages/learn/learn",
+    "pages/word-quiz/word-quiz",
+    "pages/progress/progress",
+    "pages/achievements/achievements",
+    "pages/community/community",
+    "pages/post-detail/post-detail",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0a0f1e",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "LingoPlay",
+    "backgroundColor": "#0a0f1e",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8a97b8",
+    "selectedColor": "#22d3ee",
+    "backgroundColor": "#0d1428",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "游戏大厅" },
+      { "pagePath": "pages/courses/courses", "text": "关卡地图" },
+      { "pagePath": "pages/progress/progress", "text": "我的战绩" },
+      { "pagePath": "pages/community/community", "text": "学习社区" },
+      { "pagePath": "pages/profile/profile", "text": "我的" }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

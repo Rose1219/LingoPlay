@@ -1,0 +1,33 @@
+server:
+  # 云平台通过 PORT 环境变量注入端口，本地默认 8080
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: lingolearn-backend
+  datasource:
+    # 本地默认 MySQL；云端由平台注入 DATABASE_URL（PostgreSQL），
+    # 见 com.lingolearn.config.DatabaseUrlEnvironmentPostProcessor
+    url: jdbc:mysql://localhost:3306/lingolearn?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: "123456"
+    # 驱动按 url 前缀自动识别（MySQL / PostgreSQL 双驱动并存）
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+jwt:
+  secret: lingolearn-jwt-secret-key-8c4b2a1f9d3e6c7b0a5f2d4e8b1c3a6f
+  expire-ms: 604800000
+
+# 微信小程序登录凭证（部署时通过环境变量 WX_APPID / WX_SECRET 注入，勿提交真实值）
+wx:
+  appid: ${WX_APPID:}
+  secret: ${WX_SECRET:}

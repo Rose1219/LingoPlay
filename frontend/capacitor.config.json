@@ -1,0 +1,12 @@
+{
+  "appId": "com.lingoplay.app",
+  "appName": "LingoPlay",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

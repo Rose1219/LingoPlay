@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "meeting", "phonetic": "ˈmiːtɪŋ", "meaning": "会议", "example": "The meeting starts at ten.", "translation": "会议十点开始。" },
+    { "word": "deadline", "phonetic": "ˈdedlaɪn", "meaning": "截止日期", "example": "The deadline is Friday.", "translation": "截止日期是周五。" },
+    { "word": "project", "phonetic": "ˈprɑːdʒekt", "meaning": "项目", "example": "We finished the project on time.", "translation": "我们按时完成了项目。" },
+    { "word": "colleague", "phonetic": "ˈkɑːliːɡ", "meaning": "同事", "example": "My colleague helps me a lot.", "translation": "我的同事帮了我很多。" },
+    { "word": "schedule", "phonetic": "ˈskedʒuːl", "meaning": "日程安排", "example": "Let me check my schedule.", "translation": "让我看看我的日程。" },
+    { "word": "report", "phonetic": "rɪˈpɔːrt", "meaning": "报告", "example": "Please send me the report.", "translation": "请把报告发给我。" },
+    { "word": "presentation", "phonetic": "ˌpriːzenˈteɪʃn", "meaning": "演示；汇报", "example": "She gave a great presentation.", "translation": "她做了一场精彩的演示。" },
+    { "word": "budget", "phonetic": "ˈbʌdʒɪt", "meaning": "预算", "example": "The budget is limited.", "translation": "预算有限。" },
+    { "word": "client", "phonetic": "ˈklaɪənt", "meaning": "客户", "example": "Our client is very satisfied.", "translation": "我们的客户非常满意。" },
+    { "word": "negotiate", "phonetic": "nɪˈɡoʊʃieɪt", "meaning": "谈判；协商", "example": "We need to negotiate the price.", "translation": "我们需要协商价格。" }
+  ]
+}

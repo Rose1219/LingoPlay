@@ -1,0 +1,164 @@
+<!-- ===== 语种选择 ===== -->
+<view class="page" wx:if="{{step === 'select'}}">
+  <view class="select-title">单词闯关</view>
+  <view class="select-sub">选择语种开始挑战 · 6 个关卡 · 难度递增</view>
+
+  <view class="lang-grid">
+    <view
+      class="lang-card {{item.isDefault ? 'default' : ''}} {{loadingLang === item.code ? 'loading' : ''}}"
+      wx:for="{{languages}}"
+      wx:key="code"
+      bindtap="startGame"
+      data-code="{{item.code}}"
+    >
+      <view class="lang-icon">{{item.icon}}</view>
+      <view class="lang-name">{{item.nameCn}}</view>
+      <view class="lang-words" wx:if="{{wordCounts[item.code] !== undefined}}">
+        {{wordCounts[item.code]}} 个单词
+      </view>
+      <view class="lang-play">{{loadingLang === item.code ? '加载中…' : '开始 →'}}</view>
+      <view class="default-tag" wx:if="{{item.isDefault}}">默认</view>
+    </view>
+  </view>
+
+  <view class="levels-preview">
+    <view class="levels-title">关卡一览</view>
+    <view class="levels-list">
+      <view class="level-pill" wx:for="{{levels}}" wx:key="name">
+        <text class="pill-num">{{index + 1}}</text>
+        <text class="pill-name">{{item.name}}</text>
+        <text class="pill-time">{{item.timeLimit > 0 ? item.timeLimit + 's' : '不限时'}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- ===== 游戏中 ===== -->
+<view class="page game-page" wx:if="{{step === 'playing'}}">
+  <view class="game-head">
+    <view class="quit-btn" bindtap="quitGame">✕ 退出</view>
+    <text class="game-lang">{{langIcon}} {{langName}}</text>
+  </view>
+
+  <!-- 关卡开场 -->
+  <view class="stage-card intro-card" wx:if="{{phase === 'intro'}}">
+    <view class="level-badge">LEVEL {{levelIndex + 1}}<text class="level-total">/ {{levels.length}}</text></view>
+    <view class="level-name">{{levelName}}</view>
+    <view class="level-desc">{{levelDesc}}</view>
+    <view class="rule-chips">
+      <text class="chip">{{levelQuestions}} 题</text>
+      <text class="chip">{{levelTimeLimit > 0 ? '每题 ' + levelTimeLimit + 's' : '不限时'}}</text>
+      <text class="chip">3 条生命</text>
+      <text class="chip">通过率 75%</text>
+    </view>
+    <view class="cta-btn" bindtap="startLevel">开始挑战 →</view>
+  </view>
+
+  <!-- 答题中 -->
+  <view class="stage-card playing-card" wx:if="{{phase === 'playing' && question}}">
+    <!-- 顶部 HUD -->
+    <view class="hud">
+      <view class="lives">
+        <text class="life {{lives < 1 ? 'lost' : ''}}">❤</text>
+        <text class="life {{lives < 2 ? 'lost' : ''}}">❤</text>
+        <text class="life {{lives < 3 ? 'lost' : ''}}">❤</text>
+      </view>
+      <view class="hud-center">
+        <text class="hud-chip">Lv.{{levelIndex + 1}}</text>
+        <text class="hud-chip combo-chip {{combo >= 3 ? 'hot' : ''}}">🔥 x{{combo}}</text>
+      </view>
+      <view class="hud-right">
+        <text class="score-num">{{score}}</text>
+        <text class="score-label">分</text>
+      </view>
+    </view>
+
+    <!-- 时间条 -->
+    <view class="time-bar" wx:if="{{levelTimeLimit > 0}}">
+      <view class="time-fill {{timeLeft <= 3 ? 'danger' : ''}}" style="width: {{timePercent}}%;"></view>
+    </view>
+
+    <!-- 题目进度 -->
+    <view class="progress-row">
+      <view class="progress-track">
+        <view class="progress-fill" style="width: {{progressPercent}}%;"></view>
+      </view>
+      <text class="progress-text">{{qIndex}} / {{levelQuestions}}</text>
+    </view>
+
+    <!-- 题卡 -->
+    <view class="question-card {{qKey % 2 === 0 ? 'anim-a' : 'anim-b'}}">
+      <view class="q-label">{{question.isWordToMeaning ? '选出正确的释义' : '选出对应的单词'}}</view>
+      <view class="q-word">{{question.display}}</view>
+      <view class="q-voice" wx:if="{{question.isWordToMeaning}}" catchtap="speakQuestion">🔊</view>
+      <view class="q-phonetic" wx:if="{{question.isWordToMeaning && question.phonetic}}">/ {{question.phonetic}} /</view>
+    </view>
+
+    <!-- 选项 -->
+    <view class="options">
+      <view
+        class="option {{answered && index === question.answerIndex ? 'correct' : ''}} {{answered && index === selectedIndex && index !== question.answerIndex ? 'wrong' : ''}} {{answered && index !== question.answerIndex && index !== selectedIndex ? 'dim' : ''}}"
+        wx:for="{{question.options}}"
+        wx:key="index"
+        bindtap="choose"
+        data-index="{{index}}"
+      >
+        <text class="opt-key">{{['A','B','C','D','E'][index]}}</text>
+        <text class="opt-text">{{item}}</text>
+        <text class="opt-mark" wx:if="{{answered && index === question.answerIndex}}">✓</text>
+        <text class="opt-mark wrong" wx:if="{{answered && index === selectedIndex && index !== question.answerIndex}}">✕</text>
+      </view>
+    </view>
+
+    <!-- 反馈条 -->
+    <view class="feedback {{lastCorrect ? 'ok' : 'bad'}}" wx:if="{{answered}}">
+      <text wx:if="{{lastCorrect}}">✅ 正确！ +{{lastGain}}</text>
+      <text wx:else>❌ {{question.isWordToMeaning ? '正确释义：' + question.answer : '正确单词：' + question.answer}}</text>
+    </view>
+  </view>
+
+  <!-- 关卡通过 -->
+  <view class="stage-card result-card" wx:if="{{phase === 'passed'}}">
+    <view class="result-emoji">🎉</view>
+    <view class="result-title">第 {{levelIndex + 1}} 关通过！</view>
+    <view class="result-sub">{{levelName}} 完成</view>
+    <view class="result-stats">
+      <view class="stat"><text class="stat-v">{{levelCorrect}}</text><text class="stat-k">答对</text></view>
+      <view class="stat"><text class="stat-v">{{maxCombo}}</text><text class="stat-k">最高连击</text></view>
+      <view class="stat"><text class="stat-v">{{score}}</text><text class="stat-k">总得分</text></view>
+    </view>
+    <view class="life-bonus" wx:if="{{lifeBonus > 0}}">剩余生命奖励 +{{lifeBonus}}</view>
+    <view class="cta-btn" bindtap="nextLevel">
+      {{levelIndex + 1 < levels.length ? '进入第 ' + (levelIndex + 2) + ' 关 →' : '查看最终战绩 →'}}
+    </view>
+  </view>
+
+  <!-- 闯关失败 -->
+  <view class="stage-card result-card fail" wx:if="{{phase === 'gameover'}}">
+    <view class="result-emoji">💔</view>
+    <view class="result-title">闯关失败</view>
+    <view class="result-sub">{{gameOverReason}}</view>
+    <view class="result-stats">
+      <view class="stat"><text class="stat-v">{{levelIndex + 1}}</text><text class="stat-k">到达关卡</text></view>
+      <view class="stat"><text class="stat-v">{{totalCorrect}}</text><text class="stat-k">累计答对</text></view>
+      <view class="stat"><text class="stat-v">{{score}}</text><text class="stat-k">总得分</text></view>
+    </view>
+    <view class="cta-btn" bindtap="restart">再来一局</view>
+  </view>
+
+  <!-- 全部通关 -->
+  <view class="stage-card result-card complete" wx:if="{{phase === 'complete'}}">
+    <view class="crown">👑</view>
+    <view class="result-stars">
+      <text class="star {{s <= stars ? 'on' : ''}}" wx:for="{{starList}}" wx:for-item="s" wx:key="*this">★</text>
+    </view>
+    <view class="result-title">全部通关！</view>
+    <view class="result-sub">{{levels.length}} 个关卡全部制霸</view>
+    <view class="result-stats">
+      <view class="stat"><text class="stat-v">{{totalCorrect}}/{{totalAnswered}}</text><text class="stat-k">正确率 {{accuracy}}%</text></view>
+      <view class="stat"><text class="stat-v">x{{maxCombo}}</text><text class="stat-k">最高连击</text></view>
+      <view class="stat"><text class="stat-v">{{score}}</text><text class="stat-k">总得分</text></view>
+    </view>
+    <view class="cta-btn" bindtap="restart">再来一局</view>
+  </view>
+</view>

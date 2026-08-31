@@ -1,0 +1,44 @@
+<view class="page" wx:if="{{course}}">
+  <!-- 课程头部 -->
+  <view class="head">
+    <view class="head-cover">{{course.cover}}</view>
+    <view class="head-info">
+      <view class="head-title">{{course.title}}</view>
+      <view class="head-meta">
+        <text class="tag">{{course.level}} · {{course.levelName}}</text>
+        <text class="text-muted text-sm">{{course.languageName}} · {{course.lessonCount}} 关</text>
+      </view>
+      <view class="head-desc">{{course.description}}</view>
+      <view class="progress-outer">
+        <view class="progress-inner" style="width: {{course.progressPercent}}%"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 单元列表 -->
+  <view class="unit" wx:for="{{units}}" wx:key="id" wx:for-item="unit" wx:for-index="ui">
+    <view class="unit-head">
+      <view class="unit-dot">{{ui + 1}}</view>
+      <view>
+        <view class="unit-name">{{unit.title}}</view>
+        <view class="text-muted text-sm">{{unit.description}}</view>
+      </view>
+    </view>
+
+    <view
+      class="lesson"
+      wx:for="{{unit.lessons}}"
+      wx:key="id"
+      bindtap="goLearn"
+      data-id="{{item.id}}"
+    >
+      <text class="lesson-emoji">{{item.typeEmoji}}</text>
+      <view class="lesson-title">{{item.title}}</view>
+      <view class="stars-row">
+        <text class="star {{s <= item.stars ? 'on' : ''}}" wx:for="{{item.starList}}" wx:for-item="s" wx:key="*this">★</text>
+      </view>
+      <text class="lesson-status s-{{item.status}}">{{item.statusText}}</text>
+      <view class="lesson-btn">{{item.btnText}}</view>
+    </view>
+  </view>
+</view>

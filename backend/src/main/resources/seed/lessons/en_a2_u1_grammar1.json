@@ -1,0 +1,24 @@
+{
+  "points": [
+    {
+      "title": "一般现在时：习惯与事实",
+      "explanation": "一般现在时表示习惯性动作或客观事实。主语为第三人称单数时动词加 s/es。",
+      "questions": [
+        { "question": "She ___ tea every morning.", "options": ["drink", "drinks", "drinking", "drank"], "answer": 1 },
+        { "question": "The sun ___ in the east.", "options": ["rise", "rises", "rising", "rose"], "answer": 1 },
+        { "question": "They ___ football on Sundays.", "options": ["play", "plays", "playing", "played"], "answer": 0 },
+        { "question": "He ___ to work by bus.", "options": ["go", "goes", "going", "went"], "answer": 1 }
+      ]
+    },
+    {
+      "title": "现在进行时：正在发生",
+      "explanation": "现在进行时（am/is/are + doing）表示此刻正在进行的动作。",
+      "questions": [
+        { "question": "Look! It ___ outside.", "options": ["rain", "rains", "is raining", "rained"], "answer": 2 },
+        { "question": "I ___ a book right now.", "options": ["read", "reads", "reading", "am reading"], "answer": 3 },
+        { "question": "They ___ dinner at the moment.", "options": ["are having", "have", "has", "had"], "answer": 0 },
+        { "question": "Listen! Someone ___ at the door.", "options": ["knocks", "is knocking", "knocked", "knock"], "answer": 1 }
+      ]
+    }
+  ]
+}

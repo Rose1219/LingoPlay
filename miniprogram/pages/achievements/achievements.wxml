@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="page-title">成就殿堂</view>
+  <view class="page-subtitle">坚持闯关，解锁荣誉勋章</view>
+
+  <view class="ach-grid">
+    <view class="ach-card {{item.unlocked ? 'unlocked' : ''}}" wx:for="{{achievements}}" wx:key="code">
+      <view class="ach-icon">{{item.unlocked ? item.icon : '🔒'}}</view>
+      <view class="ach-name">{{item.name}}</view>
+      <view class="ach-desc">{{item.description}}</view>
+      <view class="ach-date" wx:if="{{item.unlocked && item.dateText}}">{{item.dateText}} 解锁</view>
+    </view>
+  </view>
+</view>

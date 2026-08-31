@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "いち", "phonetic": "ichi", "meaning": "一", "example": "りんごが一つあります。", "translation": "有一个苹果。" },
+    { "word": "に", "phonetic": "ni", "meaning": "二", "example": "猫が二匹います。", "translation": "有两只猫。" },
+    { "word": "さん", "phonetic": "san", "meaning": "三", "example": "三時です。", "translation": "现在三点。" },
+    { "word": "よん", "phonetic": "yon", "meaning": "四", "example": "四つください。", "translation": "请给我四个。" },
+    { "word": "ご", "phonetic": "go", "meaning": "五", "example": "五円です。", "translation": "五日元。" },
+    { "word": "ろく", "phonetic": "roku", "meaning": "六", "example": "六時に起きます。", "translation": "六点起床。" },
+    { "word": "なな", "phonetic": "nana", "meaning": "七", "example": "七時です。", "translation": "现在七点。" },
+    { "word": "はち", "phonetic": "hachi", "meaning": "八", "example": "八番のバスです。", "translation": "是八路公交车。" },
+    { "word": "きゅう", "phonetic": "kyuu", "meaning": "九", "example": "九回見ました。", "translation": "看了九遍。" },
+    { "word": "じゅう", "phonetic": "juu", "meaning": "十", "example": "十人います。", "translation": "有十个人。" }
+  ]
+}

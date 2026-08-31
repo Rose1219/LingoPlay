@@ -1,0 +1,91 @@
+.stat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  margin-bottom: 28rpx;
+}
+
+.stat-card {
+  width: calc(50% - 10rpx);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1rpx solid rgba(120, 150, 255, 0.14);
+  border-radius: 24rpx;
+  padding: 28rpx 0;
+}
+
+.stat-icon {
+  font-size: 44rpx;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.stat-value {
+  font-size: 44rpx;
+  font-weight: 800;
+  display: block;
+  color: #dbe4f5;
+}
+
+.stat-label {
+  font-size: 22rpx;
+  color: #8a97b8;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.heat-scroll {
+  white-space: nowrap;
+}
+
+.heat-row {
+  display: inline-flex;
+  gap: 6rpx;
+}
+
+.heat-week {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.heat-cell {
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 4rpx;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.heat-cell.lv1 { background: rgba(34, 211, 238, 0.35); }
+.heat-cell.lv2 { background: rgba(34, 211, 238, 0.55); }
+.heat-cell.lv3 { background: rgba(79, 124, 255, 0.8); }
+.heat-cell.lv4 { background: linear-gradient(135deg, #4f7cff, #22d3ee); }
+.heat-cell.pad { background: transparent; }
+
+.type-row-item {
+  margin-bottom: 28rpx;
+}
+
+.type-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12rpx;
+}
+
+.type-name {
+  font-weight: 600;
+  font-size: 26rpx;
+}
+
+.progress-outer {
+  height: 16rpx;
+  border-radius: 12rpx;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.progress-inner {
+  height: 100%;
+  border-radius: 12rpx;
+  background: linear-gradient(90deg, #4f7cff, #22d3ee);
+}

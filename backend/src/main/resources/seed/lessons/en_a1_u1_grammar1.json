@@ -1,0 +1,24 @@
+{
+  "points": [
+    {
+      "title": "be 动词的基本用法",
+      "explanation": "be 动词表示“是”，随主语变化：I 用 am，he/she/it 用 is，you/we/they 用 are。",
+      "questions": [
+        { "question": "I ___ a student.", "options": ["am", "is", "are", "be"], "answer": 0 },
+        { "question": "She ___ my friend.", "options": ["am", "is", "are", "be"], "answer": 1 },
+        { "question": "They ___ teachers.", "options": ["am", "is", "are", "be"], "answer": 2 },
+        { "question": "It ___ a cute cat.", "options": ["am", "is", "are", "be"], "answer": 1 }
+      ]
+    },
+    {
+      "title": "否定式与疑问式",
+      "explanation": "否定式在 be 后加 not（is not → isn't）；疑问式把 be 提到主语前。",
+      "questions": [
+        { "question": "He ___ not at home today.", "options": ["is", "am", "are", "does"], "answer": 0 },
+        { "question": "___ you ready?", "options": ["Is", "Am", "Are", "Be"], "answer": 2 },
+        { "question": "I ___ from China.", "options": ["am", "is", "are", "be"], "answer": 0 },
+        { "question": "We ___ not tired.", "options": ["am", "is", "are", "be"], "answer": 2 }
+      ]
+    }
+  ]
+}

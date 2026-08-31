@@ -1,0 +1,199 @@
+/* ============ LingoLearn 暗色科技主题 ============ */
+:root {
+  --ll-bg: #0a0f1e;
+  --ll-bg-soft: #0e1630;
+  --ll-surface: rgba(255, 255, 255, 0.04);
+  --ll-border: rgba(120, 150, 255, 0.14);
+  --ll-primary: #4f7cff;
+  --ll-cyan: #22d3ee;
+  --ll-violet: #818cf8;
+  --ll-text: #dbe4f5;
+  --ll-text-muted: #8a97b8;
+  --el-bg-color-page: var(--ll-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--ll-bg);
+  color: var(--ll-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 星空网格背景 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(79, 124, 255, 0.16), transparent 42%),
+    radial-gradient(circle at 90% 12%, rgba(34, 211, 238, 0.10), transparent 40%),
+    radial-gradient(circle at 55% 100%, rgba(129, 140, 248, 0.12), transparent 46%),
+    radial-gradient(rgba(140, 165, 255, 0.10) 1px, transparent 1px);
+  background-size: auto, auto, auto, 26px 26px;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- 通用页面容器 ---------- */
+.page-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ll-text);
+  letter-spacing: 1px;
+}
+
+.page-subtitle {
+  color: var(--ll-text-muted);
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+/* ---------- 玻璃卡片（背景透明，仅留边框与光效） ---------- */
+.el-card {
+  background: transparent !important;
+  border: 1px solid var(--ll-border) !important;
+  border-radius: 14px !important;
+  color: var(--ll-text);
+}
+
+.el-card__header {
+  border-bottom: 1px solid var(--ll-border) !important;
+  color: var(--ll-text);
+}
+
+.hover-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(79, 124, 255, 0.5) !important;
+  box-shadow: 0 8px 28px rgba(34, 211, 238, 0.12);
+}
+
+/* ---------- 霓虹渐变按钮 ---------- */
+.neon-btn.el-button--primary {
+  background: linear-gradient(135deg, #4f7cff 0%, #22d3ee 100%);
+  border: none;
+  box-shadow: 0 4px 18px rgba(79, 124, 255, 0.35);
+}
+
+.neon-btn.el-button--primary:hover {
+  filter: brightness(1.12);
+}
+
+/* ---------- 学习热力图 ---------- */
+.heatmap {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 11px);
+  gap: 3px;
+}
+
+.heatmap-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.heatmap-cell.lv1 { background: rgba(34, 211, 238, 0.35); }
+.heatmap-cell.lv2 { background: rgba(34, 211, 238, 0.55); }
+.heatmap-cell.lv3 { background: rgba(79, 124, 255, 0.8); }
+.heatmap-cell.lv4 { background: linear-gradient(135deg, #4f7cff, #22d3ee); box-shadow: 0 0 6px rgba(34, 211, 238, 0.6); }
+
+/* ---------- 文本工具类 ---------- */
+.text-muted { color: var(--ll-text-muted) !important; }
+.text-sm { font-size: 13px; }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Element Plus 细节微调 ---------- */
+.el-menu {
+  background: transparent !important;
+}
+
+.el-tabs {
+  --el-tabs-header-bg-color: transparent;
+}
+
+.el-tabs__header {
+  background: transparent;
+}
+
+.el-tabs__nav-wrap::after {
+  background-color: rgba(120, 150, 255, 0.1);
+}
+
+.el-tabs__item {
+  color: var(--ll-text-muted);
+}
+
+.el-tabs__item.is-active {
+  color: var(--ll-cyan);
+}
+
+.el-tabs__active-bar {
+  background: linear-gradient(90deg, #4f7cff, #22d3ee);
+}
+
+.el-progress-bar__outer {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.el-dialog {
+  background: #101a38 !important;
+  border: 1px solid var(--ll-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.el-dialog__title {
+  color: var(--ll-text);
+}
+
+.el-empty__description p {
+  color: var(--ll-text-muted);
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 150, 255, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

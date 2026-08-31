@@ -1,0 +1,11 @@
+{
+  "scene": "咖啡店点单",
+  "turns": [
+    { "role": "ai", "text": "Good morning! What can I get for you?", "translation": "早上好！您需要点什么？" },
+    { "role": "user", "text": "I'd like a cup of coffee, please.", "translation": "我想要一杯咖啡。" },
+    { "role": "ai", "text": "Sure. Anything else?", "translation": "好的，还需要别的吗？" },
+    { "role": "user", "text": "A piece of cake, please.", "translation": "请再来一块蛋糕。" },
+    { "role": "ai", "text": "That will be six dollars.", "translation": "一共六美元。" },
+    { "role": "user", "text": "Here you are. Thank you!", "translation": "给您，谢谢！" }
+  ]
+}

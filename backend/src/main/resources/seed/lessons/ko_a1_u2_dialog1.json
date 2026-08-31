@@ -1,0 +1,11 @@
+{
+  "scene": "餐厅点餐",
+  "turns": [
+    { "role": "ai", "text": "어서 오세요.", "translation": "欢迎光临。" },
+    { "role": "user", "text": "비빔밥 하나 주세요.", "translation": "请给我一份拌饭。" },
+    { "role": "ai", "text": "네, 알겠습니다. 더 필요하신 것 있으세요?", "translation": "好的，还需要什么吗？" },
+    { "role": "user", "text": "물도 주세요.", "translation": "请再给我一杯水。" },
+    { "role": "ai", "text": "모두 팔천 원입니다.", "translation": "一共八千韩元。" },
+    { "role": "user", "text": "감사합니다.", "translation": "谢谢。" }
+  ]
+}

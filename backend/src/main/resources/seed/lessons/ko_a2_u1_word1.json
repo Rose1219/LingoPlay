@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "공항", "phonetic": "gonghang", "meaning": "机场", "example": "공항에 일찍 도착했어요.", "translation": "我很早就到了机场。" },
+    { "word": "표", "phonetic": "pyo", "meaning": "票", "example": "표 두 장 주세요.", "translation": "请给我两张票。" },
+    { "word": "호텔", "phonetic": "hotel", "meaning": "酒店", "example": "호텔을 예약했어요.", "translation": "我预订了酒店。" },
+    { "word": "여권", "phonetic": "yeogwon", "meaning": "护照", "example": "여권을 보여 주세요.", "translation": "请出示护照。" },
+    { "word": "지도", "phonetic": "jido", "meaning": "地图", "example": "지도를 하나 사고 싶어요.", "translation": "我想买一张地图。" },
+    { "word": "예약", "phonetic": "yeyak", "meaning": "预约", "example": "식당을 예약했어요.", "translation": "我预约了餐厅。" },
+    { "word": "기차", "phonetic": "gicha", "meaning": "火车", "example": "기차로 서울에 가요.", "translation": "坐火车去首尔。" },
+    { "word": "버스", "phonetic": "beoseu", "meaning": "巴士", "example": "버스 정류장이 어디예요?", "translation": "巴士站在哪里？" },
+    { "word": "짐", "phonetic": "jim", "meaning": "行李", "example": "짐이 많아요.", "translation": "行李很多。" },
+    { "word": "관광", "phonetic": "gwangwang", "meaning": "观光", "example": "경주에 관광하러 가요.", "translation": "去庆州观光。" }
+  ]
+}

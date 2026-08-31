@@ -1,0 +1,59 @@
+<view class="page" wx:if="{{stats}}">
+  <view class="page-title">我的战绩</view>
+  <view class="page-subtitle">每一次闯关都算数</view>
+
+  <!-- 数据卡 -->
+  <view class="stat-grid">
+    <view class="stat-card">
+      <text class="stat-icon">🔥</text>
+      <text class="stat-value">{{stats.streakDays}}</text>
+      <text class="stat-label">连续天数</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-icon">⏱️</text>
+      <text class="stat-value">{{stats.totalMinutes}}</text>
+      <text class="stat-label">累计分钟</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-icon">🧠</text>
+      <text class="stat-value">{{stats.masteredWords}}/{{stats.wordsLearned}}</text>
+      <text class="stat-label">掌握单词</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-icon">🎯</text>
+      <text class="stat-value">{{stats.lessonsCompleted}}/{{stats.lessonsStarted}}</text>
+      <text class="stat-label">完成关卡</text>
+    </view>
+  </view>
+
+  <!-- 热力图 -->
+  <view class="card">
+    <view class="card-title">🗓️ 最近 90 天学习热力图</view>
+    <scroll-view scroll-x class="heat-scroll">
+      <view class="heat-row">
+        <view class="heat-week" wx:for="{{heatWeeks}}" wx:key="index" wx:for-item="week">
+          <view
+            class="heat-cell lv{{item ? (item.minutes >= 30 ? 4 : item.minutes >= 20 ? 3 : item.minutes >= 10 ? 2 : item.minutes > 0 ? 1 : 0) : 'pad'}}"
+            wx:for="{{week}}"
+            wx:key="index"
+          ></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 模块掌握度 -->
+  <view class="card">
+    <view class="card-title">📊 各模块掌握度</view>
+    <view class="empty-tip" wx:if="{{!typeRows.length}}">完成关卡后，这里会展示各模块平均得分</view>
+    <view class="type-row-item" wx:for="{{typeRows}}" wx:key="label">
+      <view class="type-head">
+        <text class="type-name">{{item.label}}</text>
+        <text class="text-muted text-sm">{{item.scoreText}}</text>
+      </view>
+      <view class="progress-outer">
+        <view class="progress-inner" style="width: {{item.accuracy}}%"></view>
+      </view>
+    </view>
+  </view>
+</view>

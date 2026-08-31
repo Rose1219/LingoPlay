@@ -1,0 +1,12 @@
+[
+  { "code": "first_lesson", "name": "初出茅庐", "description": "完成第一节课", "icon": "🎯", "type": "LESSONS", "threshold": "1" },
+  { "code": "lessons_10", "name": "渐入佳境", "description": "累计完成 10 节课", "icon": "📚", "type": "LESSONS", "threshold": "10" },
+  { "code": "lessons_50", "name": "学霸之路", "description": "累计完成 50 节课", "icon": "🏆", "type": "LESSONS", "threshold": "50" },
+  { "code": "words_50", "name": "词汇新秀", "description": "掌握 50 个单词", "icon": "🧠", "type": "WORDS", "threshold": "50" },
+  { "code": "words_200", "name": "词汇大师", "description": "掌握 200 个单词", "icon": "💎", "type": "WORDS", "threshold": "200" },
+  { "code": "streak_3", "name": "三日之约", "description": "连续学习 3 天", "icon": "🔥", "type": "STREAK", "threshold": "3" },
+  { "code": "streak_7", "name": "七日达人", "description": "连续学习 7 天", "icon": "⚡", "type": "STREAK", "threshold": "7" },
+  { "code": "level_a1", "name": "入门通关", "description": "完成任意一门 A1 课程", "icon": "🎓", "type": "COURSE_LEVEL", "threshold": "A1" },
+  { "code": "first_post", "name": "社区新声", "description": "发布第一篇帖子", "icon": "✍️", "type": "POSTS", "threshold": "1" },
+  { "code": "likes_10", "name": "人气之星", "description": "帖子累计获得 10 个赞", "icon": "❤️", "type": "LIKES", "threshold": "10" }
+]

@@ -1,0 +1,214 @@
+<view class="page" wx:if="{{lesson && !finished}}">
+  <view class="learn-head">
+    <view>
+      <view class="text-muted text-sm">{{lesson.courseTitle}} · {{lesson.unitTitle}}</view>
+      <view class="learn-title">{{lesson.title}}</view>
+    </view>
+    <text class="tag">{{typeLabel}}</text>
+  </view>
+
+  <!-- ===== 单词闯关：五选一答题 ===== -->
+  <block wx:if="{{lesson.type === 'WORD' && quizQ}}">
+    <view class="hud">
+      <view class="hud-item">
+        <text class="hud-label">进度</text>
+        <text class="hud-value">{{quizIndex}} / {{quizTotal}}</text>
+      </view>
+      <view class="hud-item {{combo >= 2 ? 'hot' : ''}}">
+        <text class="hud-label">连击</text>
+        <text class="hud-value">{{combo >= 2 ? 'x' + combo : '--'}}</text>
+      </view>
+      <view class="hud-item">
+        <text class="hud-label">答对</text>
+        <text class="hud-value">{{quizCorrectCount}}</text>
+      </view>
+    </view>
+
+    <view class="quiz-progress-track">
+      <view class="quiz-progress-fill" style="width: {{quizProgress}}%;"></view>
+    </view>
+
+    <!-- 题卡 -->
+    <view class="quiz-card {{quizQKey % 2 === 0 ? 'anim-a' : 'anim-b'}}">
+      <view class="quiz-label">{{quizQ.isWordToMeaning ? '选出正确的释义' : '选出对应的单词'}}</view>
+      <view class="quiz-word">{{quizQ.display}}</view>
+      <view class="quiz-voice" wx:if="{{quizQ.isWordToMeaning}}" catchtap="quizSpeak">🔊</view>
+      <view class="quiz-phonetic" wx:if="{{quizQ.isWordToMeaning && quizQ.phonetic}}">/ {{quizQ.phonetic}} /</view>
+    </view>
+
+    <!-- 选项 -->
+    <view class="quiz-options">
+      <view
+        class="quiz-option {{quizAnswered && index === quizQ.answerIndex ? 'correct' : ''}} {{quizAnswered && index === quizSelected && index !== quizQ.answerIndex ? 'wrong' : ''}} {{quizAnswered && index !== quizQ.answerIndex && index !== quizSelected ? 'dim' : ''}}"
+        wx:for="{{quizQ.options}}"
+        wx:key="index"
+        bindtap="quizChoose"
+        data-index="{{index}}"
+      >
+        <text class="quiz-opt-key">{{['A','B','C','D','E'][index]}}</text>
+        <text class="quiz-opt-text">{{item}}</text>
+        <text class="quiz-opt-mark" wx:if="{{quizAnswered && index === quizQ.answerIndex}}">✓</text>
+        <text class="quiz-opt-mark wrong" wx:if="{{quizAnswered && index === quizSelected && index !== quizQ.answerIndex}}">✕</text>
+      </view>
+    </view>
+
+    <!-- 反馈 -->
+    <view class="quiz-feedback {{quizLastCorrect ? 'ok' : 'bad'}}" wx:if="{{quizAnswered}}">
+      <text wx:if="{{quizLastCorrect}}">✅ 正确！</text>
+      <text wx:else>❌ {{quizQ.isWordToMeaning ? '正确释义：' + quizQ.answer : '正确单词：' + quizQ.answer}}</text>
+    </view>
+  </block>
+
+  <!-- ===== 语法探险 ===== -->
+  <block wx:if="{{lesson.type === 'GRAMMAR'}}">
+    <view class="hud">
+      <view class="hud-item">
+        <text class="hud-label">得分</text>
+        <text class="hud-value">{{correctCount}}</text>
+      </view>
+      <view class="hud-item {{combo >= 2 ? 'hot' : ''}}">
+        <text class="hud-label">连击</text>
+        <text class="hud-value">{{combo >= 2 ? 'x' + combo : '--'}}</text>
+      </view>
+    </view>
+
+    <!-- 讲解阶段 -->
+    <block wx:if="{{phase === 'explain'}}">
+      <view class="explain-card">
+        <view class="explain-title">📜 秘笈 · {{points[pointIndex].title}}</view>
+        <view class="explain-text">{{points[pointIndex].explanation}}</view>
+      </view>
+      <view class="glass-btn primary" bindtap="grammarStart">开始挑战</view>
+    </block>
+
+    <!-- 答题阶段 -->
+    <block wx:else>
+      <view class="q-text">{{points[pointIndex].questions[qIndex].question}}</view>
+      <view
+        class="q-option {{answered && index === points[pointIndex].questions[qIndex].answer ? 'correct' : ''}} {{answered && index === selected ? 'wrong' : ''}} {{answered && index !== selected && index !== points[pointIndex].questions[qIndex].answer ? 'dim' : ''}}"
+        wx:for="{{points[pointIndex].questions[qIndex].options}}"
+        wx:key="index"
+        bindtap="grammarAnswer"
+        data-index="{{index}}"
+      >
+        <text class="q-key">{{['A','B','C','D'][index]}}</text>
+        <text>{{item}}</text>
+      </view>
+      <block wx:if="{{answered}}">
+        <view class="feedback {{selected === points[pointIndex].questions[qIndex].answer ? 'ok' : 'bad'}}">
+          {{selected === points[pointIndex].questions[qIndex].answer ? '✅ 回答正确！' : '💥 正确答案是 ' + ['A','B','C','D'][points[pointIndex].questions[qIndex].answer]}}
+        </view>
+        <view class="glass-btn primary" bindtap="grammarNext">下一题</view>
+      </block>
+    </block>
+  </block>
+
+  <!-- ===== 口语星球 ===== -->
+  <block wx:if="{{lesson.type === 'SPEAK'}}">
+    <view class="sentence-order">{{sIndex + 1}} / {{sentences.length}}</view>
+    <view class="s-text">{{sentences[sIndex].text}}</view>
+    <view class="s-trans text-muted" wx:if="{{showTranslation}}">{{sentences[sIndex].translation}}</view>
+    <view class="s-tip">💡 {{sentences[sIndex].tip}}</view>
+
+    <view class="glass-btn" bindtap="speakPlay">🔊 播放原音</view>
+    <view class="glass-btn" bindtap="speakPlaySlow">🎧 慢速跟读</view>
+    <view class="glass-btn" bindtap="toggleTranslation">{{showTranslation ? '隐藏译文' : '查看译文'}}</view>
+
+    <view class="divider"></view>
+    <view class="text-muted text-sm self-label">朗读后自评：</view>
+    <view class="self-row">
+      <view class="self-btn ok" bindtap="speakSelfRate" data-score="100">完美</view>
+      <view class="self-btn mid" bindtap="speakSelfRate" data-score="75">不错</view>
+      <view class="self-btn bad" bindtap="speakSelfRate" data-score="50">加油</view>
+    </view>
+
+    <block wx:if="{{scored}}">
+      <view class="score-big">{{lastScore}} 分</view>
+      <view class="glass-btn primary" bindtap="speakNext">
+        {{sIndex < sentences.length - 1 ? '下一句' : '查看战果'}}
+      </view>
+    </block>
+  </block>
+
+  <!-- ===== 听力侦探 ===== -->
+  <block wx:if="{{lesson.type === 'LISTEN'}}">
+    <view class="sentence-order">案件 {{lIndex + 1}} / {{listenItems.length}}</view>
+    <view class="s-tip">🕵️ 点击播放，破译你听到的句子</view>
+    <view class="play-circle" bindtap="listenPlay">▶</view>
+    <view class="listen-hint text-muted text-sm" wx:if="{{showHint}}">💡 线索：{{listenItems[lIndex].hint}}</view>
+    <view class="hint-btn" wx:else bindtap="toggleHint">查看线索</view>
+
+    <view class="input">
+      <input placeholder="输入你破译出的句子" placeholder-class="ph" value="{{listenInput}}" bindinput="onListenInput" />
+    </view>
+
+    <block wx:if="{{!listenChecked}}">
+      <view class="glass-btn primary {{listenInput ? '' : 'disabled-btn'}}" bindtap="listenCheck">破译确认</view>
+    </block>
+    <block wx:else>
+      <view class="score-big {{listenScore >= 80 ? 'c-ok' : listenScore >= 60 ? 'c-mid' : 'c-bad'}}">{{listenScore}} 分</view>
+      <view class="answer-box">
+        <view>原文：{{listenItems[lIndex].text}}</view>
+        <view class="text-muted text-sm">译文：{{listenItems[lIndex].meaning}}</view>
+      </view>
+      <view class="glass-btn primary" bindtap="listenNext">
+        {{lIndex < listenItems.length - 1 ? '下一个案件' : '查看战果'}}
+      </view>
+    </block>
+  </block>
+
+  <!-- ===== 对话剧场 ===== -->
+  <block wx:if="{{lesson.type === 'DIALOG'}}">
+    <view class="chat-area">
+      <view wx:for="{{chat}}" wx:key="index" class="bubble-row {{item.role === 'ai' ? 'ai' : 'user'}}">
+        <view class="bubble {{item.role === 'ai' ? 'ai-bubble' : 'user-bubble'}}">
+          <view>{{item.text}}</view>
+          <view class="text-muted text-sm" wx:if="{{item.role === 'ai'}}">{{item.translation}}</view>
+          <view class="bubble-score {{item.correct ? 'ok' : 'bad'}}" wx:if="{{item.role === 'user'}}">{{item.score}} 分</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 当前是 AI 回合：开始/听下一句 -->
+    <view class="glass-btn primary" wx:if="{{turns[tIndex].role === 'ai' && chat.length <= tIndex}}" bindtap="dialogStart">
+      {{tIndex === 0 ? '开始演出' : '听下一句台词'}}
+    </view>
+
+    <!-- 当前是用户回合：作答 -->
+    <block wx:if="{{turns[tIndex].role === 'user'}}">
+      <view class="answer-area">
+        <view class="text-muted text-sm">根据译文说出对应台词：</view>
+        <view class="answer-trans">{{turns[tIndex].translation}}</view>
+        <view class="glass-btn" bindtap="dialogPlayTurn">🔊 原音提词</view>
+        <view class="type-row">
+          <view class="input flex-input">
+            <input placeholder="输入你的台词" placeholder-class="ph" value="{{typed}}" bindinput="onTypedInput" />
+          </view>
+          <view class="submit-btn" bindtap="dialogSubmit">提交</view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>
+
+<!-- ===== 通关结算 ===== -->
+<view class="page" wx:if="{{lesson && finished}}">
+  <view class="result">
+    <view class="result-stars">
+      <text class="star big {{s <= stars ? 'on' : ''}}" wx:for="{{starList}}" wx:for-item="s" wx:key="*this">★</text>
+    </view>
+    <view class="result-title">{{stars >= 3 ? '完美通关！' : stars === 2 ? '顺利过关！' : '挑战成功！'}}</view>
+    <view class="result-score">本次战绩 {{score}} 分</view>
+
+    <view class="ach-box" wx:if="{{newAchievements.length}}">
+      <view class="ach-title">🎁 解锁新成就</view>
+      <view class="ach-item" wx:for="{{newAchievements}}" wx:key="code">
+        <text class="ach-icon">{{item.icon}}</text>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+
+    <view class="glass-btn" bindtap="backToMap">返回关卡地图</view>
+    <view class="glass-btn primary" bindtap="retry">再战一局</view>
+  </view>
+</view>

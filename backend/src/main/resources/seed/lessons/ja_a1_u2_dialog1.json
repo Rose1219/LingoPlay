@@ -1,0 +1,11 @@
+{
+  "scene": "便利店购物",
+  "turns": [
+    { "role": "ai", "text": "いらっしゃいませ。", "translation": "欢迎光临。" },
+    { "role": "user", "text": "おにぎりを一つください。", "translation": "请给我一个饭团。" },
+    { "role": "ai", "text": "はい、かしこまりました。他に何かありますか。", "translation": "好的，还需要别的吗？" },
+    { "role": "user", "text": "お茶もお願いします。", "translation": "请再给我一瓶茶。" },
+    { "role": "ai", "text": "全部で三百円です。", "translation": "一共三百日元。" },
+    { "role": "user", "text": "ありがとうございます。", "translation": "谢谢。" }
+  ]
+}

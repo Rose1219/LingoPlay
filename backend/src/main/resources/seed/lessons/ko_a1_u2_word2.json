@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "일", "phonetic": "il", "meaning": "一", "example": "사과 하나 주세요.", "translation": "请给我一个苹果。" },
+    { "word": "이", "phonetic": "i", "meaning": "二", "example": "고양이 두 마리가 있어요.", "translation": "有两只猫。" },
+    { "word": "삼", "phonetic": "sam", "meaning": "三", "example": "세 시예요.", "translation": "现在三点。" },
+    { "word": "사", "phonetic": "sa", "meaning": "四", "example": "네 개 주세요.", "translation": "请给我四个。" },
+    { "word": "오", "phonetic": "o", "meaning": "五", "example": "다섯 시에 만나요.", "translation": "五点见。" },
+    { "word": "육", "phonetic": "yuk", "meaning": "六", "example": "여섯 시에 일어나요.", "translation": "六点起床。" },
+    { "word": "칠", "phonetic": "chil", "meaning": "七", "example": "일곱 시예요.", "translation": "现在七点。" },
+    { "word": "팔", "phonetic": "pal", "meaning": "八", "example": "여덟 명이에요.", "translation": "有八个人。" },
+    { "word": "구", "phonetic": "gu", "meaning": "九", "example": "아홉 번 봤어요.", "translation": "看了九遍。" },
+    { "word": "십", "phonetic": "sip", "meaning": "十", "example": "열 명이에요.", "translation": "有十个人。" }
+  ]
+}

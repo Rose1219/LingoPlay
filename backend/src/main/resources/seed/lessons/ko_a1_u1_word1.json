@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "안녕하세요", "phonetic": "annyeonghaseyo", "meaning": "你好（敬语）", "example": "안녕하세요, 처음 뵙겠습니다.", "translation": "你好，初次见面。" },
+    { "word": "감사합니다", "phonetic": "gamsahamnida", "meaning": "谢谢", "example": "도와주셔서 감사합니다.", "translation": "谢谢您的帮助。" },
+    { "word": "죄송합니다", "phonetic": "joesonghamnida", "meaning": "对不起", "example": "늦어서 죄송합니다.", "translation": "对不起，我迟到了。" },
+    { "word": "네", "phonetic": "ne", "meaning": "是；好的", "example": "네, 알겠습니다.", "translation": "好的，我知道了。" },
+    { "word": "아니요", "phonetic": "aniyo", "meaning": "不；不是", "example": "아니요, 괜찮아요.", "translation": "不，没关系。" },
+    { "word": "안녕히 가세요", "phonetic": "annyeonghi gaseyo", "meaning": "再见（对离开的人说）", "example": "안녕히 가세요, 내일 봐요.", "translation": "再见，明天见。" },
+    { "word": "반갑습니다", "phonetic": "bangapseumnida", "meaning": "很高兴见到你", "example": "만나서 반갑습니다.", "translation": "见到你很高兴。" },
+    { "word": "괜찮아요", "phonetic": "gwaenchanayo", "meaning": "没关系；还不错", "example": "괜찮아요, 걱정하지 마세요.", "translation": "没关系，别担心。" },
+    { "word": "주세요", "phonetic": "juseyo", "meaning": "请给我", "example": "물 한 잔 주세요.", "translation": "请给我一杯水。" },
+    { "word": "잘 지내요?", "phonetic": "jal jinaeyo?", "meaning": "过得好吗？", "example": "요즘 잘 지내요?", "translation": "最近过得好吗？" }
+  ]
+}

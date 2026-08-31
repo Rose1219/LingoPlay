@@ -1,0 +1,271 @@
+{
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "nameCn": "英语",
+      "icon": "🇬🇧",
+      "description": "全球使用最广泛的语言，职场、旅行与考学必备技能。",
+      "sortOrder": 1
+    },
+    {
+      "code": "ja",
+      "name": "日本語",
+      "nameCn": "日语",
+      "icon": "🇯🇵",
+      "description": "动漫、旅行与文化交流的桥梁，假名入门轻松有趣。",
+      "sortOrder": 2
+    },
+    {
+      "code": "ko",
+      "name": "한국어",
+      "nameCn": "韩语",
+      "icon": "🇰🇷",
+      "description": "打开韩流文化的钥匙，表音文字一学就会。",
+      "sortOrder": 3
+    }
+  ],
+  "demoUser": {
+    "username": "demo",
+    "email": "demo@lingolearn.com",
+    "password": "demo123",
+    "nickname": "小语同学",
+    "avatar": "🦊",
+    "preferredLanguages": "en,ja,ko"
+  },
+  "posts": [
+    {
+      "language": null,
+      "title": "新人报到！大家现在都在学什么语言？",
+      "content": "最近正式开始用 LingoLearn 学习，先从英语 A1 课程开始。大家有什么高效背单词的方法吗？欢迎交流～",
+      "likeCount": 12,
+      "commentCount": 0
+    },
+    {
+      "language": "en",
+      "title": "零基础学英语打卡：今天学会了 10 个问候语",
+      "content": "Hello / Thank you / Please / Sorry……跟着课程里的单词记忆模块过了两轮，掌握度已经到 2 星了。坚持每天打卡！",
+      "likeCount": 5,
+      "commentCount": 0
+    },
+    {
+      "language": "ja",
+      "title": "五十音其实没有想象中难",
+      "content": "跟着 A1 入门课程学了平假名，一边跟读一边记，比死记硬背快多了。有一起学日语的小伙伴吗？",
+      "likeCount": 8,
+      "commentCount": 0
+    }
+  ],
+  "courses": [
+    {
+      "language": "en",
+      "title": "英语 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "从零开始：问候、数字、自我介绍与日常对话，建立开口说英语的信心。",
+      "cover": "🚀",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · 初次见面",
+          "description": "学会打招呼与自我介绍",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 日常问候", "type": "WORD", "sortOrder": 1, "contentFile": "en_a1_u1_word1.json" },
+            { "title": "语法 · be 动词", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "en_a1_u1_grammar1.json" },
+            { "title": "口语跟读 · 自我介绍", "type": "SPEAK", "sortOrder": 3, "contentFile": "en_a1_u1_speak1.json" }
+          ]
+        },
+        {
+          "title": "Unit 2 · 日常生活",
+          "description": "听音辨句与咖啡店点单",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "听力训练 · 听音辨句", "type": "LISTEN", "sortOrder": 1, "contentFile": "en_a1_u2_listen1.json" },
+            { "title": "口语对话 · 咖啡店点单", "type": "DIALOG", "sortOrder": 2, "contentFile": "en_a1_u2_dialog1.json" },
+            { "title": "词汇 · 数字与颜色", "type": "WORD", "sortOrder": 3, "contentFile": "en_a1_u2_word2.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "title": "英语 A2 · 初级",
+      "level": "A2",
+      "levelName": "初级",
+      "description": "旅行英语与进阶语法，让表达更加准确流畅。",
+      "cover": "🧳",
+      "sortOrder": 2,
+      "units": [
+        {
+          "title": "Unit 1 · 旅行在路上",
+          "description": "旅行场景词汇与时态",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "en_a2_u1_word1.json" },
+            { "title": "语法 · 一般现在时 vs 进行时", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "en_a2_u1_grammar1.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "en",
+      "title": "英语 B1 · 中级",
+      "level": "B1",
+      "levelName": "中级",
+      "description": "职场英语核心词汇，从容应对办公场景。",
+      "cover": "💼",
+      "sortOrder": 3,
+      "units": [
+        {
+          "title": "Unit 1 · 职场第一课",
+          "description": "办公场景高频词",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "en_b1_u1_word1.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ja",
+      "title": "日语 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "从五十音与问候语开始，迈出日语学习第一步。",
+      "cover": "🌸",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · はじめまして",
+          "description": "问候语与です/ます体",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 日常问候语", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a1_u1_word1.json" },
+            { "title": "语法 · です/ます 体", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ja_a1_u1_grammar1.json" },
+            { "title": "口语跟读 · 自我介绍", "type": "SPEAK", "sortOrder": 3, "contentFile": "ja_a1_u1_speak1.json" }
+          ]
+        },
+        {
+          "title": "Unit 2 · 日常生活",
+          "description": "听音辨句与便利店购物",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "听力训练 · 听音辨句", "type": "LISTEN", "sortOrder": 1, "contentFile": "ja_a1_u2_listen1.json" },
+            { "title": "口语对话 · 便利店购物", "type": "DIALOG", "sortOrder": 2, "contentFile": "ja_a1_u2_dialog1.json" },
+            { "title": "词汇 · 数字 1-10", "type": "WORD", "sortOrder": 3, "contentFile": "ja_a1_u2_word2.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ja",
+      "title": "日语 A2 · 初级",
+      "level": "A2",
+      "levelName": "初级",
+      "description": "旅行日语与て形入门，出行交流更自如。",
+      "cover": "⛩️",
+      "sortOrder": 2,
+      "units": [
+        {
+          "title": "Unit 1 · 旅行に出かけよう",
+          "description": "旅行词汇与て形基础",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a2_u1_word1.json" },
+            { "title": "语法 · て形入门", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ja_a2_u1_grammar1.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ja",
+      "title": "日语 B1 · 中级",
+      "level": "B1",
+      "levelName": "中级",
+      "description": "职场日语核心词汇，掌握敬语场景常用表达。",
+      "cover": "🏢",
+      "sortOrder": 3,
+      "units": [
+        {
+          "title": "Unit 1 · 职场の第一歩",
+          "description": "办公场景高频词",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_b1_u1_word1.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ko",
+      "title": "韩语 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "从韩文字母与问候语开始，轻松开启韩语之旅。",
+      "cover": "🎧",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · 만나서 반갑습니다",
+          "description": "问候语与이다/이에요 句型",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 日常问候语", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a1_u1_word1.json" },
+            { "title": "语法 · 입니다/이에요", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ko_a1_u1_grammar1.json" },
+            { "title": "口语跟读 · 自我介绍", "type": "SPEAK", "sortOrder": 3, "contentFile": "ko_a1_u1_speak1.json" }
+          ]
+        },
+        {
+          "title": "Unit 2 · 日常生活",
+          "description": "听音辨句与餐厅点餐",
+          "sortOrder": 2,
+          "lessons": [
+            { "title": "听力训练 · 听音辨句", "type": "LISTEN", "sortOrder": 1, "contentFile": "ko_a1_u2_listen1.json" },
+            { "title": "口语对话 · 餐厅点餐", "type": "DIALOG", "sortOrder": 2, "contentFile": "ko_a1_u2_dialog1.json" },
+            { "title": "词汇 · 数字 1-10", "type": "WORD", "sortOrder": 3, "contentFile": "ko_a1_u2_word2.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ko",
+      "title": "韩语 A2 · 初级",
+      "level": "A2",
+      "levelName": "初级",
+      "description": "旅行韩语与아/어요 终结词尾，出行交流更自然。",
+      "cover": "✈️",
+      "sortOrder": 2,
+      "units": [
+        {
+          "title": "Unit 1 · 여행을 떠나요",
+          "description": "旅行词汇与아/어요体",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a2_u1_word1.json" },
+            { "title": "语法 · 아/어요 终结词尾", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ko_a2_u1_grammar1.json" }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ko",
+      "title": "韩语 B1 · 中级",
+      "level": "B1",
+      "levelName": "中级",
+      "description": "职场韩语核心词汇，商务场景表达更得体。",
+      "cover": "💻",
+      "sortOrder": 3,
+      "units": [
+        {
+          "title": "Unit 1 · 직장 생활 첫걸음",
+          "description": "办公场景高频词",
+          "sortOrder": 1,
+          "lessons": [
+            { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_b1_u1_word1.json" }
+          ]
+        }
+      ]
+    }
+  ]
+}

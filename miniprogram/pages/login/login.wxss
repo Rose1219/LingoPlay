@@ -1,0 +1,62 @@
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 18vh;
+}
+
+.brand {
+  text-align: center;
+  margin-bottom: 80rpx;
+}
+
+.brand-logo {
+  font-size: 100rpx;
+  display: block;
+  margin-bottom: 20rpx;
+  filter: drop-shadow(0 0 30rpx rgba(34, 211, 238, 0.6));
+}
+
+.brand-name {
+  font-size: 52rpx;
+  font-weight: 800;
+  color: #dbe4f5;
+}
+
+.brand-hl {
+  color: #22d3ee;
+}
+
+.brand-sub {
+  color: #8a97b8;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+
+.wx-btn {
+  margin: 0 20rpx;
+  font-size: 32rpx;
+}
+
+button.glass-btn {
+  line-height: 92rpx;
+}
+
+button.glass-btn::after {
+  border: none;
+}
+
+.auth-input {
+  margin: 0 20rpx 24rpx;
+}
+
+.ph {
+  color: #8a97b8;
+}
+
+.switch-tip {
+  text-align: center;
+  color: #8a97b8;
+  font-size: 26rpx;
+  margin-top: 36rpx;
+}

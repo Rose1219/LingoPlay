@@ -1,0 +1,32 @@
+# ===== 构建产物 =====
+frontend/dist
+frontend/android/app/build
+backend/target
+
+# ===== 依赖 =====
+node_modules
+
+# ===== 本地工具链（体积巨大，不入库）=====
+.tools
+
+# ===== IDE / 系统 =====
+.vscode
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ===== 日志 =====
+logs
+*.log
+
+# ===== 环境与密钥 =====
+*.local
+.env
+.env.*
+
+# ===== 小程序 =====
+miniprogram/miniprogram_npm

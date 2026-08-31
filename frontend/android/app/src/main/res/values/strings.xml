@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LingoPlay</string>
+    <string name="title_activity_main">LingoPlay</string>
+    <string name="package_name">com.lingoplay.app</string>
+    <string name="custom_url_scheme">com.lingoplay.app</string>
+</resources>

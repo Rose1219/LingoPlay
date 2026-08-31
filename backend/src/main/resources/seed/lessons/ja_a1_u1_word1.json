@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "こんにちは", "phonetic": "konnichiwa", "meaning": "你好（白天问候）", "example": "こんにちは、お元気ですか。", "translation": "你好，身体好吗？" },
+    { "word": "おはようございます", "phonetic": "ohayou gozaimasu", "meaning": "早上好（敬体）", "example": "おはようございます、先生。", "translation": "老师，早上好。" },
+    { "word": "こんばんは", "phonetic": "konbanwa", "meaning": "晚上好", "example": "こんばんは、今日は寒いですね。", "translation": "晚上好，今天真冷啊。" },
+    { "word": "ありがとうございます", "phonetic": "arigatou gozaimasu", "meaning": "谢谢（敬体）", "example": "手伝ってくれてありがとうございます。", "translation": "谢谢你的帮助。" },
+    { "word": "すみません", "phonetic": "sumimasen", "meaning": "对不起；劳驾", "example": "すみません、駅はどこですか。", "translation": "劳驾，车站在哪里？" },
+    { "word": "はい", "phonetic": "hai", "meaning": "是；好的", "example": "はい、分かりました。", "translation": "好的，我明白了。" },
+    { "word": "いいえ", "phonetic": "iie", "meaning": "不；不用", "example": "いいえ、大丈夫です。", "translation": "不，没关系。" },
+    { "word": "さようなら", "phonetic": "sayounara", "meaning": "再见", "example": "さようなら、また明日。", "translation": "再见，明天见。" },
+    { "word": "お願いします", "phonetic": "onegaishimasu", "meaning": "拜托了；麻烦您", "example": "コーヒーをお願いします。", "translation": "麻烦给我一杯咖啡。" },
+    { "word": "はじめまして", "phonetic": "hajimemashite", "meaning": "初次见面", "example": "はじめまして、李です。", "translation": "初次见面，我姓李。" }
+  ]
+}

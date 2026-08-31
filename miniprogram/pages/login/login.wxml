@@ -1,0 +1,29 @@
+<view class="page auth-page">
+  <view class="brand">
+    <text class="brand-logo">🛰️</text>
+    <view class="brand-name">Lingo<text class="brand-hl">Play</text></view>
+    <view class="brand-sub">游戏化多语学习 · 英日韩</view>
+  </view>
+
+  <!-- 微信一键登录 -->
+  <block wx:if="{{mode === 'wx'}}">
+    <button class="glass-btn primary wx-btn" bindtap="wxLogin" disabled="{{wxLoading}}">
+      {{wxLoading ? '登录中…' : '微信一键登录'}}
+    </button>
+    <view class="switch-tip" bindtap="switchMode">使用账号密码登录 →</view>
+  </block>
+
+  <!-- 账号密码登录（后端未配置微信 AppID 时的备用入口） -->
+  <block wx:else>
+    <view class="input auth-input" >
+      <input placeholder="用户名 / 邮箱" placeholder-class="ph" value="{{account}}" bindinput="onAccountInput" />
+    </view>
+    <view class="input auth-input">
+      <input password placeholder="密码" placeholder-class="ph" value="{{password}}" bindinput="onPwdInput" />
+    </view>
+    <button class="glass-btn primary wx-btn" bindtap="pwdLogin" disabled="{{pwdLoading}}">
+      {{pwdLoading ? '登录中…' : '登 录'}}
+    </button>
+    <view class="switch-tip" bindtap="switchMode">使用微信一键登录 →</view>
+  </block>
+</view>

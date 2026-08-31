@@ -1,0 +1,55 @@
+<view class="page mini-home">
+  <!-- 每日单词 -->
+  <view class="daily-card {{revealed ? 'revealed' : ''}}" bindtap="toggleReveal">
+    <view class="daily-top">
+      <text class="daily-label">每日单词</text>
+      <text class="daily-lang" wx:if="{{daily}}">{{daily.icon}} {{daily.languageName}}</text>
+    </view>
+
+    <block wx:if="{{daily}}">
+      <view class="daily-word">{{daily.word}}</view>
+      <view class="daily-phonetic" wx:if="{{daily.phonetic}}">/ {{daily.phonetic}} /</view>
+      <view class="daily-meaning {{revealed ? '' : 'hidden'}}">
+        {{revealed ? daily.meaning : '点击卡片查看释义'}}
+      </view>
+      <block wx:if="{{revealed && daily.example}}">
+        <view class="divider"></view>
+        <view class="example-row">
+          <text class="example-text">{{daily.example}}</text>
+          <view class="example-voice" catchtap="playExample">🔊</view>
+        </view>
+        <view class="example-trans">{{daily.translation}}</view>
+      </block>
+    </block>
+  </view>
+
+  <!-- 玻璃拟态操作按钮 -->
+  <view class="glass-tools">
+    <view class="glass-btn primary tool" bindtap="playWord">
+      <text>🔊 播放发音</text>
+    </view>
+    <view class="glass-btn tool {{loadingWord ? 'disabled' : ''}}" bindtap="nextWord">
+      <text>{{loadingWord ? '🔄 加载中…' : '🔄 换一个'}}</text>
+    </view>
+  </view>
+
+  <!-- 单词闯关入口 -->
+  <view class="play-btn" bindtap="goPlay">
+    <text class="emoji">🎯</text>
+    <view>
+      <text class="title">单词闯关</text>
+      <text class="sub">语种选择 · 六关挑战 · 难度递增</text>
+    </view>
+    <text class="arrow">→</text>
+  </view>
+
+  <!-- 游戏工坊 -->
+  <view class="section-title">🎮 游戏工坊</view>
+  <view class="game-grid">
+    <view class="game-card" wx:for="{{games}}" wx:key="type" bindtap="goCourses">
+      <text class="game-emoji">{{item.emoji}}</text>
+      <view class="game-name">{{item.name}}</view>
+      <view class="game-desc">{{item.desc}}</view>
+    </view>
+  </view>
+</view>

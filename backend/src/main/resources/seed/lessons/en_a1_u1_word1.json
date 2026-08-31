@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "hello", "phonetic": "həˈloʊ", "meaning": "你好（打招呼）", "example": "Hello, nice to meet you.", "translation": "你好，很高兴认识你。" },
+    { "word": "hi", "phonetic": "haɪ", "meaning": "嗨（非正式问候）", "example": "Hi, how are you?", "translation": "嗨，你好吗？" },
+    { "word": "goodbye", "phonetic": "ɡʊdˈbaɪ", "meaning": "再见", "example": "Goodbye, see you tomorrow.", "translation": "再见，明天见。" },
+    { "word": "thank you", "phonetic": "θæŋk juː", "meaning": "谢谢你", "example": "Thank you for your help.", "translation": "谢谢你的帮助。" },
+    { "word": "please", "phonetic": "pliːz", "meaning": "请；麻烦你", "example": "A cup of tea, please.", "translation": "请给我一杯茶。" },
+    { "word": "sorry", "phonetic": "ˈsɒri", "meaning": "对不起", "example": "Sorry, I am late.", "translation": "对不起，我迟到了。" },
+    { "word": "yes", "phonetic": "jes", "meaning": "是的", "example": "Yes, I agree with you.", "translation": "是的，我同意你的看法。" },
+    { "word": "no", "phonetic": "noʊ", "meaning": "不；不是", "example": "No, thank you.", "translation": "不用了，谢谢。" },
+    { "word": "good morning", "phonetic": "ɡʊd ˈmɔːrnɪŋ", "meaning": "早上好", "example": "Good morning, everyone!", "translation": "大家早上好！" },
+    { "word": "good night", "phonetic": "ɡʊd naɪt", "meaning": "晚安", "example": "Good night, sweet dreams.", "translation": "晚安，做个好梦。" }
+  ]
+}

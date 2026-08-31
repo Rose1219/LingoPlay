@@ -1,0 +1,9 @@
+{
+  "sentences": [
+    { "text": "Hello, my name is Lily.", "translation": "你好，我叫莉莉。", "tip": "name 中字母 a 发 /eɪ/，注意不要读成 /æ/" },
+    { "text": "Nice to meet you.", "translation": "很高兴认识你。", "tip": "meet 的元音 /iː/ 要拉长，双唇向两边咧开" },
+    { "text": "I am from China.", "translation": "我来自中国。", "tip": "I am 常缩读成 I'm /aɪm/（口语更自然）" },
+    { "text": "I like learning English.", "translation": "我喜欢学习英语。", "tip": "learning 中 ear 发 /ɜː/，舌位居中" },
+    { "text": "Thank you for listening.", "translation": "感谢你的聆听。", "tip": "thank 的 th 是咬舌音，舌尖轻触上齿" }
+  ]
+}

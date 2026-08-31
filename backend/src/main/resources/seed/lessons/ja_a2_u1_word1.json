@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "駅", "phonetic": "eki", "meaning": "车站", "example": "駅まで歩いて十分です。", "translation": "走到车站要十分钟。" },
+    { "word": "切符", "phonetic": "kippu", "meaning": "车票", "example": "切符を一枚買いました。", "translation": "我买了一张票。" },
+    { "word": "ホテル", "phonetic": "hoteru", "meaning": "酒店", "example": "ホテルを予約しました。", "translation": "我预订了酒店。" },
+    { "word": "空港", "phonetic": "kuukou", "meaning": "机场", "example": "空港へバスで行きます。", "translation": "坐巴士去机场。" },
+    { "word": "地図", "phonetic": "chizu", "meaning": "地图", "example": "地図を見せてください。", "translation": "请给我看看地图。" },
+    { "word": "予約", "phonetic": "yoyaku", "meaning": "预约", "example": "レストランを予約したいです。", "translation": "我想预约餐厅。" },
+    { "word": "電車", "phonetic": "densha", "meaning": "电车", "example": "電車で東京へ行きます。", "translation": "坐电车去东京。" },
+    { "word": "バス", "phonetic": "basu", "meaning": "巴士", "example": "バス停はどこですか。", "translation": "巴士站在哪里？" },
+    { "word": "荷物", "phonetic": "nimotsu", "meaning": "行李", "example": "荷物が多いですね。", "translation": "行李真多啊。" },
+    { "word": "観光", "phonetic": "kankou", "meaning": "观光", "example": "京都へ観光に行きます。", "translation": "去京都观光。" }
+  ]
+}

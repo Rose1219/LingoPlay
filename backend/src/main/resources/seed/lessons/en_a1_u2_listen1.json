@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "text": "Nice to meet you.", "meaning": "很高兴认识你。", "hint": "常见寒暄语，注意 meet 的 /iː/" },
+    { "text": "Where are you from?", "meaning": "你来自哪里？", "hint": "一般疑问句尾用升调" },
+    { "text": "What time is it?", "meaning": "现在几点了？", "hint": "what 开头的 wh 问句" },
+    { "text": "Have a nice day!", "meaning": "祝你有美好的一天！", "hint": "day 的元音是 /eɪ/，结尾上扬" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "会議", "phonetic": "kaigi", "meaning": "会议", "example": "午後二時に会議があります。", "translation": "下午两点有会议。" },
+    { "word": "資料", "phonetic": "shiryou", "meaning": "资料", "example": "資料を準備しておいてください。", "translation": "请提前准备好资料。" },
+    { "word": "上司", "phonetic": "joushi", "meaning": "上司", "example": "上司に報告しました。", "translation": "我已经向上司汇报了。" },
+    { "word": "同僚", "phonetic": "douryou", "meaning": "同事", "example": "同僚と昼ご飯を食べました。", "translation": "和同事一起吃了午饭。" },
+    { "word": "出張", "phonetic": "shucchou", "meaning": "出差", "example": "来週大阪へ出張します。", "translation": "下周去大阪出差。" },
+    { "word": "残業", "phonetic": "zangyou", "meaning": "加班", "example": "昨日は三時間残業しました。", "translation": "昨天加班三个小时。" },
+    { "word": "打ち合わせ", "phonetic": "uchiawase", "meaning": "碰头会；商谈", "example": "十時に打ち合わせがあります。", "translation": "十点有碰头会。" },
+    { "word": "報告", "phonetic": "houkoku", "meaning": "报告；汇报", "example": "結果を報告してください。", "translation": "请汇报结果。" },
+    { "word": "提案", "phonetic": "teian", "meaning": "提案；建议", "example": "新しい提案があります。", "translation": "我有一个新提案。" },
+    { "word": "期限", "phonetic": "kigen", "meaning": "期限", "example": "期限は来週の金曜日です。", "translation": "期限是下周五。" }
+  ]
+}

@@ -1,0 +1,61 @@
+<view class="page">
+  <view class="head-row">
+    <view>
+      <view class="page-title">学习社区</view>
+      <view class="page-subtitle">交流心得，寻找语伴</view>
+    </view>
+    <view class="create-btn" bindtap="openCreate">✏️ 发帖</view>
+  </view>
+
+  <!-- 语种筛选 -->
+  <scroll-view scroll-x class="lang-tabs">
+    <view class="lang-tab {{activeLang === '' ? 'active' : ''}}" bindtap="switchTab" data-lang="">全部</view>
+    <view
+      class="lang-tab {{activeLang === item.code ? 'active' : ''}}"
+      wx:for="{{languages}}"
+      wx:key="code"
+      bindtap="switchTab"
+      data-lang="{{item.code}}"
+    >{{item.icon}} {{item.nameCn}}</view>
+  </scroll-view>
+
+  <!-- 帖子列表 -->
+  <view class="post" wx:for="{{posts}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+    <view class="post-head">
+      <text class="post-avatar">{{item.authorAvatar}}</text>
+      <view>
+        <view class="post-author">{{item.authorNickname}}</view>
+        <view class="text-muted text-sm">{{item.timeText}}</view>
+      </view>
+      <text class="tag post-lang" wx:if="{{item.languageName}}">{{item.languageIcon}} {{item.languageName}}</text>
+    </view>
+    <view class="post-title">{{item.title}}</view>
+    <view class="post-preview">{{item.content}}</view>
+    <view class="post-foot">
+      <text>👍 {{item.likeCount}}</text>
+      <text>💬 {{item.commentCount}}</text>
+    </view>
+  </view>
+
+  <view class="empty-tip" wx:if="{{!posts.length}}">还没有帖子，来发第一篇吧</view>
+  <view class="load-more" wx:if="{{posts.length < total}}" bindtap="loadMore">加载更多</view>
+
+  <!-- 发帖弹层 -->
+  <view class="mask" wx:if="{{showCreate}}" bindtap="closeCreate">
+    <view class="sheet" catchtap="stop">
+      <view class="sheet-title">发布帖子</view>
+      <view class="input sheet-input">
+        <input placeholder="标题" placeholder-class="ph" value="{{form.title}}" bindinput="onTitleInput" />
+      </view>
+      <view class="input sheet-input">
+        <input placeholder="内容" placeholder-class="ph" value="{{form.content}}" bindinput="onContentInput" />
+      </view>
+      <picker range="{{languages}}" range-key="nameCn" bindchange="onLangChange">
+        <view class="input sheet-input picker">
+          {{form.languageCode ? '已选语种：' + form.languageCode : '选择关联语种（选填）'}}
+        </view>
+      </picker>
+      <view class="glass-btn primary" bindtap="submitCreate">{{creating ? '发布中…' : '发布'}}</view>
+    </view>
+  </view>
+</view>

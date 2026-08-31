@@ -1,0 +1,45 @@
+.ach-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.ach-card {
+  width: calc(33.33% - 14rpx);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1rpx solid rgba(120, 150, 255, 0.14);
+  border-radius: 24rpx;
+  padding: 30rpx 12rpx;
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+.ach-card.unlocked {
+  filter: none;
+  opacity: 1;
+  border-color: rgba(251, 191, 36, 0.55);
+  background: linear-gradient(180deg, rgba(251, 191, 36, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.ach-icon {
+  font-size: 72rpx;
+  margin-bottom: 14rpx;
+}
+
+.ach-name {
+  font-size: 26rpx;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+
+.ach-desc {
+  font-size: 20rpx;
+  color: #8a97b8;
+}
+
+.ach-date {
+  font-size: 18rpx;
+  color: #8a97b8;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "one", "phonetic": "wʌn", "meaning": "一", "example": "I have one brother.", "translation": "我有一个哥哥。" },
+    { "word": "two", "phonetic": "tuː", "meaning": "二", "example": "Two cups of coffee, please.", "translation": "请来两杯咖啡。" },
+    { "word": "three", "phonetic": "θriː", "meaning": "三", "example": "There are three birds.", "translation": "有三只鸟。" },
+    { "word": "four", "phonetic": "fɔːr", "meaning": "四", "example": "A table has four legs.", "translation": "桌子有四条腿。" },
+    { "word": "five", "phonetic": "faɪv", "meaning": "五", "example": "I get up at five.", "translation": "我五点起床。" },
+    { "word": "red", "phonetic": "red", "meaning": "红色的", "example": "The apple is red.", "translation": "这个苹果是红色的。" },
+    { "word": "blue", "phonetic": "bluː", "meaning": "蓝色的", "example": "The sky is blue.", "translation": "天空是蓝色的。" },
+    { "word": "green", "phonetic": "ɡriːn", "meaning": "绿色的", "example": "The grass is green.", "translation": "草是绿色的。" },
+    { "word": "yellow", "phonetic": "ˈjeloʊ", "meaning": "黄色的", "example": "The banana is yellow.", "translation": "香蕉是黄色的。" },
+    { "word": "black", "phonetic": "blæk", "meaning": "黑色的", "example": "She has a black bag.", "translation": "她有一个黑色的包。" }
+  ]
+}

@@ -1,0 +1,42 @@
+<view class="page" wx:if="{{detail}}">
+  <!-- 帖子正文 -->
+  <view class="card">
+    <view class="post-head">
+      <text class="post-avatar">{{detail.post.authorAvatar}}</text>
+      <view>
+        <view class="post-author">{{detail.post.authorNickname}}</view>
+        <view class="text-muted text-sm">{{detail.post.timeText}}</view>
+      </view>
+      <text class="tag post-lang" wx:if="{{detail.post.languageName}}">{{detail.post.languageIcon}} {{detail.post.languageName}}</text>
+    </view>
+    <view class="post-title">{{detail.post.title}}</view>
+    <view class="post-body">{{detail.post.content}}</view>
+    <view class="like-btn {{detail.post.liked ? 'liked' : ''}}" bindtap="toggleLike">
+      {{detail.post.liked ? '❤️ 已点赞' : '🤍 点赞'}} {{detail.post.likeCount}}
+    </view>
+  </view>
+
+  <!-- 评论 -->
+  <view class="card">
+    <view class="card-title">💬 评论（{{detail.comments.length}}）</view>
+    <view class="empty-tip" wx:if="{{!detail.comments.length}}">还没有评论，来抢沙发～</view>
+    <view class="comment" wx:for="{{detail.comments}}" wx:key="id">
+      <text class="comment-avatar">{{item.authorAvatar}}</text>
+      <view class="comment-body">
+        <view class="comment-head">
+          <text class="comment-author">{{item.authorNickname}}</text>
+          <text class="text-muted text-sm">{{item.timeText}}</text>
+        </view>
+        <view class="comment-content">{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 评论输入 -->
+  <view class="comment-input-row">
+    <view class="input flex-input">
+      <input placeholder="友善交流，写下你的评论…" placeholder-class="ph" value="{{commentText}}" bindinput="onCommentInput" confirm-type="send" bindconfirm="submitComment" />
+    </view>
+    <view class="submit-btn" bindtap="submitComment">{{sending ? '…' : '发送'}}</view>
+  </view>
+</view>

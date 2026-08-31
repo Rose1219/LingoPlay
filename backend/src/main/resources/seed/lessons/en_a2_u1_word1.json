@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "airport", "phonetic": "ˈerpɔːrt", "meaning": "机场", "example": "The airport is far from the city.", "translation": "机场离市区很远。" },
+    { "word": "ticket", "phonetic": "ˈtɪkɪt", "meaning": "票；机票", "example": "I booked a ticket online.", "translation": "我在网上订了一张票。" },
+    { "word": "hotel", "phonetic": "hoʊˈtel", "meaning": "酒店", "example": "We stayed at a nice hotel.", "translation": "我们住在一家不错的酒店。" },
+    { "word": "passport", "phonetic": "ˈpæspɔːrt", "meaning": "护照", "example": "Don't forget your passport.", "translation": "别忘了带护照。" },
+    { "word": "luggage", "phonetic": "ˈlʌɡɪdʒ", "meaning": "行李", "example": "Where can I get my luggage?", "translation": "我在哪里取行李？" },
+    { "word": "reservation", "phonetic": "ˌrezərˈveɪʃn", "meaning": "预订", "example": "I have a reservation for two.", "translation": "我预订了两个人的位子。" },
+    { "word": "station", "phonetic": "ˈsteɪʃn", "meaning": "车站", "example": "The train station is nearby.", "translation": "火车站在附近。" },
+    { "word": "map", "phonetic": "mæp", "meaning": "地图", "example": "Can I have a city map?", "translation": "能给我一张城市地图吗？" },
+    { "word": "museum", "phonetic": "mjuˈziːəm", "meaning": "博物馆", "example": "The museum opens at nine.", "translation": "博物馆九点开门。" },
+    { "word": "restaurant", "phonetic": "ˈrestrɑːnt", "meaning": "餐厅", "example": "This restaurant serves good food.", "translation": "这家餐厅的食物很好吃。" }
+  ]
+}

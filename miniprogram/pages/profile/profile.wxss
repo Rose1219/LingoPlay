@@ -1,0 +1,65 @@
+.profile-head {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid rgba(120, 150, 255, 0.14);
+  margin-bottom: 30rpx;
+}
+
+.profile-avatar {
+  font-size: 88rpx;
+  width: 130rpx;
+  height: 130rpx;
+  background: rgba(79, 124, 255, 0.16);
+  border: 1rpx solid rgba(120, 150, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-nickname {
+  font-size: 38rpx;
+  font-weight: 700;
+}
+
+.form-label {
+  font-size: 24rpx;
+  color: #8a97b8;
+  margin: 24rpx 0 14rpx;
+}
+
+.lang-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  margin-bottom: 30rpx;
+}
+
+.lang-check {
+  padding: 14rpx 30rpx;
+  border-radius: 34rpx;
+  font-size: 26rpx;
+  color: #8a97b8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1rpx solid rgba(120, 150, 255, 0.14);
+}
+
+.lang-check.checked {
+  color: #04122e;
+  background: linear-gradient(135deg, #4f7cff, #22d3ee);
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.logout-btn {
+  text-align: center;
+  color: #f87171;
+  padding: 24rpx 0;
+  font-size: 28rpx;
+}
+
+.ph {
+  color: #8a97b8;
+}

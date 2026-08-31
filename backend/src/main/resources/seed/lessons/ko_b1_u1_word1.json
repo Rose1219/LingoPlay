@@ -1,0 +1,14 @@
+{
+  "words": [
+    { "word": "회의", "phonetic": "hoeui", "meaning": "会议", "example": "오후 두 시에 회의가 있어요.", "translation": "下午两点有会议。" },
+    { "word": "마감", "phonetic": "magam", "meaning": "截止", "example": "마감이 금요일이에요.", "translation": "截止日期是周五。" },
+    { "word": "프로젝트", "phonetic": "peurojekteu", "meaning": "项目", "example": "프로젝트를 제시간에 끝냈어요.", "translation": "我们按时完成了项目。" },
+    { "word": "동료", "phonetic": "dongnyo", "meaning": "同事", "example": "동료가 많이 도와줬어요.", "translation": "同事帮了我很多。" },
+    { "word": "일정", "phonetic": "iljeong", "meaning": "日程", "example": "일정을 확인해 볼게요.", "translation": "我确认一下日程。" },
+    { "word": "보고서", "phonetic": "bogoseo", "meaning": "报告书", "example": "보고서를 보내 주세요.", "translation": "请把报告发给我。" },
+    { "word": "발표", "phonetic": "balpyo", "meaning": "发表；演示", "example": "내일 발표가 있어요.", "translation": "明天有演示。" },
+    { "word": "예산", "phonetic": "yesan", "meaning": "预算", "example": "예산이 부족해요.", "translation": "预算不足。" },
+    { "word": "고객", "phonetic": "gogaek", "meaning": "客户", "example": "고객이 아주 만족했어요.", "translation": "客户非常满意。" },
+    { "word": "협상", "phonetic": "hyeopsang", "meaning": "协商；谈判", "example": "가격을 협상해야 해요.", "translation": "需要协商价格。" }
+  ]
+}
