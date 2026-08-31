@@ -6,7 +6,7 @@
 
     <template v-if="stats">
       <el-row :gutter="16" class="mb">
-        <el-col :span="6" v-for="card in statCards" :key="card.label">
+        <el-col :xs="12" :sm="12" :md="6" v-for="card in statCards" :key="card.label">
           <el-card shadow="never" class="stat-card">
             <div class="stat-icon">{{ card.icon }}</div>
             <div class="stat-value">{{ card.value }}</div>
@@ -16,13 +16,13 @@
       </el-row>
 
       <el-row :gutter="16">
-        <el-col :span="12">
+        <el-col :xs="24" :md="12">
           <el-card shadow="never" class="panel">
             <template #header><span>🗓️ 最近 90 天学习热力图</span></template>
             <Heatmap :items="stats.heatmap" />
           </el-card>
         </el-col>
-        <el-col :span="12">
+        <el-col :xs="24" :md="12">
           <el-card shadow="never" class="panel">
             <template #header><span>📊 各模块掌握度</span></template>
             <div v-if="!stats.typeAccuracy.length" class="empty-tip">

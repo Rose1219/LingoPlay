@@ -381,4 +381,38 @@ onMounted(() => {
   font-size: 22px;
   font-weight: 700;
 }
+
+/* ---------- 移动端适配 ---------- */
+@media (max-width: 768px) {
+  .mini-home {
+    padding-top: 3vh;
+    gap: 14px;
+  }
+
+  .daily-card {
+    padding: 20px 18px 18px;
+  }
+
+  .daily-word {
+    font-size: 38px;
+  }
+
+  .glass-btn {
+    height: 46px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
+
+  .play-btn {
+    padding: 16px 18px;
+  }
+
+  .play-emoji {
+    font-size: 28px;
+  }
+
+  .play-title {
+    font-size: 17px;
+  }
+}
 </style>

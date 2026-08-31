@@ -72,6 +72,40 @@ body::before {
   margin: 0 0 24px;
 }
 
+/* ---------- 移动端响应式基础 ---------- */
+/* 小屏（手机）：收紧容器内边距、缩小标题 */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 16px 14px 32px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .page-subtitle {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  /* 移动端弹窗宽度自适应 */
+  .el-dialog {
+    width: 92% !important;
+    max-width: 420px;
+    margin: 8vh auto;
+  }
+
+  /* 移动端表单标签置顶，输入框占满宽度 */
+  .el-form--label-top .el-form-item__label {
+    padding-bottom: 4px;
+  }
+
+  /* 表格横向滚动兜底 */
+  .el-table {
+    font-size: 13px;
+  }
+}
+
 /* ---------- 玻璃卡片（背景透明，仅留边框与光效） ---------- */
 .el-card {
   background: transparent !important;

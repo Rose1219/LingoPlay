@@ -5,7 +5,7 @@
     <p class="page-subtitle">坚持学习，解锁属于你的荣誉勋章</p>
 
     <el-row :gutter="16">
-      <el-col :span="6" v-for="a in achievements" :key="a.code">
+      <el-col :xs="12" :sm="8" :md="6" v-for="a in achievements" :key="a.code">
         <div class="achievement-card" :class="{ unlocked: a.unlocked }">
           <div class="achievement-icon">{{ a.unlocked ? a.icon : '🔒' }}</div>
           <div class="achievement-name">{{ a.name }}</div>

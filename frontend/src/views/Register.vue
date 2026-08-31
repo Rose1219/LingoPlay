@@ -80,7 +80,8 @@ async function submit() {
 }
 
 .auth-card {
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   background: #fff;
   border-radius: 16px;
   padding: 40px 36px 28px;
@@ -124,5 +125,16 @@ async function submit() {
   color: #4f7cff;
   font-weight: 600;
   text-decoration: none;
+}
+
+/* 小屏手机：收紧卡片内边距 */
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 16px;
+  }
+
+  .auth-card {
+    padding: 28px 20px 22px;
+  }
 }
 </style>

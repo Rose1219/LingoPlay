@@ -314,4 +314,31 @@ onMounted(async () => {
   font-size: 13px;
   color: var(--ll-text-muted);
 }
+
+/* ---------- 移动端适配 ---------- */
+@media (max-width: 768px) {
+  .select-title {
+    font-size: 24px;
+  }
+
+  .select-sub {
+    margin-bottom: 24px;
+  }
+
+  .lang-card {
+    width: calc(50% - 9px);
+    min-width: 150px;
+    padding: 22px 12px 18px;
+  }
+
+  .lang-grid {
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  /* 关卡一览：小屏改两列，避免挤压 */
+  .levels-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 </style>

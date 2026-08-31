@@ -15,7 +15,7 @@
 
     <div v-loading="loading">
       <el-row :gutter="16">
-        <el-col :span="8" v-for="course in courses" :key="course.id">
+        <el-col :xs="12" :sm="12" :md="8" v-for="course in courses" :key="course.id">
           <el-card shadow="never" class="course-card hover-card" @click="goDetail(course)">
             <div class="course-cover">{{ course.cover }}</div>
             <div class="course-body">

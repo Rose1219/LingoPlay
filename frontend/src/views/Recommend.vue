@@ -14,7 +14,7 @@
       </el-alert>
 
       <el-row :gutter="16" class="mt">
-        <el-col :span="14">
+        <el-col :xs="24" :md="14">
           <el-card shadow="never" class="panel">
             <template #header>
               <div class="panel-header">
@@ -46,7 +46,7 @@
           </el-card>
         </el-col>
 
-        <el-col :span="10">
+        <el-col :xs="24" :md="10">
           <el-card shadow="never" class="panel">
             <template #header>
               <div class="panel-header">

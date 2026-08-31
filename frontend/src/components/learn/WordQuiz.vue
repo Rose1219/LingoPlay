@@ -941,4 +941,23 @@ onMounted(() => {
   70% { transform: scale(1.35); }
   100% { transform: scale(1); }
 }
+
+/* ---------- 移动端适配 ---------- */
+@media (max-width: 768px) {
+  .stage-card {
+    padding: 22px 16px;
+  }
+
+  .intro-card {
+    padding: 40px 16px;
+  }
+
+  .result-stats {
+    gap: 8px;
+  }
+
+  .stat {
+    padding: 12px 4px;
+  }
+}
 </style>

@@ -335,4 +335,12 @@ onMounted(() => {
   color: var(--ll-text-muted);
   font-size: 14px;
 }
+
+/* ---------- 移动端适配 ---------- */
+@media (max-width: 768px) {
+  /* 选项可能较长，小屏改单列避免挤压换行错乱 */
+  .question-options {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

@@ -211,4 +211,38 @@ onMounted(async () => {
 
 .lesson-status.st-completed { color: #34d399; }
 .lesson-status.st-in_progress { color: #fbbf24; }
+
+/* ---------- 移动端适配 ---------- */
+@media (max-width: 768px) {
+  .course-head {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .course-cover-lg {
+    width: 88px;
+    height: 88px;
+    font-size: 42px;
+  }
+
+  .unit-block {
+    padding: 14px;
+  }
+
+  /* 课时行：小屏换行排布，避免横向溢出 */
+  .lesson-item {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    padding: 12px;
+  }
+
+  .lesson-title {
+    flex-basis: calc(100% - 40px);
+  }
+
+  .stars-box {
+    margin-left: auto;
+  }
+}
 </style>
