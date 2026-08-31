@@ -121,6 +121,8 @@ public class SeedService implements CommandLineRunner {
             course.setDescription(cs.getDescription());
             course.setCover(cs.getCover());
             course.setSortOrder(cs.getSortOrder());
+            // 先保存课程：新建课程持久化拿到主键后，其下 Unit 才能安全引用
+            courseRepository.save(course);
 
             for (UnitSeed us : cs.getUnits()) {
                 Unit unit = unitRepository.findByCourseIdAndTitle(course.getId() != null ? course.getId() : -1L, us.getTitle())
