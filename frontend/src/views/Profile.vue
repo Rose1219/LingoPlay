@@ -36,11 +36,17 @@
       </el-form>
     </el-card>
 
-    <!-- 关于：显示版本与运行环境，便于问题排查 -->
+    <!-- 关于：显示版本与运行环境，App 环境提供检查更新 -->
     <div class="about-box">
-      <span>LingoPlay v{{ APP_VERSION }}</span>
+      <span>LingoPlay v{{ displayVersion }}</span>
       <span class="about-dot">·</span>
       <span>{{ isNativeApp ? 'App 原生环境' : '浏览器环境' }}</span>
+      <template v-if="isNativeApp">
+        <span class="about-dot">·</span>
+        <a class="about-link" :class="{ 'about-link-loading': checking }" @click.prevent="onCheckUpdate">
+          {{ checking ? '检查中…' : '检查更新' }}
+        </a>
+      </template>
     </div>
   </div>
 </template>
@@ -51,13 +57,10 @@ import { ElMessage } from 'element-plus'
 import { languageApi } from '../api'
 import { useUserStore } from '../store/user'
 import PageBack from '../components/PageBack.vue'
+import { APP_VERSION, isNativeApp, getCurrentVersion, checkUpdateManually } from '../utils/updater'
 
-const APP_VERSION = '1.0.4'
-const isNativeApp =
-  typeof window !== 'undefined' &&
-  !!window.Capacitor &&
-  window.Capacitor.isNativePlatform()
-
+const displayVersion = ref(APP_VERSION)
+const checking = ref(false)
 const store = useUserStore()
 const languages = ref([])
 const saving = ref(false)
@@ -76,6 +79,18 @@ async function save() {
   }
 }
 
+async function onCheckUpdate() {
+  if (checking.value) return
+  checking.value = true
+  try {
+    await checkUpdateManually()
+  } catch (e) {
+    ElMessage.error('检查更新失败，请稍后再试')
+  } finally {
+    checking.value = false
+  }
+}
+
 onMounted(async () => {
   languages.value = await languageApi.list()
   await store.fetchMe()
@@ -83,6 +98,8 @@ onMounted(async () => {
   form.preferredLanguages = (store.user.preferredLanguages || '')
     .split(',')
     .filter((c) => c)
+  // App 环境展示真实原生版本号（来自 build.gradle 的 versionName）
+  displayVersion.value = await getCurrentVersion()
 })
 </script>
 
@@ -131,5 +148,21 @@ onMounted(async () => {
 
 .about-dot {
   margin: 0 6px;
+}
+
+.about-link {
+  color: var(--el-color-primary);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  opacity: 0.8;
+}
+
+.about-link-loading {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
 }
 </style>

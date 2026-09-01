@@ -108,6 +108,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useUserStore } from '../store/user'
+import { checkUpdateOnLaunch } from '../utils/updater'
 
 const route = useRoute()
 const router = useRouter()
@@ -126,6 +127,10 @@ onMounted(() => {
   } else if (mobileQuery.addListener) {
     mobileQuery.addListener(onMediaChange)
   }
+  // App 启动自动检查更新（仅原生环境，静默失败，不打扰启动）
+  setTimeout(() => {
+    checkUpdateOnLaunch()
+  }, 800)
 })
 onBeforeUnmount(() => {
   if (mobileQuery.removeEventListener) {

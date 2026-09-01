@@ -17,6 +17,11 @@ export const languageApi = {
   list: () => http.get('/languages')
 }
 
+// App 版本
+export const appApi = {
+  latest: () => http.get('/app/latest')
+}
+
 // 课程与课时
 export const courseApi = {
   list: (language) => http.get('/courses', { params: language ? { language } : {} }),

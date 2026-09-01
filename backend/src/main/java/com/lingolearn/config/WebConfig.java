@@ -37,7 +37,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor)
                 .addPathPatterns("/api/**")
-                // 登录注册接口放行
-                .excludePathPatterns("/api/auth/**");
+                // 登录注册接口放行；App 版本检查放行（未登录也可检查更新）
+                .excludePathPatterns("/api/auth/**", "/api/app/**");
     }
 }
