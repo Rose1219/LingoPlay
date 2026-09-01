@@ -11,9 +11,24 @@
 // 浏览器端 Chrome 的 getVoices() 为异步懒加载，冷启动可能数秒才就绪；
 // 未就绪时朗读会静默无声（首次进入站点点发音没声音的根因）。
 
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { Capacitor } from '@capacitor/core'
 import { TextToSpeech } from '@capacitor-community/text-to-speech'
+
+/**
+ * 跳转系统「文字转语音（TTS）」设置页（仅 Android 原生环境）。
+ * 由 MainActivity 注册的 TtsSettingsPlugin 实现；iOS 系统内置全语言语音，无需此操作。
+ */
+async function openTtsSettings() {
+  try {
+    const plugin = Capacitor.Plugins && Capacitor.Plugins.TtsSettings
+    if (!plugin) return false
+    await plugin.open()
+    return true
+  } catch (e) {
+    return false
+  }
+}
 
 /** 语言代码归一化：en_US / en-us → en-us，便于比较 */
 function normLang(lang) {
@@ -112,12 +127,30 @@ function warnMissingOnce(lang, tip) {
   const names = { 'en-US': '英语', 'ja-JP': '日语', 'ko-KR': '韩语' }
   const name = names[lang] || lang
   if (tip) {
-    // 原生路径：给出可操作的安装指引
-    ElMessage({
-      type: 'warning',
-      duration: 8000,
-      message: `当前设备缺少${name}语音包，已用其他可用语音朗读。如需标准发音：系统设置 → 语言和输入法 → 文字转语音（TTS）→ 安装/下载${name}语音数据；另请确认媒体音量已打开。`
-    })
+    // 原生路径：可操作弹窗 + 一键跳转系统 TTS 设置安装语音数据
+    ElMessageBox.confirm(
+      `<div style="text-align:left;line-height:1.7;">
+        当前设备的语音引擎缺少<b style="color:#e6a23c">${name}</b>语音数据，朗读可能不标准甚至无声。<br/>
+        解决方法：<b>安装/切换 TTS 引擎并下载语音数据</b>——
+        在系统「文字转语音（TTS）输出」设置中，首选引擎选择
+        <b>Google 文字转语音</b> 或 <b>讯飞语音+</b>，并在引擎内下载${name}语音包。
+      </div>`,
+      '需要安装语音数据',
+      {
+        dangerouslyUseHTMLString: true,
+        confirmButtonText: '去系统设置',
+        cancelButtonText: '暂不',
+        type: 'warning',
+        autofocus: false
+      }
+    )
+      .then(async () => {
+        const opened = await openTtsSettings()
+        if (!opened) {
+          ElMessage.info('入口：系统设置 → 语言和输入法 → 文字转语音（TTS）输出')
+        }
+      })
+      .catch(() => {})
   } else {
     ElMessage({
       type: 'warning',
@@ -260,13 +293,35 @@ async function nativeSpeak(text, lang, rate) {
   }
 }
 
-/** 原生路径失败的提示（细分原因，方便定位） */
+/** 原生路径失败的提示（细分原因 + 一键跳转系统 TTS 设置） */
 function warnNativeError(detail) {
-  ElMessage({
-    type: 'warning',
-    duration: 8000,
-    message: `语音朗读失败（${detail}）。请检查：① 媒体音量已打开；② 系统设置 → 语言和输入法 → 文字转语音（TTS）已启用引擎并安装语音数据。`
-  })
+  if (!warnedLangs.has('__engine__')) {
+    warnedLangs.add('__engine__')
+    ElMessageBox.confirm(
+      `<div style="text-align:left;line-height:1.7;">
+        语音朗读失败（${detail}）。常见原因：<br/>
+        ① 设备未启用文字转语音（TTS）引擎；<br/>
+        ② 引擎未下载语音数据；<br/>
+        ③ 媒体音量被关闭。<br/>
+        可到系统「文字转语音（TTS）输出」设置中启用引擎并安装语音数据。
+      </div>`,
+      '语音引擎不可用',
+      {
+        dangerouslyUseHTMLString: true,
+        confirmButtonText: '去系统设置',
+        cancelButtonText: '暂不',
+        type: 'warning',
+        autofocus: false
+      }
+    )
+      .then(async () => {
+        const opened = await openTtsSettings()
+        if (!opened) {
+          ElMessage.info('入口：系统设置 → 语言和输入法 → 文字转语音（TTS）输出')
+        }
+      })
+      .catch(() => {})
+  }
 }
 
 /** 浏览器 Web Speech API 朗读 */
