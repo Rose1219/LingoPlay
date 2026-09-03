@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -200,6 +199,11 @@ public class VipController {
 
     @SuppressWarnings("unused")
     private static String encode(String s) {
-        return URLEncoder.encode(s, StandardCharsets.UTF_8);
+        // Java 8 无 URLEncoder.encode(String, Charset) 重载，用字符串编码名
+        try {
+            return URLEncoder.encode(s, "UTF-8");
+        } catch (java.io.UnsupportedEncodingException e) {
+            return s;
+        }
     }
 }
