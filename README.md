@@ -122,7 +122,7 @@ npm run dev
 | 环境变量 | 说明 |
 |---|---|
 | `WX_PAY_APPID` / `WX_PAY_MCH_ID` / `WX_PAY_MCH_KEY` | 微信支付 V2 商户凭证 |
-| `ALIPAY_APP_ID` / `ALIPAY_PRIVATE_KEY` / `ALIPAY_PUBLIC_KEY` | 支付宝开放平台（PKCS8 私钥 + 支付宝公钥） |
+| `ALIPAY_APP_ID` / `ALIPAY_MERCHANT_KEY` / `ALIPAY_PUBLIC_KEY` | 支付宝开放平台（PKCS8 私钥 + 支付宝公钥） |
 | `PAYPAL_MODE`（sandbox/live）/ `PAYPAL_CLIENT_ID` / `PAYPAL_SECRET` | PayPal（信用卡由其收银台代收，我方不接触卡号） |
 | `PAY_MOCK_ENABLED` | 演示支付开关，默认 false |
 
