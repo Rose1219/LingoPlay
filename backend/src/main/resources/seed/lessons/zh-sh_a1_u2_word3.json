@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "一",
+      "phonetic": "iq",
+      "meaning": "数字一",
+      "example": "买一朵白兰花。",
+      "translation": "买一朵白兰花。"
+    },
+    {
+      "word": "两",
+      "phonetic": "liang",
+      "meaning": "数字二（量词前用两）",
+      "example": "来两客生煎馒头。",
+      "translation": "来两客生煎包。"
+    },
+    {
+      "word": "三",
+      "phonetic": "sae",
+      "meaning": "数字三",
+      "example": "三站路就到了。",
+      "translation": "三站路就到了。"
+    },
+    {
+      "word": "屋里厢",
+      "phonetic": "oq li xiang",
+      "meaning": "家里（沪语「屋里厢」）",
+      "example": "我拉屋里厢看电视机。",
+      "translation": "我在家里看电视。"
+    },
+    {
+      "word": "上班去",
+      "phonetic": "zae boe qi",
+      "meaning": "上班去",
+      "example": "七点钟就上班去了。",
+      "translation": "七点就上班去了。"
+    },
+    {
+      "word": "白相",
+      "phonetic": "baq xi",
+      "meaning": "玩、游玩（沪语灵魂词）",
+      "example": "礼拜天去城隍庙白相。",
+      "translation": "星期天去城隍庙玩。"
+    },
+    {
+      "word": "谈山海经",
+      "phonetic": "de sae hae jing",
+      "meaning": "聊天、闲谈",
+      "example": "隔壁邻居一道谈山海经。",
+      "translation": "和邻居一起闲聊。"
+    },
+    {
+      "word": "吃茶",
+      "phonetic": "qiog zo",
+      "meaning": "喝茶（沪语说吃茶）",
+      "example": "坐落来吃杯茶再走。",
+      "translation": "坐下来喝杯茶再走。"
+    },
+    {
+      "word": "困觉",
+      "phonetic": "kuen gao",
+      "meaning": "睡觉",
+      "example": "小囡困觉，轻一眼。",
+      "translation": "孩子睡觉，轻一点。"
+    },
+    {
+      "word": "读书",
+      "phonetic": "toq sy",
+      "meaning": "上学 / 读书",
+      "example": "囡囡读书去了。",
+      "translation": "孩子上学去了。"
+    },
+    {
+      "word": "灶披间",
+      "phonetic": "tzao pi gae",
+      "meaning": "厨房（老上海石库门说法）",
+      "example": "灶披间飘出红烧肉香。",
+      "translation": "厨房飘出红烧肉香。"
+    },
+    {
+      "word": "弄堂",
+      "phonetic": "long dang",
+      "meaning": "小巷、胡同（上海特色）",
+      "example": "夏夜里弄堂里乘风凉。",
+      "translation": "夏夜在弄堂里乘凉。"
+    },
+    {
+      "word": "乘风凉",
+      "phonetic": "zen nang liang",
+      "meaning": "乘凉",
+      "example": "老少齐坐弄堂乘风凉。",
+      "translation": "老少一起坐在弄堂乘凉。"
+    },
+    {
+      "word": "交关",
+      "phonetic": "jiao gue",
+      "meaning": "很多 / 非常",
+      "example": "今朝菜市场人交关多。",
+      "translation": "今天菜市场人很多。"
+    },
+    {
+      "word": "慢交交",
+      "phonetic": "mae jiao jiao",
+      "meaning": "慢一点（叠词更亲昵）",
+      "example": "慢交交走，勿要急。",
+      "translation": "慢点走，别急。"
+    }
+  ]
+}

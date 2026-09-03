@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "挤公交",
+      "phonetic": "jǐ gōng jiāo",
+      "meaning": "挤公交车",
+      "example": "早高峰挤公交得有好身板儿。",
+      "translation": "早高峰挤公交得有好身板。"
+    },
+    {
+      "word": "坐地铁",
+      "phonetic": "zuò dì tiě",
+      "meaning": "坐地铁",
+      "example": "西站坐地铁几站地就到。",
+      "translation": "西站坐地铁几站就到。"
+    },
+    {
+      "word": "堵得慌",
+      "phonetic": "dǔ de huāng",
+      "meaning": "堵得难受",
+      "example": "环路堵得慌，导航都发红。",
+      "translation": "环路堵得难受，导航全红。"
+    },
+    {
+      "word": "下雪",
+      "phonetic": "xià xuě",
+      "meaning": "下雪",
+      "example": "一下雪北京就成了北平。",
+      "translation": "一下雪北京就有了古都的味道。"
+    },
+    {
+      "word": "干冷",
+      "phonetic": "gān lěng",
+      "meaning": "干冷（北方冬天体感）",
+      "example": "北京冬天干冷，得多喝水。",
+      "translation": "北京冬天干燥寒冷，要多喝水。"
+    },
+    {
+      "word": "问个道儿",
+      "phonetic": "wèn gè dàor",
+      "meaning": "问个路",
+      "example": "大爷，问个道儿，前门怎么走？",
+      "translation": "大爷，问个路，前门怎么走？"
+    },
+    {
+      "word": "顺边儿走",
+      "phonetic": "shùn biānr zǒu",
+      "meaning": "沿这条边走",
+      "example": "您顺边儿走，过俩路口就到。",
+      "translation": "您沿这边走，过两个路口就到。"
+    },
+    {
+      "word": "掉头",
+      "phonetic": "diào tóu",
+      "meaning": "调头、转弯",
+      "example": "前边儿禁止掉头，绕一圈儿吧。",
+      "translation": "前面禁止调头，绕一圈吧。"
+    },
+    {
+      "word": "稍等会儿",
+      "phonetic": "shāo děng huìr",
+      "meaning": "稍等一下",
+      "example": "稍等会儿，我取个东西就来。",
+      "translation": "稍等一下，我去取个东西。"
+    },
+    {
+      "word": "逛大棚",
+      "phonetic": "guàng dà péng",
+      "meaning": "逛大型集市（老说法）",
+      "example": "赶集上大棚，啥都有。",
+      "translation": "去赶大集，什么都有。"
+    },
+    {
+      "word": "砍价",
+      "phonetic": "kǎn jià",
+      "meaning": "讨价还价",
+      "example": "潘家园砍价得对半儿起。",
+      "translation": "潘家园买东西砍价从半价开始。"
+    },
+    {
+      "word": "试衣裳",
+      "phonetic": "shì yī shang",
+      "meaning": "试衣服",
+      "example": "这棉袄试衣裳再定夺。",
+      "translation": "这件棉袄试穿再决定。"
+    },
+    {
+      "word": "搭车",
+      "phonetic": "dā chē",
+      "meaning": "搭便车 / 乘车",
+      "example": "顺道儿捎你一段，别打车了。",
+      "translation": "顺路捎你一段，别打车了。"
+    },
+    {
+      "word": "拎包",
+      "phonetic": "līn bāo",
+      "meaning": "拎包（帮忙拿东西）",
+      "example": "大姐拎包的手都不带停的。",
+      "translation": "大姐拎着包一路不停。"
+    },
+    {
+      "word": "归置行李",
+      "phonetic": "guī zhi xíng li",
+      "meaning": "收拾行李",
+      "example": "明儿回老家，今儿归置行李。",
+      "translation": "明天回老家，今天收拾行李。"
+    }
+  ]
+}

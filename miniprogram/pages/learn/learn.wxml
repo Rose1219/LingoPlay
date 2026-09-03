@@ -209,6 +209,8 @@
     </view>
 
     <view class="glass-btn" bindtap="backToMap">返回关卡地图</view>
-    <view class="glass-btn primary" bindtap="retry">再战一局</view>
+    <view class="glass-btn" bindtap="retry">再战一局</view>
+    <view class="glass-btn primary" wx:if="{{nextLessonId}}" bindtap="goNext">进入下一关 →</view>
+    <view class="glass-btn primary" wx:elif="{{score >= 60}}" bindtap="backToMap">🎉 本课程全部通关</view>
   </view>
 </view>

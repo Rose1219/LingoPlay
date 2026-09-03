@@ -22,6 +22,47 @@
 .profile-nickname {
   font-size: 38rpx;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.vip-badge {
+  font-size: 20rpx;
+  font-weight: 800;
+  color: #2b1a00;
+  background: linear-gradient(90deg, #ffb84f, #ff9a3c);
+  padding: 4rpx 14rpx;
+  border-radius: 16rpx;
+}
+
+/* 界面语言 */
+.ui-langs {
+  white-space: nowrap;
+  margin-bottom: 30rpx;
+}
+
+.ui-lang {
+  display: inline-block;
+  padding: 12rpx 26rpx;
+  margin-right: 14rpx;
+  border-radius: 32rpx;
+  font-size: 24rpx;
+  color: #8a97b8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1rpx solid rgba(120, 150, 255, 0.14);
+}
+
+.ui-lang.active {
+  color: #22d3ee;
+  border-color: rgba(34, 211, 238, 0.5);
+  background: rgba(34, 211, 238, 0.08);
+  font-weight: 700;
+}
+
+.check-vip {
+  font-size: 20rpx;
+  margin-left: 4rpx;
 }
 
 .form-label {

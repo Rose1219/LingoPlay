@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "您",
+      "phonetic": "nín",
+      "meaning": "您（北京人对谁都客气，用得极多）",
+      "example": "您这是上哪儿去啊？",
+      "translation": "您这是上哪儿去呀？"
+    },
+    {
+      "word": "您呐",
+      "phonetic": "nín na",
+      "meaning": "您（句尾带「呐」，京味十足）",
+      "example": "天儿凉了，您呐，多穿点儿。",
+      "translation": "天凉了，您多穿点。"
+    },
+    {
+      "word": "哥们儿",
+      "phonetic": "gē menr",
+      "meaning": "哥们儿（兄弟、朋友）",
+      "example": "哥们儿，搭把手！",
+      "translation": "兄弟，帮个忙！"
+    },
+    {
+      "word": "大爷",
+      "phonetic": "dà ye",
+      "meaning": "对年长男性的尊称（大爷，读 dàye）",
+      "example": "大爷，跟您打听个地儿。",
+      "translation": "大爷，跟您打听个地方。"
+    },
+    {
+      "word": "妈",
+      "phonetic": "mā",
+      "meaning": "妈妈（北京口语叫「我妈」）",
+      "example": "我妈今儿炖了肉。",
+      "translation": "我妈妈今天炖了肉。"
+    },
+    {
+      "word": "孩儿他爸",
+      "phonetic": "hár tā bà",
+      "meaning": "孩子的爸爸（街坊式称呼）",
+      "example": "孩儿他爸，接孩子去喽。",
+      "translation": "孩子他爸，接孩子去啦。"
+    },
+    {
+      "word": "嘛呢",
+      "phonetic": "mà ne",
+      "meaning": "干什么呢（「嘛」读去声）",
+      "example": "你搁这儿嘛呢？",
+      "translation": "你在这儿干什么呢？"
+    },
+    {
+      "word": "咋回事儿",
+      "phonetic": "zǎ huí shìr",
+      "meaning": "怎么回事儿",
+      "example": "咋回事儿，门锁不上？",
+      "translation": "怎么回事儿，门锁不上？"
+    },
+    {
+      "word": "哪儿",
+      "phonetic": "nǎr",
+      "meaning": "哪里（儿化音）",
+      "example": "您家搁哪儿啊？",
+      "translation": "您家住在哪里呀？"
+    },
+    {
+      "word": "多少钱",
+      "phonetic": "duō shao qián",
+      "meaning": "多少钱（常问「多少钱儿」）",
+      "example": "这核桃多少钱一斤？",
+      "translation": "这核桃多少钱一斤？"
+    },
+    {
+      "word": "没准儿",
+      "phonetic": "méi zhǔnr",
+      "meaning": "说不定、不一定",
+      "example": "他没准儿一会儿就来了。",
+      "translation": "他说不定一会儿就来了。"
+    },
+    {
+      "word": "得嘞",
+      "phonetic": "dé lei",
+      "meaning": "好了、成了（爽快应答）",
+      "example": "您就瞧好吧——得嘞！",
+      "translation": "您放心吧——好嘞！"
+    },
+    {
+      "word": "回见",
+      "phonetic": "huí jiàn",
+      "meaning": "回头见（告别用语）",
+      "example": "得嘞，回见您呐。",
+      "translation": "好嘞，回头见。"
+    },
+    {
+      "word": "改天",
+      "phonetic": "gǎi tiān",
+      "meaning": "改天、以后某天",
+      "example": "改天约您喝酒。",
+      "translation": "改天约您喝酒。"
+    },
+    {
+      "word": "甭客气",
+      "phonetic": "béng kè qi",
+      "meaning": "不用客气（「甭」=不用）",
+      "example": "都是自己人，甭客气。",
+      "translation": "都是自己人，不用客气。"
+    }
+  ]
+}

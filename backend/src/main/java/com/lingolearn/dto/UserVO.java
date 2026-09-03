@@ -3,6 +3,8 @@ package com.lingolearn.dto;
 import com.lingolearn.entity.User;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 /** 用户信息视图 */
 @Data
 public class UserVO {
@@ -15,6 +17,15 @@ public class UserVO {
     /** 偏好语言代码，逗号分隔 */
     private String preferredLanguages;
 
+    /** 是否有效 VIP（未过期） */
+    private Boolean vip;
+
+    /** VIP 到期时间，从未开通为 null */
+    private LocalDateTime vipExpireAt;
+
+    /** 累计开通月数 */
+    private Integer vipMonths;
+
     public static UserVO of(User u) {
         UserVO vo = new UserVO();
         vo.id = u.getId();
@@ -23,6 +34,9 @@ public class UserVO {
         vo.nickname = u.getNickname();
         vo.avatar = u.getAvatar();
         vo.preferredLanguages = u.getPreferredLanguages();
+        vo.vip = u.getVipExpireAt() != null && u.getVipExpireAt().isAfter(LocalDateTime.now());
+        vo.vipExpireAt = u.getVipExpireAt();
+        vo.vipMonths = u.getVipMonths() == null ? 0 : u.getVipMonths();
         return vo;
     }
 }

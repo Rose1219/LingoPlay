@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "你好",
+      "phonetic": "nei5 hou2",
+      "meaning": "粤语最常用的问候，与普通话写法相同",
+      "example": "你好，我叫阿明。",
+      "translation": "你好，我叫阿明。"
+    },
+    {
+      "word": "唔该",
+      "phonetic": "m4 goi1",
+      "meaning": "谢谢；也用来引起别人注意",
+      "example": "唔该，我想要一杯咖啡。",
+      "translation": "谢谢，我想要一杯咖啡。"
+    },
+    {
+      "word": "多谢",
+      "phonetic": "do1 ze6",
+      "meaning": "感谢，多用于收到礼物时",
+      "example": "多谢你嘅礼物。",
+      "translation": "谢谢你的礼物。"
+    },
+    {
+      "word": "对唔住",
+      "phonetic": "deoi3 m4 zyu6",
+      "meaning": "对不起",
+      "example": "对唔住，我迟到咗。",
+      "translation": "对不起，我迟到了。"
+    },
+    {
+      "word": "再见",
+      "phonetic": "zoi3 gin3",
+      "meaning": "告别用语",
+      "example": "再见，听日见。",
+      "translation": "再见，明天见。"
+    },
+    {
+      "word": "早晨",
+      "phonetic": "zou2 san4",
+      "meaning": "早上好",
+      "example": "早晨，各位！",
+      "translation": "早上好，各位！"
+    },
+    {
+      "word": "食咗饭未",
+      "phonetic": "sik6 zo2 faan6 mei6",
+      "meaning": "吃饭了吗（粤语特色问候，相当于寒暄）",
+      "example": "你食咗饭未？",
+      "translation": "你吃饭了吗？"
+    },
+    {
+      "word": "好耐冇见",
+      "phonetic": "hou2 noi6 mou5 gin3",
+      "meaning": "好久不见",
+      "example": "好耐冇见，最近点呀？",
+      "translation": "好久不见，最近怎么样？"
+    },
+    {
+      "word": "唔使客气",
+      "phonetic": "m4 sai2 haak3 hei3",
+      "meaning": "不客气",
+      "example": "唔使客气，小事一桩。",
+      "translation": "不客气，小事一桩。"
+    },
+    {
+      "word": "慢慢行",
+      "phonetic": "maan6 maan6 haang4",
+      "meaning": "慢走（送客时的客气话）",
+      "example": "慢慢行，小心啲。",
+      "translation": "慢走，小心点。"
+    }
+  ]
+}

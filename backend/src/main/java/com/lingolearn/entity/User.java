@@ -43,6 +43,17 @@ public class User {
     @Column(name = "openid", length = 64)
     private String openid;
 
+    /**
+     * VIP 到期时间。null 表示从未开通；早于当前时间表示已过期。
+     * 用到期时间而非布尔值，才能支持连续订阅叠加与过期判定。
+     */
+    @Column(name = "vip_expire_at")
+    private LocalDateTime vipExpireAt;
+
+    /** 累计开通月数，用于成就与运营统计 */
+    @Column(name = "vip_months")
+    private Integer vipMonths = 0;
+
     @Column(name = "registered_at", nullable = false, updatable = false)
     private LocalDateTime registeredAt = LocalDateTime.now();
 }

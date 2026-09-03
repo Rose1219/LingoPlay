@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "侬好",
+      "phonetic": "non hau",
+      "meaning": "你好",
+      "example": "侬好，我是上海人。",
+      "translation": "你好，我是上海人。"
+    },
+    {
+      "word": "谢谢",
+      "phonetic": "xhia xhia",
+      "meaning": "谢谢",
+      "example": "谢谢侬。",
+      "translation": "谢谢你。"
+    },
+    {
+      "word": "再会",
+      "phonetic": "tse we",
+      "meaning": "再见",
+      "example": "再会，明朝见。",
+      "translation": "再见，明天见。"
+    },
+    {
+      "word": "阿拉",
+      "phonetic": "aq la",
+      "meaning": "我们；我",
+      "example": "阿拉是上海人。",
+      "translation": "我们是上海人。"
+    },
+    {
+      "word": "啥",
+      "phonetic": "sa",
+      "meaning": "什么",
+      "example": "侬做啥？",
+      "translation": "你在做什么？"
+    },
+    {
+      "word": "勿要",
+      "phonetic": "veq iau",
+      "meaning": "不要",
+      "example": "我勿要。",
+      "translation": "我不要。"
+    },
+    {
+      "word": "蛮好",
+      "phonetic": "me hau",
+      "meaning": "挺好的",
+      "example": "今朝天气蛮好。",
+      "translation": "今天天气挺好的。"
+    },
+    {
+      "word": "晓得",
+      "phonetic": "xiau teq",
+      "meaning": "知道",
+      "example": "我晓得了。",
+      "translation": "我知道了。"
+    },
+    {
+      "word": "交关",
+      "phonetic": "ciau kue",
+      "meaning": "很多；非常",
+      "example": "交关人。",
+      "translation": "很多人。"
+    },
+    {
+      "word": "轧朋友",
+      "phonetic": "gaq ban yoeu",
+      "meaning": "谈恋爱；交朋友",
+      "example": "伊勒轧朋友。",
+      "translation": "他在谈恋爱。"
+    }
+  ]
+}

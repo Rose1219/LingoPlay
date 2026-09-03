@@ -32,6 +32,46 @@ wx:
   appid: ${WX_APPID:}
   secret: ${WX_SECRET:}
 
+# 翻译服务（默认 MyMemory 免费源；Google/有道/Lingva 免费端点在国内网络均不可达）
+translate:
+  # 填邮箱可把 MyMemory 匿名额度从 5000 字/天 提到 50000 字/天
+  mymemory-email: ${TRANSLATE_MYMEMORY_EMAIL:}
+  cache-size: ${TRANSLATE_CACHE_SIZE:500}
+
+# 发音服务（小程序同声传译插件仅支持 zh/en，其余语种走后端代理）
+tts:
+  enabled: ${TTS_ENABLED:true}
+  # 每日合成总量上限，0 表示不限。接入付费云 TTS 后务必设一个值，防止匿名接口被刷爆账单
+  daily-quota: ${TTS_DAILY_QUOTA:0}
+  # 单 IP 每分钟请求上限
+  rate-limit-per-minute: ${TTS_RATE_LIMIT:60}
+  # 预录音频目录（方言唯一零成本方案），留空则只走在线合成
+  # 目录结构：{assets-dir}/{语种}/{md5(文本)}.mp3，例如 /data/tts/zh-yue/<md5>.mp3
+  assets-dir: ${TTS_ASSETS_DIR:}
+
+# VIP 会员订阅（¥5/月）支付渠道。所有凭证通过环境变量注入，切勿提交真实值；
+# 渠道凭证未配置时该渠道自动不可用（前端渠道列表由服务端下发）。
+# 演示模式 pay.mock-enabled 仅用于联调：开启后 VIP 页出现「演示支付」，生产环境必须为 false。
+pay:
+  mock-enabled: ${PAY_MOCK_ENABLED:false}
+  wechat:
+    # 与微信支付商户平台绑定的 appid（通常等于小程序 appid）
+    appid: ${WX_PAY_APPID:}
+    mch-id: ${WX_PAY_MCH_ID:}
+    mch-key: ${WX_PAY_MCH_KEY:}
+  alipay:
+    app-id: ${ALIPAY_APP_ID:}
+    # PKCS8 应用私钥（支付宝开放平台「密钥工具」导出）
+    private-key: ${ALIPAY_PRIVATE_KEY:}
+    # 支付宝公钥（用于异步通知验签）
+    alipay-public-key: ${ALIPAY_PUBLIC_KEY:}
+    gateway: ${ALIPAY_GATEWAY:https://openapi.alipay.com/gateway.do}
+  paypal:
+    # sandbox | live
+    mode: ${PAYPAL_MODE:sandbox}
+    client-id: ${PAYPAL_CLIENT_ID:}
+    secret: ${PAYPAL_SECRET:}
+
 # App 客户端最新版本信息（发新版时同步更新，客户端据此检查更新）
 app:
   latest:

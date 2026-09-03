@@ -1,0 +1,29 @@
+{
+  "sentences": [
+    {
+      "text": "Hola, me llamo Carlos.",
+      "translation": "你好，我叫卡洛斯。",
+      "tip": "llamo 的 ll 在西班牙发 /ʎ/，拉美发 /j/，都对"
+    },
+    {
+      "text": "Soy de México.",
+      "translation": "我来自墨西哥。",
+      "tip": "soy 的 oy 是双元音，要一口气读完"
+    },
+    {
+      "text": "Tengo veinticinco años.",
+      "translation": "我二十五岁。",
+      "tip": "西班牙语年龄用 tener（有），不是 ser（是）"
+    },
+    {
+      "text": "Hablo español y un poco de inglés.",
+      "translation": "我说西班牙语和一点英语。",
+      "tip": "ñ 发 /ɲ/，舌尖顶上颚，类似「尼」"
+    },
+    {
+      "text": "Mucho gusto en conocerte.",
+      "translation": "很高兴认识你。",
+      "tip": "重音落在 gus- 上， gusto 的 u 轻轻带过"
+    }
+  ]
+}

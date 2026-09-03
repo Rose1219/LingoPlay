@@ -38,6 +38,10 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(jwtInterceptor)
                 .addPathPatterns("/api/**")
                 // 登录注册接口放行；App 版本检查放行（未登录也可检查更新）
-                .excludePathPatterns("/api/auth/**", "/api/app/**");
+                // 发音接口放行：音频组件（InnerAudioContext / <audio>）无法携带自定义请求头，
+                // 服务端靠限长 + 限频 + 配额控制滥用风险
+                // 支付回调放行：第三方渠道通知无法携带 JWT，安全性由验签保证
+                .excludePathPatterns("/api/auth/**", "/api/app/**", "/api/tts",
+                        "/api/vip/notify/**", "/api/vip/paypal/return");
     }
 }

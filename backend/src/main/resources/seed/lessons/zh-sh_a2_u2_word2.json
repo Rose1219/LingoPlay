@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "乘地铁",
+      "phonetic": "zen di tiq",
+      "meaning": "乘地铁",
+      "example": "人民广场换二号线交关方便。",
+      "translation": "人民广场换乘二号线很方便。"
+    },
+    {
+      "word": "挤电车",
+      "phonetic": "ji di qie",
+      "meaning": "挤电车（老式说法含公交）",
+      "example": "早晚高峰挤电车要立稳。",
+      "translation": "早晚高峰挤公交要站稳。"
+    },
+    {
+      "word": "堵牢",
+      "phonetic": "du lao",
+      "meaning": "堵住了",
+      "example": "延安高架又堵牢了。",
+      "translation": "延安高架又堵住了。"
+    },
+    {
+      "word": "落雨",
+      "phonetic": "loq yu",
+      "meaning": "下雨",
+      "example": "落雨带伞，弄堂路滑。",
+      "translation": "下雨带伞，小巷路滑。"
+    },
+    {
+      "word": "热煞了",
+      "phonetic": "niq saq le",
+      "meaning": "热死了（「煞」=死，程度词）",
+      "example": "黄梅天潮答答热煞了。",
+      "translation": "梅雨天又闷又热。"
+    },
+    {
+      "word": "问讯",
+      "phonetic": "ven xin",
+      "meaning": "问路 / 询问",
+      "example": "爷叔，问讯一声，外滩哪能走？",
+      "translation": "叔叔，问一下，外滩怎么走？"
+    },
+    {
+      "word": "一直过",
+      "phonetic": "yiq zi gu",
+      "meaning": "直走",
+      "example": "一直过两个路口就是。",
+      "translation": "一直走两个路口就是。"
+    },
+    {
+      "word": "转弯角子",
+      "phonetic": "zuan mae goq zi",
+      "meaning": "转弯的地方",
+      "example": "转弯角子上有家烟纸店。",
+      "translation": "转弯角上有家小杂货店。"
+    },
+    {
+      "word": "等等我",
+      "phonetic": "deng deng ngo",
+      "meaning": "等等我",
+      "example": "等等我，我去拿皮夹子。",
+      "translation": "等等我，我去拿钱包。"
+    },
+    {
+      "word": "逛马路",
+      "phonetic": "guang ma lu",
+      "meaning": "逛街（沪语经典说法）",
+      "example": "休息天搭侬逛马路去。",
+      "translation": "休息天陪你逛街去。"
+    },
+    {
+      "word": "便宜货",
+      "phonetic": "bi yi hu",
+      "meaning": "便宜货 / 划算的东西",
+      "example": "外滩源小摊浪淘着便宜货。",
+      "translation": "在外滩源小摊淘到便宜货。"
+    },
+    {
+      "word": "掼派头",
+      "phonetic": "guan pae dhou",
+      "meaning": "摆阔、摆排场",
+      "example": "请客勿要掼派头，量力而行。",
+      "translation": "请客别摆阔，量力而行。"
+    },
+    {
+      "word": "试衣裳",
+      "phonetic": "si yi zang",
+      "meaning": "试衣服",
+      "example": "迭件大衣试衣裳再买。",
+      "translation": "这件大衣试穿再买。"
+    },
+    {
+      "word": "铜钿",
+      "phonetic": "dong di",
+      "meaning": "钱（沪语说铜钿）",
+      "example": "出趟门要备足铜钿。",
+      "translation": "出趟门要备足钱。"
+    },
+    {
+      "word": "拎得清",
+      "phonetic": "lin de qing",
+      "meaning": "办事得体、有分寸",
+      "example": "伊办事体老拎得清个。",
+      "translation": "他办事很得体。"
+    }
+  ]
+}

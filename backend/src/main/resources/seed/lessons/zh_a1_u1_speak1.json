@@ -1,0 +1,29 @@
+{
+  "sentences": [
+    {
+      "text": "你好，我叫李明。",
+      "translation": "Hello, my name is Li Ming.",
+      "tip": "「我叫……」是中文最自然的自我介绍方式"
+    },
+    {
+      "text": "我是学生。",
+      "translation": "I am a student.",
+      "tip": "中文没有时态变化，「是」不随人称改变"
+    },
+    {
+      "text": "我住在北京。",
+      "translation": "I live in Beijing.",
+      "tip": "语序是「主语 + 动词 + 地点」，与英语一致"
+    },
+    {
+      "text": "我会说一点汉语。",
+      "translation": "I can speak a little Chinese.",
+      "tip": "「会」表示通过学习获得的能力"
+    },
+    {
+      "text": "很高兴认识你。",
+      "translation": "Nice to meet you.",
+      "tip": "注意四声：hěn(3) gāo(1) xìng(4)，xìng 是第四声"
+    }
+  ]
+}

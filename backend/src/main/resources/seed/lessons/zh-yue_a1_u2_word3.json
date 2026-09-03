@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "一",
+      "phonetic": "jat1",
+      "meaning": "数字一",
+      "example": "我买咗一个西瓜。",
+      "translation": "我买了一个西瓜。"
+    },
+    {
+      "word": "两",
+      "phonetic": "loeng5",
+      "meaning": "数字二（量词前用「两」）",
+      "example": "俾两杯奶茶我。",
+      "translation": "给我两杯奶茶。"
+    },
+    {
+      "word": "三",
+      "phonetic": "saam1",
+      "meaning": "数字三",
+      "example": "佢有三个仔女。",
+      "translation": "他有三个子女。"
+    },
+    {
+      "word": "十",
+      "phonetic": "sap6",
+      "meaning": "数字十",
+      "example": "呢篮生果十蚊。",
+      "translation": "这篮水果十块钱。"
+    },
+    {
+      "word": "百",
+      "phonetic": "baak3",
+      "meaning": "数字百",
+      "example": "件衫卖三百蚊。",
+      "translation": "这件衣服卖三百块。"
+    },
+    {
+      "word": "屋企",
+      "phonetic": "uk1 kei2",
+      "meaning": "家 / 家里",
+      "example": "我喺屋企睇电视。",
+      "translation": "我在家看电视。"
+    },
+    {
+      "word": "返工",
+      "phonetic": "faan1 gung1",
+      "meaning": "上班",
+      "example": "你几点返工呀？",
+      "translation": "你几点上班呀？"
+    },
+    {
+      "word": "放工",
+      "phonetic": "fong3 gung1",
+      "meaning": "下班",
+      "example": "放工一齐去食嘢？",
+      "translation": "下班一起去吃东西？"
+    },
+    {
+      "word": "阿婆",
+      "phonetic": "aa3 po4",
+      "meaning": "奶奶 / 外婆",
+      "example": "阿婆最锡我。",
+      "translation": "奶奶最疼我。"
+    },
+    {
+      "word": "阿公",
+      "phonetic": "aa3 gung1",
+      "meaning": "爷爷 / 外公",
+      "example": "阿公日日去饮茶。",
+      "translation": "爷爷每天去喝茶。"
+    },
+    {
+      "word": "锡",
+      "phonetic": "sek3",
+      "meaning": "疼爱 / 亲吻",
+      "example": "阿妈好锡你㗎。",
+      "translation": "妈妈很疼你的。"
+    },
+    {
+      "word": "倾偈",
+      "phonetic": "king1 gai2",
+      "meaning": "聊天",
+      "example": "得闲搵你倾偈。",
+      "translation": "有空找你聊天。"
+    },
+    {
+      "word": "饮茶",
+      "phonetic": "jam2 caa4",
+      "meaning": "喝早茶（广式社交）",
+      "example": "礼拜日我哋去饮茶。",
+      "translation": "星期天我们去喝早茶。"
+    },
+    {
+      "word": "去边",
+      "phonetic": "heoi3 bin1",
+      "meaning": "去哪里",
+      "example": "咁夜你去边呀？",
+      "translation": "这么晚你去哪里呀？"
+    },
+    {
+      "word": "快啲",
+      "phonetic": "faai3 di1",
+      "meaning": "快一点",
+      "example": "快啲啦，赶住开戏。",
+      "translation": "快点啦，赶着看电影。"
+    }
+  ]
+}

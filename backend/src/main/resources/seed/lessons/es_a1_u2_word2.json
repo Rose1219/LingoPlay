@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "uno",
+      "phonetic": "ˈuno",
+      "meaning": "一；一个",
+      "example": "Tengo un hermano.",
+      "translation": "我有一个兄弟。"
+    },
+    {
+      "word": "dos",
+      "phonetic": "dos",
+      "meaning": "二",
+      "example": "Dos cafés, por favor.",
+      "translation": "请来两杯咖啡。"
+    },
+    {
+      "word": "tres",
+      "phonetic": "tɾes",
+      "meaning": "三",
+      "example": "Son las tres.",
+      "translation": "现在三点。"
+    },
+    {
+      "word": "rojo",
+      "phonetic": "ˈroxo",
+      "meaning": "红色",
+      "example": "Me gusta el vestido rojo.",
+      "translation": "我喜欢那条红裙子。"
+    },
+    {
+      "word": "azul",
+      "phonetic": "aˈθul",
+      "meaning": "蓝色",
+      "example": "El cielo es azul.",
+      "translation": "天空是蓝色的。"
+    },
+    {
+      "word": "verde",
+      "phonetic": "ˈbeɾðe",
+      "meaning": "绿色",
+      "example": "Tengo una mochila verde.",
+      "translation": "我有一个绿色背包。"
+    },
+    {
+      "word": "negro",
+      "phonetic": "ˈneɣɾo",
+      "meaning": "黑色",
+      "example": "Lleva un abrigo negro.",
+      "translation": "他穿着一件黑色大衣。"
+    },
+    {
+      "word": "blanco",
+      "phonetic": "ˈblanko",
+      "meaning": "白色",
+      "example": "Quiero arroz blanco.",
+      "translation": "我想要白米饭。"
+    },
+    {
+      "word": "amarillo",
+      "phonetic": "amaˈɾiʎo",
+      "meaning": "黄色",
+      "example": "Las flores amarillas son bonitas.",
+      "translation": "黄色的花很漂亮。"
+    },
+    {
+      "word": "pequeño",
+      "phonetic": "peˈkeɲo",
+      "meaning": "小的",
+      "example": "Es un gato pequeño.",
+      "translation": "这是一只小猫。"
+    }
+  ]
+}

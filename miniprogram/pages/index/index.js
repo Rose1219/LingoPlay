@@ -65,6 +65,14 @@ Page({
     wx.navigateTo({ url: '/pages/word-quiz/word-quiz' })
   },
 
+  goTranslate() {
+    wx.navigateTo({ url: '/pages/translate/translate' })
+  },
+
+  goVip() {
+    wx.navigateTo({ url: '/pages/vip/vip' })
+  },
+
   goCourses() {
     wx.switchTab({ url: '/pages/courses/courses' })
   }

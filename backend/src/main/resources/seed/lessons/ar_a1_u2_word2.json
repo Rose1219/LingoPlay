@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "واحد",
+      "phonetic": "waː.ħid",
+      "meaning": "一；一个",
+      "example": "عندي أخ واحد.",
+      "translation": "我有一个兄弟。"
+    },
+    {
+      "word": "اثنان",
+      "phonetic": "iθ.naːn",
+      "meaning": "二",
+      "example": "قهوتان من فضلك.",
+      "translation": "请来两杯咖啡。"
+    },
+    {
+      "word": "ثلاثة",
+      "phonetic": "θa.laː.θa",
+      "meaning": "三",
+      "example": "عنده ثلاث سنوات.",
+      "translation": "他三岁了。"
+    },
+    {
+      "word": "أحمر",
+      "phonetic": "ʔaħ.mar",
+      "meaning": "红色",
+      "example": "أحب هذا الفستان الأحمر.",
+      "translation": "我喜欢这条红裙子。"
+    },
+    {
+      "word": "أزرق",
+      "phonetic": "ʔaz.raq",
+      "meaning": "蓝色",
+      "example": "السماء زرقاء.",
+      "translation": "天空是蓝色的。"
+    },
+    {
+      "word": "أخضر",
+      "phonetic": "ʔax.dˤar",
+      "meaning": "绿色",
+      "example": "عندي حقيبة خضراء.",
+      "translation": "我有一个绿色的包。"
+    },
+    {
+      "word": "أسود",
+      "phonetic": "ʔas.wad",
+      "meaning": "黑色",
+      "example": "يرتدي معطفا أسود.",
+      "translation": "他穿着一件黑色大衣。"
+    },
+    {
+      "word": "أبيض",
+      "phonetic": "ʔab.jadˤ",
+      "meaning": "白色",
+      "example": "أريد أرزا أبيض.",
+      "translation": "我想要白米饭。"
+    },
+    {
+      "word": "أصفر",
+      "phonetic": "ʔasˤ.far",
+      "meaning": "黄色",
+      "example": "الورود الصفراء جميلة.",
+      "translation": "黄色的花很漂亮。"
+    },
+    {
+      "word": "صغير",
+      "phonetic": "sˤa.ɣiːr",
+      "meaning": "小的",
+      "example": "هذه قطة صغيرة.",
+      "translation": "这是一只小猫。"
+    }
+  ]
+}

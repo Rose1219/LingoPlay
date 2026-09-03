@@ -61,7 +61,18 @@
         </div>
         <template #footer>
           <el-button @click="$router.push(`/courses/${lesson.courseId}`)">返回关卡地图</el-button>
-          <el-button type="primary" class="neon-btn" @click="relearn">再战一局</el-button>
+          <el-button @click="relearn">再战一局</el-button>
+          <el-button
+            v-if="result && result.nextLessonId"
+            type="primary"
+            class="neon-btn"
+            @click="goNext"
+          >
+            进入下一关 →
+          </el-button>
+          <el-button v-else-if="result && result.completed" type="primary" class="neon-btn" @click="$router.push(`/courses/${lesson.courseId}`)">
+            🎉 本课程全部通关
+          </el-button>
         </template>
       </el-dialog>
     </template>
@@ -70,7 +81,7 @@
 
 <script setup>
 import { computed, onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { lessonApi } from '../api'
 import { typeInfo, starsOf } from '../utils/format'
@@ -82,6 +93,7 @@ import DialogueSim from '../components/learn/DialogueSim.vue'
 import PageBack from '../components/PageBack.vue'
 
 const route = useRoute()
+const router = useRouter()
 const loading = ref(false)
 const lesson = ref(null)
 const result = ref(null)
@@ -121,6 +133,13 @@ async function onFinished(payload) {
 function relearn() {
   resultVisible.value = false
   window.location.reload()
+}
+
+/** 通关后跳到课程内下一关 */
+function goNext() {
+  if (!result.value || !result.value.nextLessonId) return
+  resultVisible.value = false
+  router.push(`/learn/${result.value.nextLessonId}`)
 }
 
 onMounted(async () => {

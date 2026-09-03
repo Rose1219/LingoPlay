@@ -1,0 +1,88 @@
+{
+  "words": [
+    {
+      "word": "你谂清楚先",
+      "phonetic": "nei5 nam2 cing1 co2 sin1",
+      "meaning": "你先想清楚（劝人慎重）",
+      "example": "呢件事唔细，你谂清楚先好答我。",
+      "translation": "这件事不小，你先想清楚再答复我。"
+    },
+    {
+      "word": "唔关我事",
+      "phonetic": "m4 gwaan1 ngo5 si6",
+      "meaning": "不关我的事",
+      "example": "佢哋嗌交唔关我事，我唔帮边个。",
+      "translation": "他们吵架不关我的事，我不帮任何一方。"
+    },
+    {
+      "word": "睇下点算",
+      "phonetic": "tai2 haa5 dim2 syun3",
+      "meaning": "看看再说 / 到时看情况",
+      "example": "天暗得快，睇下点算，或者唔去了。",
+      "translation": "天黑得快，到时看情况，或许就不去了。"
+    },
+    {
+      "word": "讲多无谓",
+      "phonetic": "gong2 do1 mou4 wai6",
+      "meaning": "多说无益",
+      "example": "佢已经决定咗，我哋讲多无谓。",
+      "translation": "他已经决定了，我们多说无益。"
+    },
+    {
+      "word": "话晒事",
+      "phonetic": "waa6 saai3 si6",
+      "meaning": "说了算 / 做主",
+      "example": "间屋系佢话晒事，你要问过佢。",
+      "translation": "这房子他说了算，你得先问过他。"
+    },
+    {
+      "word": "急唔嚟",
+      "phonetic": "gap1 m4 lai4",
+      "meaning": "急不来的",
+      "example": "学语言急唔嚟，日积月累先有效。",
+      "translation": "学语言急不来，日积月累才有效。"
+    },
+    {
+      "word": "慢工出细货",
+      "phonetic": "maan6 gung1 ceot1 sai3 fo3",
+      "meaning": "慢工出细活",
+      "example": "你唔好催佢，慢工出细货㗎。",
+      "translation": "你别催他，慢工出细活的。"
+    },
+    {
+      "word": "一人让一步",
+      "phonetic": "jat1 jan4 joeng6 jat1 bou6",
+      "meaning": "各退一步",
+      "example": "两兄弟一人让一步，件事就咁算了。",
+      "translation": "两兄弟各退一步，事情就这么算了。"
+    },
+    {
+      "word": "见步行步",
+      "phonetic": "gin3 haai6 hang6 bou6",
+      "meaning": "走一步看一步",
+      "example": "市况点变无人知，见步行步啦。",
+      "translation": "行情怎么变没人知道，走一步看一步吧。"
+    },
+    {
+      "word": "帮理不帮亲",
+      "phonetic": "bong1 lei5 bat1 bong1 can1",
+      "meaning": "帮理不帮亲",
+      "example": "我哋屋企人讲开帮理不帮亲，边个啱帮边个。",
+      "translation": "我们家人讲究帮理不帮亲，谁有理帮谁。"
+    },
+    {
+      "word": "冇几耐",
+      "phonetic": "mou5 gei2 noi6",
+      "meaning": "没多久",
+      "example": "佢哋冇几耐就熟络起身，倾到停唔到口。",
+      "translation": "他们没多久就熟络起来，聊得停不下来。"
+    },
+    {
+      "word": "费事嘥气",
+      "phonetic": "fai3 si6 saai3 hei3",
+      "meaning": "省得白费口舌",
+      "example": "佢听唔入耳，我费事嘥气。",
+      "translation": "他听不进去，我省得白费口舌。"
+    }
+  ]
+}

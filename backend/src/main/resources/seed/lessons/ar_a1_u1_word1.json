@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "مرحبا",
+      "phonetic": "mar.ha.ban",
+      "meaning": "你好（最通用的问候）",
+      "example": "مرحبا، كيف حالك؟",
+      "translation": "你好，你好吗？"
+    },
+    {
+      "word": "صباح الخير",
+      "phonetic": "sˤa.baːħ al.xajr",
+      "meaning": "早上好",
+      "example": "صباح الخير، يا أحمد.",
+      "translation": "早上好，艾哈迈德。"
+    },
+    {
+      "word": "مساء الخير",
+      "phonetic": "ma.saːʔ al.xajr",
+      "meaning": "晚上好",
+      "example": "مساء الخير، يا صديقي.",
+      "translation": "晚上好，我的朋友。"
+    },
+    {
+      "word": "شكرا",
+      "phonetic": "ʃuk.ran",
+      "meaning": "谢谢",
+      "example": "شكرا جزيلا على مساعدتك.",
+      "translation": "非常感谢你的帮助。"
+    },
+    {
+      "word": "من فضلك",
+      "phonetic": "min fadˤ.lik",
+      "meaning": "请（对男性说）",
+      "example": "قهوة من فضلك.",
+      "translation": "请给我一杯咖啡。"
+    },
+    {
+      "word": "آسف",
+      "phonetic": "ʔaː.sif",
+      "meaning": "对不起（男性说）",
+      "example": "آسف، أنا متأخر.",
+      "translation": "对不起，我迟到了。"
+    },
+    {
+      "word": "نعم",
+      "phonetic": "na.ʕam",
+      "meaning": "是；对",
+      "example": "نعم، أوافقك الرأي.",
+      "translation": "是的，我同意你的看法。"
+    },
+    {
+      "word": "لا",
+      "phonetic": "laː",
+      "meaning": "不；不是",
+      "example": "لا، شكرا.",
+      "translation": "不用了，谢谢。"
+    },
+    {
+      "word": "مع السلامة",
+      "phonetic": "ma.ʕa as.sa.laː.ma",
+      "meaning": "再见（愿您平安）",
+      "example": "مع السلامة، أراك غدا.",
+      "translation": "再见，明天见。"
+    },
+    {
+      "word": "كيف حالك",
+      "phonetic": "kaj.fa ħaː.luk",
+      "meaning": "你好吗（对男性）",
+      "example": "مرحبا، كيف حالك؟",
+      "translation": "嗨，你好吗？"
+    }
+  ]
+}

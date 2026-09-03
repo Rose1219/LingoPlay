@@ -23,6 +23,82 @@
       "icon": "🇰🇷",
       "description": "打开韩流文化的钥匙，表音文字一学就会。",
       "sortOrder": 3
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "nameCn": "法语",
+      "icon": "🇫🇷",
+      "description": "浪漫之语，欧盟与非洲多国通用，发音优雅规律。",
+      "sortOrder": 4
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "nameCn": "西班牙语",
+      "icon": "🇪🇸",
+      "description": "世界第二大母语，横跨拉美与西班牙，入门发音简单。",
+      "sortOrder": 5
+    },
+    {
+      "code": "ar",
+      "name": "العربية",
+      "nameCn": "阿拉伯语",
+      "icon": "🇸🇦",
+      "description": "中东与北非的通用语，书法优美，从右向左书写。",
+      "sortOrder": 6
+    },
+    {
+      "code": "zh",
+      "name": "中文",
+      "nameCn": "普通话",
+      "icon": "🇨🇳",
+      "description": "全球使用人数最多的语言，四声是学习的第一道关。",
+      "sortOrder": 7
+    },
+    {
+      "code": "zh-yue",
+      "name": "粵語",
+      "nameCn": "广东话（粤语）",
+      "icon": "🍵",
+      "description": "保留大量古汉语入声，通行于粤港澳与海外华人社区。",
+      "sortOrder": 8,
+      "ttsApproximate": true,
+      "fallbackTo": "zh",
+      "vipOnly": true
+    },
+    {
+      "code": "zh-sc",
+      "name": "四川話",
+      "nameCn": "四川话",
+      "icon": "🌶️",
+      "description": "西南官话代表，语调婉转上扬，自带幽默感。",
+      "sortOrder": 9,
+      "ttsApproximate": true,
+      "fallbackTo": "zh",
+      "vipOnly": true
+    },
+    {
+      "code": "zh-bj",
+      "name": "北京話",
+      "nameCn": "北京话",
+      "icon": "🏯",
+      "description": "普通话的基础方言，儿化音浓郁，京味十足。",
+      "sortOrder": 10,
+      "ttsApproximate": true,
+      "fallbackTo": "zh",
+      "vipOnly": true
+    },
+    {
+      "code": "zh-sh",
+      "name": "上海話",
+      "nameCn": "上海话",
+      "icon": "🌃",
+      "description": "吴语代表，保留浊音声母，软糯婉转。",
+      "sortOrder": 11,
+      "ttsApproximate": true,
+      "fallbackTo": "zh",
+      "vipOnly": true
     }
   ],
   "demoUser": {
@@ -71,9 +147,24 @@
           "description": "学会打招呼与自我介绍",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 日常问候", "type": "WORD", "sortOrder": 1, "contentFile": "en_a1_u1_word1.json" },
-            { "title": "语法 · be 动词", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "en_a1_u1_grammar1.json" },
-            { "title": "口语跟读 · 自我介绍", "type": "SPEAK", "sortOrder": 3, "contentFile": "en_a1_u1_speak1.json" }
+            {
+              "title": "词汇 · 日常问候",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_a1_u1_word1.json"
+            },
+            {
+              "title": "语法 · be 动词",
+              "type": "GRAMMAR",
+              "sortOrder": 2,
+              "contentFile": "en_a1_u1_grammar1.json"
+            },
+            {
+              "title": "口语跟读 · 自我介绍",
+              "type": "SPEAK",
+              "sortOrder": 3,
+              "contentFile": "en_a1_u1_speak1.json"
+            }
           ]
         },
         {
@@ -81,9 +172,24 @@
           "description": "听音辨句与咖啡店点单",
           "sortOrder": 2,
           "lessons": [
-            { "title": "听力训练 · 听音辨句", "type": "LISTEN", "sortOrder": 1, "contentFile": "en_a1_u2_listen1.json" },
-            { "title": "口语对话 · 咖啡店点单", "type": "DIALOG", "sortOrder": 2, "contentFile": "en_a1_u2_dialog1.json" },
-            { "title": "词汇 · 数字与颜色", "type": "WORD", "sortOrder": 3, "contentFile": "en_a1_u2_word2.json" }
+            {
+              "title": "听力训练 · 听音辨句",
+              "type": "LISTEN",
+              "sortOrder": 1,
+              "contentFile": "en_a1_u2_listen1.json"
+            },
+            {
+              "title": "口语对话 · 咖啡店点单",
+              "type": "DIALOG",
+              "sortOrder": 2,
+              "contentFile": "en_a1_u2_dialog1.json"
+            },
+            {
+              "title": "词汇 · 数字与颜色",
+              "type": "WORD",
+              "sortOrder": 3,
+              "contentFile": "en_a1_u2_word2.json"
+            }
           ]
         },
         {
@@ -91,7 +197,12 @@
           "description": "家庭成员与日常场景词汇",
           "sortOrder": 3,
           "lessons": [
-            { "title": "词汇 · 家庭与日常", "type": "WORD", "sortOrder": 1, "contentFile": "en_a1_u3_word3.json" }
+            {
+              "title": "词汇 · 家庭与日常",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_a1_u3_word3.json"
+            }
           ]
         },
         {
@@ -99,7 +210,12 @@
           "description": "基础动词与形容词",
           "sortOrder": 4,
           "lessons": [
-            { "title": "词汇 · 基础动词与形容词", "type": "WORD", "sortOrder": 1, "contentFile": "en_a1_u4_word4.json" }
+            {
+              "title": "词汇 · 基础动词与形容词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_a1_u4_word4.json"
+            }
           ]
         }
       ]
@@ -118,8 +234,18 @@
           "description": "旅行场景词汇与时态",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "en_a2_u1_word1.json" },
-            { "title": "语法 · 一般现在时 vs 进行时", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "en_a2_u1_grammar1.json" }
+            {
+              "title": "词汇 · 旅行必备词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_a2_u1_word1.json"
+            },
+            {
+              "title": "语法 · 一般现在时 vs 进行时",
+              "type": "GRAMMAR",
+              "sortOrder": 2,
+              "contentFile": "en_a2_u1_grammar1.json"
+            }
           ]
         },
         {
@@ -127,7 +253,12 @@
           "description": "表达情绪与评价的形容词",
           "sortOrder": 2,
           "lessons": [
-            { "title": "词汇 · 情感与描述", "type": "WORD", "sortOrder": 1, "contentFile": "en_a2_u2_word2.json" }
+            {
+              "title": "词汇 · 情感与描述",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_a2_u2_word2.json"
+            }
           ]
         },
         {
@@ -135,7 +266,12 @@
           "description": "高频动词短语与频度副词",
           "sortOrder": 3,
           "lessons": [
-            { "title": "词汇 · 动词短语与副词", "type": "WORD", "sortOrder": 1, "contentFile": "en_a2_u3_word3.json" }
+            {
+              "title": "词汇 · 动词短语与副词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_a2_u3_word3.json"
+            }
           ]
         }
       ]
@@ -154,7 +290,12 @@
           "description": "办公场景高频词",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "en_b1_u1_word1.json" }
+            {
+              "title": "词汇 · 职场高频词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_b1_u1_word1.json"
+            }
           ]
         },
         {
@@ -162,7 +303,12 @@
           "description": "抽象名词与观点表达",
           "sortOrder": 2,
           "lessons": [
-            { "title": "词汇 · 抽象名词与表达", "type": "WORD", "sortOrder": 1, "contentFile": "en_b1_u2_word2.json" }
+            {
+              "title": "词汇 · 抽象名词与表达",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_b1_u2_word2.json"
+            }
           ]
         }
       ]
@@ -181,7 +327,12 @@
           "description": "书面与口语高级词汇",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 高级词汇", "type": "WORD", "sortOrder": 1, "contentFile": "en_b2_u1_word1.json" }
+            {
+              "title": "词汇 · 高级词汇",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "en_b2_u1_word1.json"
+            }
           ]
         }
       ]
@@ -200,9 +351,24 @@
           "description": "问候语与です/ます体",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 日常问候语", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a1_u1_word1.json" },
-            { "title": "语法 · です/ます 体", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ja_a1_u1_grammar1.json" },
-            { "title": "口语跟读 · 自我介绍", "type": "SPEAK", "sortOrder": 3, "contentFile": "ja_a1_u1_speak1.json" }
+            {
+              "title": "词汇 · 日常问候语",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_a1_u1_word1.json"
+            },
+            {
+              "title": "语法 · です/ます 体",
+              "type": "GRAMMAR",
+              "sortOrder": 2,
+              "contentFile": "ja_a1_u1_grammar1.json"
+            },
+            {
+              "title": "口语跟读 · 自我介绍",
+              "type": "SPEAK",
+              "sortOrder": 3,
+              "contentFile": "ja_a1_u1_speak1.json"
+            }
           ]
         },
         {
@@ -210,9 +376,24 @@
           "description": "听音辨句与便利店购物",
           "sortOrder": 2,
           "lessons": [
-            { "title": "听力训练 · 听音辨句", "type": "LISTEN", "sortOrder": 1, "contentFile": "ja_a1_u2_listen1.json" },
-            { "title": "口语对话 · 便利店购物", "type": "DIALOG", "sortOrder": 2, "contentFile": "ja_a1_u2_dialog1.json" },
-            { "title": "词汇 · 数字 1-10", "type": "WORD", "sortOrder": 3, "contentFile": "ja_a1_u2_word2.json" }
+            {
+              "title": "听力训练 · 听音辨句",
+              "type": "LISTEN",
+              "sortOrder": 1,
+              "contentFile": "ja_a1_u2_listen1.json"
+            },
+            {
+              "title": "口语对话 · 便利店购物",
+              "type": "DIALOG",
+              "sortOrder": 2,
+              "contentFile": "ja_a1_u2_dialog1.json"
+            },
+            {
+              "title": "词汇 · 数字 1-10",
+              "type": "WORD",
+              "sortOrder": 3,
+              "contentFile": "ja_a1_u2_word2.json"
+            }
           ]
         },
         {
@@ -220,7 +401,12 @@
           "description": "家族与日常场景词汇",
           "sortOrder": 3,
           "lessons": [
-            { "title": "词汇 · 家族与日常", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a1_u3_word3.json" }
+            {
+              "title": "词汇 · 家族与日常",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_a1_u3_word3.json"
+            }
           ]
         },
         {
@@ -228,7 +414,12 @@
           "description": "基础动词与形容词",
           "sortOrder": 4,
           "lessons": [
-            { "title": "词汇 · 基础动词与形容词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a1_u4_word4.json" }
+            {
+              "title": "词汇 · 基础动词与形容词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_a1_u4_word4.json"
+            }
           ]
         }
       ]
@@ -247,8 +438,18 @@
           "description": "旅行词汇与て形基础",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a2_u1_word1.json" },
-            { "title": "语法 · て形入门", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ja_a2_u1_grammar1.json" }
+            {
+              "title": "词汇 · 旅行必备词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_a2_u1_word1.json"
+            },
+            {
+              "title": "语法 · て形入门",
+              "type": "GRAMMAR",
+              "sortOrder": 2,
+              "contentFile": "ja_a2_u1_grammar1.json"
+            }
           ]
         },
         {
@@ -256,7 +457,12 @@
           "description": "表达情绪与评价的词汇",
           "sortOrder": 2,
           "lessons": [
-            { "title": "词汇 · 情感与描述", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a2_u2_word2.json" }
+            {
+              "title": "词汇 · 情感与描述",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_a2_u2_word2.json"
+            }
           ]
         },
         {
@@ -264,7 +470,12 @@
           "description": "高频生活动词",
           "sortOrder": 3,
           "lessons": [
-            { "title": "词汇 · 生活动词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_a2_u3_word3.json" }
+            {
+              "title": "词汇 · 生活动词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_a2_u3_word3.json"
+            }
           ]
         }
       ]
@@ -283,7 +494,12 @@
           "description": "办公场景高频词",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "ja_b1_u1_word1.json" }
+            {
+              "title": "词汇 · 职场高频词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_b1_u1_word1.json"
+            }
           ]
         },
         {
@@ -291,7 +507,12 @@
           "description": "抽象名词与观点表达",
           "sortOrder": 2,
           "lessons": [
-            { "title": "词汇 · 抽象名词与表达", "type": "WORD", "sortOrder": 1, "contentFile": "ja_b1_u2_word2.json" }
+            {
+              "title": "词汇 · 抽象名词与表达",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_b1_u2_word2.json"
+            }
           ]
         }
       ]
@@ -310,7 +531,12 @@
           "description": "书面与口语高级词汇",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 高级词汇", "type": "WORD", "sortOrder": 1, "contentFile": "ja_b2_u1_word1.json" }
+            {
+              "title": "词汇 · 高级词汇",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ja_b2_u1_word1.json"
+            }
           ]
         }
       ]
@@ -329,9 +555,24 @@
           "description": "问候语与이다/이에요 句型",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 日常问候语", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a1_u1_word1.json" },
-            { "title": "语法 · 입니다/이에요", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ko_a1_u1_grammar1.json" },
-            { "title": "口语跟读 · 自我介绍", "type": "SPEAK", "sortOrder": 3, "contentFile": "ko_a1_u1_speak1.json" }
+            {
+              "title": "词汇 · 日常问候语",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_a1_u1_word1.json"
+            },
+            {
+              "title": "语法 · 입니다/이에요",
+              "type": "GRAMMAR",
+              "sortOrder": 2,
+              "contentFile": "ko_a1_u1_grammar1.json"
+            },
+            {
+              "title": "口语跟读 · 自我介绍",
+              "type": "SPEAK",
+              "sortOrder": 3,
+              "contentFile": "ko_a1_u1_speak1.json"
+            }
           ]
         },
         {
@@ -339,9 +580,24 @@
           "description": "听音辨句与餐厅点餐",
           "sortOrder": 2,
           "lessons": [
-            { "title": "听力训练 · 听音辨句", "type": "LISTEN", "sortOrder": 1, "contentFile": "ko_a1_u2_listen1.json" },
-            { "title": "口语对话 · 餐厅点餐", "type": "DIALOG", "sortOrder": 2, "contentFile": "ko_a1_u2_dialog1.json" },
-            { "title": "词汇 · 数字 1-10", "type": "WORD", "sortOrder": 3, "contentFile": "ko_a1_u2_word2.json" }
+            {
+              "title": "听力训练 · 听音辨句",
+              "type": "LISTEN",
+              "sortOrder": 1,
+              "contentFile": "ko_a1_u2_listen1.json"
+            },
+            {
+              "title": "口语对话 · 餐厅点餐",
+              "type": "DIALOG",
+              "sortOrder": 2,
+              "contentFile": "ko_a1_u2_dialog1.json"
+            },
+            {
+              "title": "词汇 · 数字 1-10",
+              "type": "WORD",
+              "sortOrder": 3,
+              "contentFile": "ko_a1_u2_word2.json"
+            }
           ]
         },
         {
@@ -349,7 +605,12 @@
           "description": "家人与日常场景词汇",
           "sortOrder": 3,
           "lessons": [
-            { "title": "词汇 · 家庭与日常", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a1_u3_word3.json" }
+            {
+              "title": "词汇 · 家庭与日常",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_a1_u3_word3.json"
+            }
           ]
         },
         {
@@ -357,7 +618,12 @@
           "description": "基础动词与形容词",
           "sortOrder": 4,
           "lessons": [
-            { "title": "词汇 · 基础动词与形容词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a1_u4_word4.json" }
+            {
+              "title": "词汇 · 基础动词与形容词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_a1_u4_word4.json"
+            }
           ]
         }
       ]
@@ -376,8 +642,18 @@
           "description": "旅行词汇与아/어요体",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 旅行必备词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a2_u1_word1.json" },
-            { "title": "语法 · 아/어요 终结词尾", "type": "GRAMMAR", "sortOrder": 2, "contentFile": "ko_a2_u1_grammar1.json" }
+            {
+              "title": "词汇 · 旅行必备词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_a2_u1_word1.json"
+            },
+            {
+              "title": "语法 · 아/어요 终结词尾",
+              "type": "GRAMMAR",
+              "sortOrder": 2,
+              "contentFile": "ko_a2_u1_grammar1.json"
+            }
           ]
         },
         {
@@ -385,7 +661,12 @@
           "description": "表达情绪与评价的词汇",
           "sortOrder": 2,
           "lessons": [
-            { "title": "词汇 · 情感与描述", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a2_u2_word2.json" }
+            {
+              "title": "词汇 · 情感与描述",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_a2_u2_word2.json"
+            }
           ]
         },
         {
@@ -393,7 +674,12 @@
           "description": "高频生活动词",
           "sortOrder": 3,
           "lessons": [
-            { "title": "词汇 · 生活动词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_a2_u3_word3.json" }
+            {
+              "title": "词汇 · 生活动词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_a2_u3_word3.json"
+            }
           ]
         }
       ]
@@ -412,7 +698,12 @@
           "description": "办公场景高频词",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 职场高频词", "type": "WORD", "sortOrder": 1, "contentFile": "ko_b1_u1_word1.json" }
+            {
+              "title": "词汇 · 职场高频词",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_b1_u1_word1.json"
+            }
           ]
         },
         {
@@ -420,7 +711,12 @@
           "description": "抽象名词与观点表达",
           "sortOrder": 2,
           "lessons": [
-            { "title": "词汇 · 抽象名词与表达", "type": "WORD", "sortOrder": 1, "contentFile": "ko_b1_u2_word2.json" }
+            {
+              "title": "词汇 · 抽象名词与表达",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_b1_u2_word2.json"
+            }
           ]
         }
       ]
@@ -439,7 +735,772 @@
           "description": "书面与口语高级词汇",
           "sortOrder": 1,
           "lessons": [
-            { "title": "词汇 · 高级词汇", "type": "WORD", "sortOrder": 1, "contentFile": "ko_b2_u1_word1.json" }
+            {
+              "title": "词汇 · 高级词汇",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ko_b2_u1_word1.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "fr",
+      "title": "法语 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "从最实用的问候与自我介绍开始，迈出法语第一步。",
+      "cover": "🥐",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · Bonjour 你好",
+          "description": "问候语与自我介绍",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 日常问候",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "fr_a1_u1_word1.json"
+            },
+            {
+              "title": "口语跟读 · 自我介绍",
+              "type": "SPEAK",
+              "sortOrder": 2,
+              "contentFile": "fr_a1_u1_speak1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · Au café 咖啡馆",
+          "description": "数字、颜色与咖啡馆点单",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 数字与颜色",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "fr_a1_u2_word2.json"
+            },
+            {
+              "title": "口语对话 · 咖啡馆点单",
+              "type": "DIALOG",
+              "sortOrder": 2,
+              "contentFile": "fr_a1_u2_dialog1.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "title": "西班牙语 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "从最实用的问候与自我介绍开始，迈出西班牙语第一步。",
+      "cover": "💃",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · ¡Hola! 你好",
+          "description": "问候语与自我介绍",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 日常问候",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "es_a1_u1_word1.json"
+            },
+            {
+              "title": "口语跟读 · 自我介绍",
+              "type": "SPEAK",
+              "sortOrder": 2,
+              "contentFile": "es_a1_u1_speak1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · En el restaurante 餐厅",
+          "description": "数字、颜色与餐厅点餐",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 数字与颜色",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "es_a1_u2_word2.json"
+            },
+            {
+              "title": "口语对话 · 餐厅点餐",
+              "type": "DIALOG",
+              "sortOrder": 2,
+              "contentFile": "es_a1_u2_dialog1.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "ar",
+      "title": "阿拉伯语 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "从最实用的问候与自我介绍开始，迈出阿拉伯语第一步。",
+      "cover": "🕌",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · مرحبا 你好",
+          "description": "问候语与自我介绍",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 日常问候",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ar_a1_u1_word1.json"
+            },
+            {
+              "title": "口语跟读 · 自我介绍",
+              "type": "SPEAK",
+              "sortOrder": 2,
+              "contentFile": "ar_a1_u1_speak1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · في المقهى 咖啡馆",
+          "description": "数字、颜色与咖啡馆点单",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 数字与颜色",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "ar_a1_u2_word2.json"
+            },
+            {
+              "title": "口语对话 · 咖啡馆点单",
+              "type": "DIALOG",
+              "sortOrder": 2,
+              "contentFile": "ar_a1_u2_dialog1.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh",
+      "title": "普通话 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "从最实用的问候与自我介绍开始，迈出普通话第一步。",
+      "cover": "🏮",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · 你好",
+          "description": "问候语与自我介绍",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 日常问候",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh_a1_u1_word1.json"
+            },
+            {
+              "title": "口语跟读 · 自我介绍",
+              "type": "SPEAK",
+              "sortOrder": 2,
+              "contentFile": "zh_a1_u1_speak1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 在餐馆",
+          "description": "数字、颜色与中餐馆点餐",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 数字与颜色",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh_a1_u2_word2.json"
+            },
+            {
+              "title": "口语对话 · 中餐馆点餐",
+              "type": "DIALOG",
+              "sortOrder": 2,
+              "contentFile": "zh_a1_u2_dialog1.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-yue",
+      "title": "广东话 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "从最地道的粤语问候学起，听懂港片与粤语歌。",
+      "cover": "🍵",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · 日常问候",
+          "description": "粤语问候与地道寒暄",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 粤语问候",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-yue_a1_u1_word1.json"
+            },
+            {
+              "title": "词汇 · 人称与寒暄",
+              "type": "WORD",
+              "sortOrder": 2,
+              "contentFile": "zh-yue_a1_u1_word2.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 屋企与数字",
+          "description": "家人称谓、数字与茶楼日常",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 屋企与数字",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-yue_a1_u2_word3.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-sc",
+      "title": "四川话 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "巴适得板！学会川味日常表达与特色词汇。",
+      "cover": "🌶️",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · 日常用语",
+          "description": "四川话常用表达",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 川味日常",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sc_a1_u1_word1.json"
+            },
+            {
+              "title": "词汇 · 人称与寒暄",
+              "type": "WORD",
+              "sortOrder": 2,
+              "contentFile": "zh-sc_a1_u1_word2.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 屋头与数字",
+          "description": "家人称谓、数字与赶场日常",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 屋头日常",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sc_a1_u2_word3.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-bj",
+      "title": "北京话 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "儿化音与京片子，感受老北京的腔调。",
+      "cover": "🏯",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · 日常用语",
+          "description": "北京话常用表达",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 京味日常",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-bj_a1_u1_word1.json"
+            },
+            {
+              "title": "词汇 · 人称与寒暄",
+              "type": "WORD",
+              "sortOrder": 2,
+              "contentFile": "zh-bj_a1_u1_word2.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 大院日常",
+          "description": "老街坊、遛弯儿与数字",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 大院日常",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-bj_a1_u2_word3.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-sh",
+      "title": "上海话 A1 · 入门",
+      "level": "A1",
+      "levelName": "入门",
+      "description": "吴侬软语入门，听懂海派日常对话。",
+      "cover": "🌃",
+      "sortOrder": 1,
+      "units": [
+        {
+          "title": "Unit 1 · 日常用语",
+          "description": "上海话常用表达",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 海派日常",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sh_a1_u1_word1.json"
+            },
+            {
+              "title": "词汇 · 人称与寒暄",
+              "type": "WORD",
+              "sortOrder": 2,
+              "contentFile": "zh-sh_a1_u1_word2.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 屋里厢",
+          "description": "家人称谓、数字与弄堂生活",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 屋里厢",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sh_a1_u2_word3.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-yue",
+      "title": "广东话 A2 · 初级",
+      "level": "A2",
+      "levelName": "初级",
+      "description": "茶楼点单、逛街购物，学用地道粤语逛吃香港。",
+      "cover": "🍵",
+      "sortOrder": 2,
+      "units": [
+        {
+          "title": "Unit 1 · 茶楼与街市",
+          "description": "埋单打包、行街讲价",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 茶楼食玩",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-yue_a2_u1_word1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 出行购物",
+          "description": "搭车问路、试衫刷卡",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 出行购物",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-yue_a2_u2_word2.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-yue",
+      "title": "广东话 B1 · 中级",
+      "level": "B1",
+      "levelName": "中级",
+      "description": "长句对话与粤语俗语，听懂港片台词里的机锋。",
+      "cover": "🍵",
+      "sortOrder": 3,
+      "units": [
+        {
+          "title": "Unit 1 · 街坊对话",
+          "description": "劝人金句与处事长句",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "句式 · 街坊对话",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-yue_b1_u1_sentence1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 俗语惯用",
+          "description": "港式俗语与生活智慧",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "句式 · 俗语惯用",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-yue_b1_u2_sentence2.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-yue",
+      "title": "广东话 B2 · 进阶",
+      "level": "B2",
+      "levelName": "进阶",
+      "description": "粤语成语歇后语进阶，讲嘢有晒味道。",
+      "cover": "🍵",
+      "sortOrder": 4,
+      "units": [
+        {
+          "title": "Unit 1 · 成语歇后语",
+          "description": "鹩哥豁口、水瓜打狗——讲得出就赢",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "句式 · 成语歇后语",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-yue_b2_u1_idiom1.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-sc",
+      "title": "四川话 A2 · 初级",
+      "level": "A2",
+      "levelName": "初级",
+      "description": "烫火锅、吃串串，用四川话把安逸生活吃到巴适。",
+      "cover": "🌶️",
+      "sortOrder": 2,
+      "units": [
+        {
+          "title": "Unit 1 · 麻辣吃玩",
+          "description": "烫火锅、打牙祭、好吃狗集合",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 麻辣吃玩",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sc_a2_u1_word1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 出行购物",
+          "description": "赶公交、倒拐问路、砍价",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 出行购物",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sc_a2_u2_word2.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-sc",
+      "title": "四川话 B1 · 中级",
+      "level": "B1",
+      "levelName": "中级",
+      "description": "川式长句与俗语，茶馆头摆龙门阵不怯场。",
+      "cover": "🌶️",
+      "sortOrder": 3,
+      "units": [
+        {
+          "title": "Unit 1 · 坝坝茶话",
+          "description": "劝人金句与处事长句",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "句式 · 坝坝茶话",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sc_b1_u1_sentence1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 俗语惯用",
+          "description": "雄起、假打、捡耙和",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "句式 · 俗语惯用",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sc_b1_u2_sentence2.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-sc",
+      "title": "四川话 B2 · 进阶",
+      "level": "B2",
+      "levelName": "进阶",
+      "description": "川味歇后语进阶，说的就是那一口麻辣味。",
+      "cover": "🌶️",
+      "sortOrder": 4,
+      "units": [
+        {
+          "title": "Unit 1 · 歇后语进阶",
+          "description": "猫抓糍粑——脱不到爪爪",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "句式 · 歇后语进阶",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sc_b2_u1_idiom1.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-bj",
+      "title": "北京话 A2 · 初级",
+      "level": "A2",
+      "levelName": "初级",
+      "description": "豆汁儿焦圈儿涮羊肉，把北京吃出味道来。",
+      "cover": "🏯",
+      "sortOrder": 2,
+      "units": [
+        {
+          "title": "Unit 1 · 京味吃玩",
+          "description": "豆汁儿、听戏、贴秋膘",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 京味吃玩",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-bj_a2_u1_word1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 出行购物",
+          "description": "挤公交、逛庙会、砍价",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 出行购物",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-bj_a2_u2_word2.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-bj",
+      "title": "北京话 B1 · 中级",
+      "level": "B1",
+      "levelName": "中级",
+      "description": "京味长句与俗语，茶馆侃大山压得住场。",
+      "cover": "🏯",
+      "sortOrder": 3,
+      "units": [
+        {
+          "title": "Unit 1 · 茶馆对白",
+          "description": "京味劝人金句与处事长句",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "句式 · 茶馆对白",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-bj_b1_u1_sentence1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 俗语惯用",
+          "description": "猫儿腻、掉链子、侃大山",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "句式 · 俗语惯用",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-bj_b1_u2_sentence2.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-bj",
+      "title": "北京话 B2 · 进阶",
+      "level": "B2",
+      "levelName": "进阶",
+      "description": "北京歇后语进阶，言语儿里透着局气。",
+      "cover": "🏯",
+      "sortOrder": 4,
+      "units": [
+        {
+          "title": "Unit 1 · 歇后语进阶",
+          "description": "外甥打灯笼——照旧",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "句式 · 歇后语进阶",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-bj_b2_u1_idiom1.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-sh",
+      "title": "上海话 A2 · 初级",
+      "level": "A2",
+      "levelName": "初级",
+      "description": "生煎小笼排骨年糕，用上海话吃遍梧桐区。",
+      "cover": "🌃",
+      "sortOrder": 2,
+      "units": [
+        {
+          "title": "Unit 1 · 沪上吃玩",
+          "description": "生煎小笼、白相大世界",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "词汇 · 沪上吃玩",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sh_a2_u1_word1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 出行购物",
+          "description": "乘地铁、逛马路、掼派头",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "词汇 · 出行购物",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sh_a2_u2_word2.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-sh",
+      "title": "上海话 B1 · 中级",
+      "level": "B1",
+      "levelName": "中级",
+      "description": "沪语长句与俗语，谈山海经拎得清。",
+      "cover": "🌃",
+      "sortOrder": 3,
+      "units": [
+        {
+          "title": "Unit 1 · 客堂间对话",
+          "description": "沪语处事金句与长句",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "句式 · 客堂间对话",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sh_b1_u1_sentence1.json"
+            }
+          ]
+        },
+        {
+          "title": "Unit 2 · 俗语惯用",
+          "description": "捣浆糊、拎勿清、扎劲",
+          "sortOrder": 2,
+          "lessons": [
+            {
+              "title": "句式 · 俗语惯用",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sh_b1_u2_sentence2.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "language": "zh-sh",
+      "title": "上海话 B2 · 进阶",
+      "level": "B2",
+      "levelName": "进阶",
+      "description": "沪上歇后语进阶，讲闲话老有腔调。",
+      "cover": "🌃",
+      "sortOrder": 4,
+      "units": [
+        {
+          "title": "Unit 1 · 俗谚进阶",
+          "description": "螺丝壳里做道场",
+          "sortOrder": 1,
+          "lessons": [
+            {
+              "title": "句式 · 俗谚进阶",
+              "type": "WORD",
+              "sortOrder": 1,
+              "contentFile": "zh-sh_b2_u1_idiom1.json"
+            }
           ]
         }
       ]

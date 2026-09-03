@@ -77,15 +77,20 @@ Page({
   loadLanguages() {
     get('/languages')
       .then((languages) => {
+        const user = getApp().globalData.user || {}
         const list = (languages || []).map((l) => ({
           code: l.code,
           nameCn: l.nameCn,
           icon: iconMap[l.code] || '🌍',
+          vipOnly: !!l.vipOnly,
+          locked: !!l.vipOnly && !user.vip,
           isDefault: l.code === 'en'
         }))
         this.setData({ languages: list })
-        // 默认英语卡片高亮，并预取各语种词库数量
-        list.forEach((l) => this.loadCount(l.code))
+        // 默认英语卡片高亮，并预取各语种词库数量（VIP 语种对非会员静默跳过，避免 403 报错刷屏）
+        list.forEach((l) => {
+          if (!l.locked) this.loadCount(l.code)
+        })
       })
       .catch(() => {
         this.setData({ languages: [{ code: 'en', nameCn: '英语', icon: '🇬🇧', isDefault: true }] })
@@ -94,7 +99,7 @@ Page({
   },
 
   loadCount(code) {
-    get('/game/word-quiz', { lang: code })
+    get('/game/word-quiz', { lang: code }, true)
       .then((list) => {
         this.setData({ ['wordCounts.' + code]: (list || []).length })
       })
@@ -106,6 +111,19 @@ Page({
   startGame(e) {
     const code = e.currentTarget.dataset.code
     if (this.data.loadingLang) return
+    const langCard = this.data.languages.find((l) => l.code === code)
+    // VIP 语种：非会员先引导开通
+    if (langCard && langCard.locked) {
+      wx.showModal({
+        title: 'VIP 专属',
+        content: '「' + langCard.nameCn + '」为 VIP 专属语种，开通会员后即可学习',
+        confirmText: '去开通',
+        success: (res) => {
+          if (res.confirm) wx.navigateTo({ url: '/pages/vip/vip' })
+        }
+      })
+      return
+    }
     const count = this.data.wordCounts[code]
     if (count === 0) {
       wx.showToast({ title: '该语种暂无词库', icon: 'none' })

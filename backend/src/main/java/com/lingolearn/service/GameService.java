@@ -33,18 +33,20 @@ public class GameService {
     private final UserWordRepository userWordRepository;
     private final StudyRecordRepository studyRecordRepository;
     private final AchievementService achievementService;
+    private final VipService vipService;
     private final ObjectMapper objectMapper;
 
     public GameService(LanguageRepository languageRepository, LessonRepository lessonRepository,
                        UserRepository userRepository, UserWordRepository userWordRepository,
                        StudyRecordRepository studyRecordRepository, AchievementService achievementService,
-                       ObjectMapper objectMapper) {
+                       VipService vipService, ObjectMapper objectMapper) {
         this.languageRepository = languageRepository;
         this.lessonRepository = lessonRepository;
         this.userRepository = userRepository;
         this.userWordRepository = userWordRepository;
         this.studyRecordRepository = studyRecordRepository;
         this.achievementService = achievementService;
+        this.vipService = vipService;
         this.objectMapper = objectMapper;
     }
 
@@ -79,24 +81,25 @@ public class GameService {
         }
     }
 
-    /** 按已入本词数决定难度上限：词量越多解锁越高的难度档位 */
+    /** 按已入本词数决定难度上限：词量越多解锁越高的难度档位（20/50/85 档位对应 A2/B1/B2） */
     private static int difficultyCap(int learnedCount) {
-        if (learnedCount < 30) return 1;   // 起步只出 A1
-        if (learnedCount < 70) return 2;   // 解锁 A2
-        if (learnedCount < 130) return 3;  // 解锁 B1
+        if (learnedCount < 20) return 1;   // 起步只出 A1
+        if (learnedCount < 50) return 2;   // 解锁 A2
+        if (learnedCount < 85) return 3;   // 解锁 B1
         return 4;                          // 解锁 B2
     }
 
     /**
      * 每日单词（v1.0.4 重写）：
      * 1. 优先推送从未出现过的词（未入单词本），避免来回重复；
-     * 2. 难度随已学词数递增（30/70/130 词分别解锁 A2/B1/B2）；
+     * 2. 难度随已学词数递增（20/50/85 词分别解锁 A2/B1/B2）；
      * 3. 展示的词自动收入单词本（mastery=0），全部词汇随之沉淀；
      * 4. 非 random 时同一天稳定出同一个新词；random（换一个）随机换新词。
      */
     @Transactional
     public Map<String, Object> dailyWord(Long userId, String langParam, boolean random) {
         Language lang = resolveLanguage(userId, langParam);
+        vipService.assertLanguageAccess(userId, lang);
         List<Lesson> wordLessons = lessonRepository
                 .findByTypeAndUnitCourseLanguageCode(Lesson.TYPE_WORD, lang.getCode());
         if (wordLessons.isEmpty()) {
@@ -250,6 +253,7 @@ public class GameService {
     @Transactional(readOnly = true)
     public List<Map<String, String>> quizWords(Long userId, String langParam) {
         Language lang = resolveLanguage(userId, langParam);
+        vipService.assertLanguageAccess(userId, lang);
         List<Lesson> wordLessons = lessonRepository
                 .findByTypeAndUnitCourseLanguageCode(Lesson.TYPE_WORD, lang.getCode());
         List<Map<String, String>> result = new ArrayList<>();

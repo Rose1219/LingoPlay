@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "您好",
+      "phonetic": "nin hao",
+      "meaning": "尊敬的问候，用「您」表示客气",
+      "example": "您好，请问您找谁？",
+      "translation": "您好，请问您找谁？"
+    },
+    {
+      "word": "吃了么",
+      "phonetic": "chi le me",
+      "meaning": "吃饭了吗（老北京式寒暄）",
+      "example": "您吃了么？",
+      "translation": "您吃饭了吗？"
+    },
+    {
+      "word": "倍儿棒",
+      "phonetic": "bei er bang",
+      "meaning": "非常好",
+      "example": "这菜做得倍儿棒。",
+      "translation": "这菜做得非常好。"
+    },
+    {
+      "word": "溜达",
+      "phonetic": "liu da",
+      "meaning": "散步；闲逛",
+      "example": "出去溜达溜达。",
+      "translation": "出去散散步。"
+    },
+    {
+      "word": "甭",
+      "phonetic": "beng",
+      "meaning": "不用（「不用」的合音）",
+      "example": "甭客气。",
+      "translation": "不用客气。"
+    },
+    {
+      "word": "特",
+      "phonetic": "te",
+      "meaning": "很；非常",
+      "example": "这玩意儿特好。",
+      "translation": "这东西特别好。"
+    },
+    {
+      "word": "哥们儿",
+      "phonetic": "ge menr",
+      "meaning": "兄弟；朋友（男性之间）",
+      "example": "哥们儿，帮个忙。",
+      "translation": "兄弟，帮个忙。"
+    },
+    {
+      "word": "局气",
+      "phonetic": "ju qi",
+      "meaning": "仗义；守规矩",
+      "example": "这人办事真局气。",
+      "translation": "这人办事真仗义。"
+    },
+    {
+      "word": "哪儿",
+      "phonetic": "nar",
+      "meaning": "哪里（带儿化音）",
+      "example": "您住哪儿？",
+      "translation": "您住哪里？"
+    },
+    {
+      "word": "瞅瞅",
+      "phonetic": "chou chou",
+      "meaning": "看看",
+      "example": "我瞅瞅。",
+      "translation": "我看看。"
+    }
+  ]
+}

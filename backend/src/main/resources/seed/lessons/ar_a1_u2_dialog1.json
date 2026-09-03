@@ -1,0 +1,35 @@
+{
+  "scene": "咖啡馆点单",
+  "turns": [
+    {
+      "role": "ai",
+      "text": "مرحبا! ماذا تريد؟",
+      "translation": "你好！你想要什么？"
+    },
+    {
+      "role": "user",
+      "text": "أريد قهوة، من فضلك.",
+      "translation": "我想要一杯咖啡，谢谢。"
+    },
+    {
+      "role": "ai",
+      "text": "مع السكر؟",
+      "translation": "要加糖吗？"
+    },
+    {
+      "role": "user",
+      "text": "لا، بدون سكر، شكرا.",
+      "translation": "不用，不加糖，谢谢。"
+    },
+    {
+      "role": "ai",
+      "text": "ذلك ثلاثة دولارات.",
+      "translation": "一共三美元。"
+    },
+    {
+      "role": "user",
+      "text": "تفضل. شكرا جزيلا!",
+      "translation": "给您，非常感谢！"
+    }
+  ]
+}

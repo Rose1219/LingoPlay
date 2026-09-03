@@ -24,11 +24,55 @@ body,
   padding: 0;
 }
 
+/* ---------- 多语言字体栈 ----------
+ * 界面语言切换时（i18n.setLocale）会同步设置 <html lang="xx">，
+ * 各语言选用对应文字体系的首选系统字体，避免泰文/韩文/越南文等
+ * 落到中文栈后退化成宋体或浏览器兜底字体。
+ */
 body {
-  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  font-family:
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial,
+    'Noto Sans', 'Noto Sans Arabic', sans-serif;
   background: var(--ll-bg);
   color: var(--ll-text);
   -webkit-font-smoothing: antialiased;
+}
+
+/* 简体中文 */
+html[lang='zh-CN'] body {
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 繁體中文 */
+html[lang='zh-TW'] body {
+  font-family: 'PingFang TC', 'Hiragino Sans TC', 'Microsoft JhengHei', 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* English / Español / Français（拉丁体系通用） */
+html[lang='en'] body,
+html[lang='es'] body,
+html[lang='fr'] body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Roboto, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 日本語 */
+html[lang='ja'] body {
+  font-family: 'Hiragino Sans', 'Yu Gothic UI', 'Yu Gothic', Meiryo, 'Noto Sans JP', 'PingFang SC', sans-serif;
+}
+
+/* 한국어 */
+html[lang='ko'] body {
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', 'Segoe UI', 'PingFang SC', sans-serif;
+}
+
+/* Tiếng Việt（越南文带变音符，需完整拉丁扩展字体） */
+html[lang='vi'] body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* ไทย（泰文，Windows 用 Leelawadee UI，macOS 用 Thonburi/Sukhumvit） */
+html[lang='th'] body {
+  font-family: 'Sukhumvit Set', 'Thonburi', 'Leelawadee UI', 'Noto Sans Thai', Tahoma, 'Segoe UI', sans-serif;
 }
 
 /* 星空网格背景 */

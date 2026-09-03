@@ -36,6 +36,15 @@
   background: linear-gradient(160deg, rgba(79, 124, 255, 0.1), rgba(34, 211, 238, 0.04));
 }
 
+.lang-card.locked {
+  border-color: rgba(255, 184, 79, 0.3);
+  background: linear-gradient(160deg, rgba(255, 184, 79, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.lang-card.locked .lang-play {
+  color: #ffb84f;
+}
+
 .lang-card.loading {
   opacity: 0.6;
 }

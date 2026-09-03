@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="page-title">{{i18n.title}}</view>
+  <view class="page-subtitle">{{i18n.subtitle}}</view>
+
+  <!-- 语种选择条 -->
+  <view class="lang-bar">
+    <picker class="lang-picker" mode="selector" range="{{sourceNames}}" bindchange="onSourceChange">
+      <view class="lang-picker-inner">{{sourceNames[sourceIndex] || '🌐 …'}}</view>
+    </picker>
+
+    <view class="swap-btn" bindtap="swap">⇄</view>
+
+    <picker class="lang-picker" mode="selector" range="{{langNames}}" bindchange="onTargetChange">
+      <view class="lang-picker-inner" wx:if="{{languages.length}}">
+        {{langNames[targetIndex]}}
+      </view>
+      <view class="lang-picker-inner" wx:else>…</view>
+    </picker>
+  </view>
+
+  <!-- 输入区 -->
+  <view class="panel">
+    <textarea
+      class="input-area"
+      value="{{text}}"
+      maxlength="2000"
+      placeholder="{{i18n.placeholder}}"
+      placeholder-class="ph"
+      bindinput="onTextInput"
+      auto-height
+    />
+    <view class="panel-foot">
+      <view class="detect-tag" wx:if="{{detectedName}}">{{i18n.detected}}：{{detectedName}}</view>
+      <view class="char-count">{{text.length}}/2000</view>
+    </view>
+  </view>
+
+  <!-- 结果区 -->
+  <view class="panel result-panel">
+    <view class="result-text" wx:if="{{result}}">{{result}}</view>
+    <view class="result-empty" wx:elif="{{translating}}">{{i18n.translating}}</view>
+    <view class="result-empty" wx:else>{{i18n.resultPlaceholder}}</view>
+    <view class="panel-foot" wx:if="{{result}}">
+      <view class="mini-btn" bindtap="copyResult">📋 {{i18n.copyResult}}</view>
+      <view class="mini-btn" bindtap="playResult">🔊 {{i18n.play}}</view>
+    </view>
+  </view>
+
+  <view class="translate-btn" bindtap="doTranslate">
+    {{translating ? i18n.translating : i18n.translateBtn}}
+  </view>
+</view>

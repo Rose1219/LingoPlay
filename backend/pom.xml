@@ -75,6 +75,20 @@
         </dependency>
     </dependencies>
 
+    <!-- 本地验证专用：H2 内存库，仅 `mvn -Plocal` 激活，不污染生产依赖 -->
+    <profiles>
+        <profile>
+            <id>local</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>

@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "一",
+      "phonetic": "yī",
+      "meaning": "数字一",
+      "example": "来一碗炸酱面。",
+      "translation": "来一碗炸酱面。"
+    },
+    {
+      "word": "俩",
+      "phonetic": "liǎ",
+      "meaning": "两个（口语把「两个」说成「俩」）",
+      "example": "我们俩打小一块儿长大。",
+      "translation": "我们两个从小一起长大。"
+    },
+    {
+      "word": "仨",
+      "phonetic": "sā",
+      "meaning": "三个（口语「仨」）",
+      "example": "哥儿仨好得穿一条裤子。",
+      "translation": "兄弟三人好得像一个人。"
+    },
+    {
+      "word": "家去",
+      "phonetic": "jiā qù",
+      "meaning": "回家去",
+      "example": "天不早了，家去吧。",
+      "translation": "天不早了，回家去吧。"
+    },
+    {
+      "word": "上单位",
+      "phonetic": "shàng dān wèi",
+      "meaning": "去单位上班",
+      "example": "明儿一早儿得上单位。",
+      "translation": "明天一早要去单位上班。"
+    },
+    {
+      "word": "放学",
+      "phonetic": "fàng xué",
+      "meaning": "放学",
+      "example": "孩子放学先写作业。",
+      "translation": "孩子放学先写作业。"
+    },
+    {
+      "word": "遛弯儿",
+      "phonetic": "liù wānr",
+      "meaning": "散步（北京人最爱的日常）",
+      "example": "吃完饭上胡同遛弯儿去。",
+      "translation": "吃完饭去胡同散步。"
+    },
+    {
+      "word": "嗑牙",
+      "phonetic": "kè yá",
+      "meaning": "闲聊（也说「侃大山」）",
+      "example": "老哥儿几个凑一块儿嗑牙。",
+      "translation": "老哥们几个凑一起闲聊。"
+    },
+    {
+      "word": "串门儿",
+      "phonetic": "chuàn ménr",
+      "meaning": "到邻居家坐坐",
+      "example": "没事儿来串门儿，别拿自己当外人。",
+      "translation": "没事来串门，别拿自己当外人。"
+    },
+    {
+      "word": "归置",
+      "phonetic": "guī zhi",
+      "meaning": "收拾、整理",
+      "example": "把屋里的东西归置利索。",
+      "translation": "把屋里的东西收拾整齐。"
+    },
+    {
+      "word": "外头",
+      "phonetic": "wài tou",
+      "meaning": "外面",
+      "example": "外头风大，加件衣裳。",
+      "translation": "外面风大，加件衣服。"
+    },
+    {
+      "word": "赶趟儿",
+      "phonetic": "gǎn tàngr",
+      "meaning": "来得及 / 赶上趟",
+      "example": "别急，八点走也赶趟儿。",
+      "translation": "别急，八点出发也来得及。"
+    },
+    {
+      "word": "老街坊",
+      "phonetic": "lǎo jiē fang",
+      "meaning": "多年的老邻居",
+      "example": "都是老街坊，谁还没个难处。",
+      "translation": "都是老邻居，谁没个难处。"
+    },
+    {
+      "word": "上岁数",
+      "phonetic": "shàng suì shu",
+      "meaning": "上了年纪",
+      "example": "我爸上岁数了，觉少。",
+      "translation": "我爸上了年纪，觉少。"
+    },
+    {
+      "word": "多半儿",
+      "phonetic": "duō bànr",
+      "meaning": "大概、多半",
+      "example": "他这会儿多半儿到家了。",
+      "translation": "他这会儿多半到家了。"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "阿拉",
+      "phonetic": "a laq",
+      "meaning": "我们 / 我们的（沪语标志词）",
+      "example": "阿拉屋里住拉浦东。",
+      "translation": "我们家住在浦东。"
+    },
+    {
+      "word": "伊",
+      "phonetic": "yi",
+      "meaning": "他 / 她（沪语第三人称）",
+      "example": "伊是我弟弟。",
+      "translation": "他是我弟弟。"
+    },
+    {
+      "word": "侬讲啥",
+      "phonetic": "nong gang sa",
+      "meaning": "你说什么？",
+      "example": "侬讲啥？声音再响点好伐？",
+      "translation": "你说什么？声音再大点行吗？"
+    },
+    {
+      "word": "妈妈",
+      "phonetic": "ma ma",
+      "meaning": "妈妈（沪语也叫姆妈）",
+      "example": "姆妈喊侬回去吃饭。",
+      "translation": "妈妈喊你回家吃饭。"
+    },
+    {
+      "word": "爷叔",
+      "phonetic": "ya zoq",
+      "meaning": "叔叔 / 对中年男性称呼",
+      "example": "爷叔，问侬桩事体。",
+      "translation": "叔叔，向您打听件事。"
+    },
+    {
+      "word": "小囡",
+      "phonetic": "xiao noe",
+      "meaning": "小孩子（也叫小囡囡）",
+      "example": "小囡囡困觉了。",
+      "translation": "小宝宝睡觉了。"
+    },
+    {
+      "word": "做啥",
+      "phonetic": "zu sa",
+      "meaning": "干什么",
+      "example": "侬立拉门口做啥？",
+      "translation": "你站在门口干什么？"
+    },
+    {
+      "word": "啥地方",
+      "phonetic": "sa di fang",
+      "meaning": "什么地方",
+      "example": "阿拉碰头定啥地方？",
+      "translation": "我们在什么地方见面？"
+    },
+    {
+      "word": "几化",
+      "phonetic": "ji hu",
+      "meaning": "多少（问数量、价钱）",
+      "example": "迭桩物事几化铜钿？",
+      "translation": "这个东西多少钱？"
+    },
+    {
+      "word": "现在",
+      "phonetic": "yi ze",
+      "meaning": "现在（沪语讲「伊仄」）",
+      "example": "现在几点钟了？",
+      "translation": "现在几点了？"
+    },
+    {
+      "word": "明朝",
+      "phonetic": "men tzao",
+      "meaning": "明天（沪语「明朝」）",
+      "example": "明朝阿拉一道去公园。",
+      "translation": "明天我们一起去公园。"
+    },
+    {
+      "word": "昨朝",
+      "phonetic": "zoq tzao",
+      "meaning": "昨天",
+      "example": "昨朝落了一天雨。",
+      "translation": "昨天下了一天雨。"
+    },
+    {
+      "word": "好白相",
+      "phonetic": "hao baq xi",
+      "meaning": "很好玩 / 有趣",
+      "example": "迪个地方老好白相个。",
+      "translation": "这个地方很好玩。"
+    },
+    {
+      "word": "结棍",
+      "phonetic": "jiq gun",
+      "meaning": "厉害 / 猛",
+      "example": "伊身体老结棍个。",
+      "translation": "他身体很棒。"
+    },
+    {
+      "word": "谢谢侬",
+      "phonetic": "xia xia nong",
+      "meaning": "谢谢你（沪语发音特别）",
+      "example": "帮了大忙，谢谢侬！",
+      "translation": "帮了大忙，谢谢你！"
+    }
+  ]
+}

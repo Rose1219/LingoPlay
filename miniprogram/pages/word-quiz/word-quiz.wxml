@@ -5,7 +5,7 @@
 
   <view class="lang-grid">
     <view
-      class="lang-card {{item.isDefault ? 'default' : ''}} {{loadingLang === item.code ? 'loading' : ''}}"
+      class="lang-card {{item.isDefault ? 'default' : ''}} {{item.locked ? 'locked' : ''}} {{loadingLang === item.code ? 'loading' : ''}}"
       wx:for="{{languages}}"
       wx:key="code"
       bindtap="startGame"
@@ -13,10 +13,11 @@
     >
       <view class="lang-icon">{{item.icon}}</view>
       <view class="lang-name">{{item.nameCn}}</view>
-      <view class="lang-words" wx:if="{{wordCounts[item.code] !== undefined}}">
+      <view class="lang-words" wx:if="{{item.locked}}">👑 VIP 专属</view>
+      <view class="lang-words" wx:elif="{{wordCounts[item.code] !== undefined}}">
         {{wordCounts[item.code]}} 个单词
       </view>
-      <view class="lang-play">{{loadingLang === item.code ? '加载中…' : '开始 →'}}</view>
+      <view class="lang-play">{{item.locked ? '🔒 开通解锁' : (loadingLang === item.code ? '加载中…' : '开始 →')}}</view>
       <view class="default-tag" wx:if="{{item.isDefault}}">默认</view>
     </view>
   </view>

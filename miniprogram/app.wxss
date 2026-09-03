@@ -2,7 +2,12 @@
 page {
   background: #0a0f1e;
   color: #dbe4f5;
-  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  /* 多语言字体栈：界面语言切换（utils/i18n.js）后各语种文案与课程内容
+     均能取到对应体系的系统字体（日/韩/泰/越南/阿拉伯等），
+     浏览器按字符逐个回退，缺失字形自动落到下一个字体。 */
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans',
+    'Hiragino Sans GB', 'Apple SD Gothic Neo', 'Sukhumvit Set', 'Thonburi',
+    'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
   font-size: 28rpx;
   min-height: 100%;
 }

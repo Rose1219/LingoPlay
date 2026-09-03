@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "hola",
+      "phonetic": "ˈola",
+      "meaning": "你好",
+      "example": "¡Hola! ¿Qué tal?",
+      "translation": "嗨！最近怎么样？"
+    },
+    {
+      "word": "buenos días",
+      "phonetic": "ˈbwenos ˈðias",
+      "meaning": "早上好",
+      "example": "Buenos días, señora.",
+      "translation": "早上好，女士。"
+    },
+    {
+      "word": "buenas noches",
+      "phonetic": "ˈbwenas ˈnotʃes",
+      "meaning": "晚上好；晚安",
+      "example": "Buenas noches, hasta mañana.",
+      "translation": "晚安，明天见。"
+    },
+    {
+      "word": "gracias",
+      "phonetic": "ˈɡɾaθjas",
+      "meaning": "谢谢",
+      "example": "Muchas gracias por tu ayuda.",
+      "translation": "非常感谢你的帮助。"
+    },
+    {
+      "word": "por favor",
+      "phonetic": "poɾ faˈβoɾ",
+      "meaning": "请",
+      "example": "Un vaso de agua, por favor.",
+      "translation": "请给我一杯水。"
+    },
+    {
+      "word": "lo siento",
+      "phonetic": "lo ˈsjento",
+      "meaning": "对不起；我很抱歉",
+      "example": "Lo siento, llego tarde.",
+      "translation": "对不起，我迟到了。"
+    },
+    {
+      "word": "sí",
+      "phonetic": "si",
+      "meaning": "是；对",
+      "example": "Sí, me gusta mucho.",
+      "translation": "是的，我很喜欢。"
+    },
+    {
+      "word": "no",
+      "phonetic": "no",
+      "meaning": "不；不是",
+      "example": "No, gracias.",
+      "translation": "不用了，谢谢。"
+    },
+    {
+      "word": "adiós",
+      "phonetic": "aˈðjos",
+      "meaning": "再见",
+      "example": "Adiós, nos vemos pronto.",
+      "translation": "再见，很快见。"
+    },
+    {
+      "word": "¿cómo estás?",
+      "phonetic": "ˈkomo esˈtas",
+      "meaning": "你好吗",
+      "example": "Hola Ana, ¿cómo estás?",
+      "translation": "你好安娜，你好吗？"
+    }
+  ]
+}

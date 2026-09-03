@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "你好",
+      "phonetic": "ni hao",
+      "meaning": "问候语，与普通话相同",
+      "example": "你好，好久不见。",
+      "translation": "你好，好久不见。"
+    },
+    {
+      "word": "多谢",
+      "phonetic": "do xie",
+      "meaning": "谢谢",
+      "example": "多谢你帮忙。",
+      "translation": "谢谢你的帮忙。"
+    },
+    {
+      "word": "要得",
+      "phonetic": "yao de",
+      "meaning": "好的；可以",
+      "example": "这个办法要得。",
+      "translation": "这个办法可以。"
+    },
+    {
+      "word": "巴适",
+      "phonetic": "ba shi",
+      "meaning": "舒服；很好",
+      "example": "这顿饭吃得好巴适。",
+      "translation": "这顿饭吃得很舒服。"
+    },
+    {
+      "word": "啥子",
+      "phonetic": "sha zi",
+      "meaning": "什么",
+      "example": "你在做啥子？",
+      "translation": "你在做什么？"
+    },
+    {
+      "word": "莫得",
+      "phonetic": "mo de",
+      "meaning": "没有",
+      "example": "我莫得钱。",
+      "translation": "我没有钱。"
+    },
+    {
+      "word": "安逸",
+      "phonetic": "an yi",
+      "meaning": "舒服；惬意",
+      "example": "今天天气好安逸。",
+      "translation": "今天天气很舒服。"
+    },
+    {
+      "word": "摆龙门阵",
+      "phonetic": "bai long men zhen",
+      "meaning": "聊天；闲谈",
+      "example": "我们来摆龙门阵。",
+      "translation": "我们来聊天。"
+    },
+    {
+      "word": "好久",
+      "phonetic": "hao jiu",
+      "meaning": "什么时候",
+      "example": "你好久来？",
+      "translation": "你什么时候来？"
+    },
+    {
+      "word": "莫得事",
+      "phonetic": "mo de shi",
+      "meaning": "没关系",
+      "example": "莫得事，不消着急。",
+      "translation": "没关系，不用着急。"
+    }
+  ]
+}

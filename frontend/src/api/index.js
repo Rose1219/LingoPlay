@@ -58,6 +58,33 @@ export const achievementApi = {
   list: () => http.get('/achievements')
 }
 
+// 在线翻译
+export const translateApi = {
+  // 后端 DTO 返回 translatedText / detectedLanguage，这里统一成组件使用的字段名，
+  // 集中适配，避免接口改名时前端各处散落兼容逻辑
+  translate: async (text, source, target) => {
+    const r = (await http.post('/translate', { text, source, target })) || {}
+    return {
+      translated: r.translatedText ?? r.translated ?? '',
+      detected: r.detectedLanguage ?? r.detected ?? '',
+      source: r.source,
+      target: r.target,
+      provider: r.provider
+    }
+  },
+  detect: (text) => http.post('/translate/detect', { text }),
+  languages: () => http.get('/translate/languages')
+}
+
+// VIP 会员
+export const vipApi = {
+  status: () => http.get('/vip/status'),
+  createOrder: (channel, openid) => http.post('/vip/orders', { channel, openid }),
+  orderStatus: (orderNo) => http.get(`/vip/orders/${orderNo}`),
+  myOrders: () => http.get('/vip/orders'),
+  mockPay: (orderNo) => http.post(`/vip/mock-pay/${orderNo}`)
+}
+
 // 游戏化接口
 export const gameApi = {
   dailyWord: (params) => http.get('/game/daily-word', { params }),

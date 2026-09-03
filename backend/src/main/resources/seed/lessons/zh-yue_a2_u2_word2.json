@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "搭车",
+      "phonetic": "daap3 ce1",
+      "meaning": "乘车",
+      "example": "听日搭早班车去深圳。",
+      "translation": "明天坐早班车去深圳。"
+    },
+    {
+      "word": "地铁",
+      "phonetic": "dei6 tit3",
+      "meaning": "地铁",
+      "example": "搭地铁去旺角最快。",
+      "translation": "坐地铁去旺角最快。"
+    },
+    {
+      "word": "塞车",
+      "phonetic": "sak1 ce1",
+      "meaning": "堵车",
+      "example": "放工时间好易塞车。",
+      "translation": "下班时间很容易堵车。"
+    },
+    {
+      "word": "落雨",
+      "phonetic": "lok6 jyu5",
+      "meaning": "下雨",
+      "example": "落雨记得带遮。",
+      "translation": "下雨记得带伞。"
+    },
+    {
+      "word": "好热",
+      "phonetic": "hou2 jit6",
+      "meaning": "很热",
+      "example": "香港夏天热到出汗。",
+      "translation": "香港夏天热到出汗。"
+    },
+    {
+      "word": "冻",
+      "phonetic": "dung3",
+      "meaning": "冷",
+      "example": "开冷气唔好太冻。",
+      "translation": "空调别开太冷。"
+    },
+    {
+      "word": "问路",
+      "phonetic": "man6 lou6",
+      "meaning": "问路",
+      "example": "唔识路就问路人啦。",
+      "translation": "不认识路就问路人吧。"
+    },
+    {
+      "word": "直行",
+      "phonetic": "zik6 haang4",
+      "meaning": "直走",
+      "example": "直行到尾就係车站。",
+      "translation": "直走到头就是车站。"
+    },
+    {
+      "word": "转头",
+      "phonetic": "zyun3 tau4",
+      "meaning": "转弯 / 回头",
+      "example": "前面转头见。",
+      "translation": "前面转弯见。"
+    },
+    {
+      "word": "等阵",
+      "phonetic": "dang2 zan6",
+      "meaning": "等一下",
+      "example": "等阵先，我攞银包。",
+      "translation": "等一下，我去拿钱包。"
+    },
+    {
+      "word": "讲价",
+      "phonetic": "gong2 gaa3",
+      "meaning": "砍价",
+      "example": "佢讲价好叻。",
+      "translation": "他很会砍价。"
+    },
+    {
+      "word": "试衫",
+      "phonetic": "si3 saam1",
+      "meaning": "试衣服",
+      "example": "可以去试衫房试吗？",
+      "translation": "可以去试衣间试吗？"
+    },
+    {
+      "word": "大減價",
+      "phonetic": "daai6 gaam2 gaa3",
+      "meaning": "大减价",
+      "example": "百货公司大减价，好多人。",
+      "translation": "百货商场大减价，人很多。"
+    },
+    {
+      "word": "刷卡",
+      "phonetic": "caak3 kaa1",
+      "meaning": "刷卡付款",
+      "example": "唔够现金可以刷卡。",
+      "translation": "现金不够可以刷卡。"
+    },
+    {
+      "word": "执嘢",
+      "phonetic": "zap1 je5",
+      "meaning": "收拾东西 / 捡东西",
+      "example": "听日搬屋，今晚执嘢。",
+      "translation": "明天搬家，今晚收拾东西。"
+    }
+  ]
+}

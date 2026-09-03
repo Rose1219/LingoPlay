@@ -1,4 +1,10 @@
 {
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.5",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
   "pages": [
     "pages/login/login",
     "pages/index/index",
@@ -6,6 +12,8 @@
     "pages/course-detail/course-detail",
     "pages/learn/learn",
     "pages/word-quiz/word-quiz",
+    "pages/translate/translate",
+    "pages/vip/vip",
     "pages/progress/progress",
     "pages/achievements/achievements",
     "pages/community/community",

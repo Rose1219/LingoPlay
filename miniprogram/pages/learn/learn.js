@@ -8,6 +8,8 @@ Page({
   data: {
     lesson: null,
     typeLabel: '',
+    nextLessonId: 0,
+    nextLessonTitle: '',
     // 单词答题（5选1）
     quizQ: null,
     quizQKey: 0,
@@ -339,12 +341,20 @@ Page({
       .then((res) => {
         this.setData({
           finished: true,
-          newAchievements: (res && res.newAchievements) || []
+          newAchievements: (res && res.newAchievements) || [],
+          nextLessonId: (res && res.hasNextLesson && res.nextLessonId) || 0,
+          nextLessonTitle: (res && res.nextLessonTitle) || ''
         })
       })
       .catch(() => {
-        this.setData({ finished: true, newAchievements: [] })
+        this.setData({ finished: true, newAchievements: [], nextLessonId: 0, nextLessonTitle: '' })
       })
+  },
+
+  /** 进入课程内下一关 */
+  goNext() {
+    if (!this.data.nextLessonId) return
+    wx.redirectTo({ url: '/pages/learn/learn?id=' + this.data.nextLessonId })
   },
 
   retry() {
@@ -357,7 +367,8 @@ Page({
       sIndex: 0, scored: false, showTranslation: false, lastScore: 0, speakScores: [],
       lIndex: 0, listenInput: '', listenChecked: false, listenScore: 0, showHint: false, listenScores: [],
       tIndex: 0, chat: [], typed: '', userScores: [],
-      finished: false, score: 0, stars: 0, newAchievements: []
+      finished: false, score: 0, stars: 0, newAchievements: [],
+      nextLessonId: 0, nextLessonTitle: ''
     })
     this.initMode(this.data.lesson)
   },

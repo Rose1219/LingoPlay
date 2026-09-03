@@ -6,7 +6,7 @@
         <span class="brand-logo">🛰️</span>
         <div>
           <div class="brand-name">Lingo<span class="brand-hl">Play</span></div>
-          <div class="brand-sub">游戏化多语学习</div>
+          <div class="brand-sub">{{ t('brand.slogan') }}</div>
         </div>
       </div>
       <el-menu :default-active="activeMenu" router class="menu">
@@ -25,19 +25,43 @@
           <div class="brand-name">Lingo<span class="brand-hl">Play</span></div>
         </div>
         <div v-else class="header-greeting">{{ greeting }}</div>
-        <el-dropdown @command="onCommand">
-          <span class="user-chip">
-            <span class="avatar">{{ store.user ? store.user.avatar || '🙂' : '🙂' }}</span>
-            <span class="nickname">{{ store.nickname }}</span>
-            <el-icon><ArrowDown /></el-icon>
-          </span>
-          <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item command="profile">个人中心</el-dropdown-item>
-              <el-dropdown-item command="logout" divided>退出登录</el-dropdown-item>
-            </el-dropdown-menu>
-          </template>
-        </el-dropdown>
+        <div class="header-actions">
+          <!-- 界面语言切换 -->
+          <el-dropdown @command="onLangCommand" trigger="click">
+            <span class="lang-chip" :title="t('lang.label')">
+              <el-icon><Globe /></el-icon>
+              <span class="lang-code">{{ currentLang.code }}</span>
+              <el-icon><ArrowDown /></el-icon>
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item
+                  v-for="l in SUPPORTED_LANGS"
+                  :key="l.code"
+                  :command="l.code"
+                  :class="{ 'lang-active': l.code === currentLang.code }"
+                >
+                  <span class="lang-menu-item">
+                    <span class="lang-menu-flag">{{ l.flag }}</span>{{ l.name }}
+                  </span>
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
+          <el-dropdown @command="onCommand">
+            <span class="user-chip">
+              <span class="avatar">{{ store.user ? store.user.avatar || '🙂' : '🙂' }}</span>
+              <span class="nickname">{{ store.nickname }}</span>
+              <el-icon><ArrowDown /></el-icon>
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item command="profile">{{ t('nav.profile') }}</el-dropdown-item>
+                <el-dropdown-item command="logout" divided>{{ t('nav.logout') }}</el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
+        </div>
       </header>
 
       <main class="main">
@@ -59,7 +83,7 @@
       </button>
       <button class="tab-item" :class="{ active: drawerVisible }" @click="drawerVisible = true">
         <el-icon class="tab-icon"><Menu /></el-icon>
-        <span class="tab-label">更多</span>
+        <span class="tab-label">{{ t('nav.more') }}</span>
       </button>
     </nav>
 
@@ -76,7 +100,7 @@
         <span class="brand-logo">🛰️</span>
         <div>
           <div class="brand-name">Lingo<span class="brand-hl">Play</span></div>
-          <div class="brand-sub">游戏化多语学习</div>
+          <div class="brand-sub">{{ t('brand.slogan') }}</div>
         </div>
       </div>
       <div class="drawer-menu">
@@ -91,13 +115,27 @@
           <span>{{ item.label }}</span>
         </button>
         <div class="drawer-divider"></div>
+        <!-- 移动端语言切换 -->
+        <div class="drawer-lang">
+          <span class="drawer-lang-label">{{ t('lang.label') }}</span>
+          <div class="drawer-lang-chips">
+            <button
+              v-for="l in SUPPORTED_LANGS"
+              :key="l.code"
+              class="lang-chip-btn"
+              :class="{ active: l.code === currentLang.code }"
+              @click="onLangCommand(l.code)"
+            >{{ l.flag }} {{ l.name }}</button>
+          </div>
+        </div>
+        <div class="drawer-divider"></div>
         <button class="drawer-item" @click="goDrawer('/profile')">
           <el-icon><User /></el-icon>
-          <span>个人中心</span>
+          <span>{{ t('nav.profile') }}</span>
         </button>
         <button class="drawer-item danger" @click="logout">
           <el-icon><SwitchButton /></el-icon>
-          <span>退出登录</span>
+          <span>{{ t('nav.logout') }}</span>
         </button>
       </div>
     </el-drawer>
@@ -107,12 +145,24 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { useUserStore } from '../store/user'
+import { SUPPORTED_LANGS, setLocale, currentLocale } from '../i18n'
 import { checkUpdateOnLaunch } from '../utils/updater'
 
+const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 const store = useUserStore()
+
+const currentLang = computed(() => {
+  const code = currentLocale()
+  return SUPPORTED_LANGS.find((l) => l.code === code) || SUPPORTED_LANGS[0]
+})
+
+function onLangCommand(code) {
+  setLocale(code)
+}
 
 // 响应式断点：≤768px 视为移动端（覆盖主流手机竖屏/小平板）
 const mobileQuery = window.matchMedia('(max-width: 768px)')
@@ -140,31 +190,35 @@ onBeforeUnmount(() => {
   }
 })
 
-// 全部导航项（桌面侧边栏用）
-const allMenus = [
-  { path: '/', icon: 'Lightning', label: '游戏大厅' },
-  { path: '/courses', icon: 'MapLocation', label: '关卡地图' },
-  { path: '/recommend', icon: 'MagicStick', label: '智能推荐' },
-  { path: '/progress', icon: 'DataLine', label: '我的战绩' },
-  { path: '/community', icon: 'ChatDotRound', label: '学习社区' },
-  { path: '/achievements', icon: 'Trophy', label: '成就殿堂' },
-  { path: '/download', icon: 'Cellphone', label: 'APP 下载' }
-]
+// 全部导航项（桌面侧边栏用），label 跟随界面语言
+const allMenus = computed(() => [
+  { path: '/', icon: 'Lightning', label: t('nav.dashboard') },
+  { path: '/courses', icon: 'MapLocation', label: t('nav.courses') },
+  { path: '/translate', icon: 'Promotion', label: t('nav.translate') },
+  { path: '/recommend', icon: 'MagicStick', label: t('nav.recommend') },
+  { path: '/progress', icon: 'DataLine', label: t('nav.progress') },
+  { path: '/community', icon: 'ChatDotRound', label: t('nav.community') },
+  { path: '/achievements', icon: 'Trophy', label: t('nav.achievements') },
+  { path: '/vip', icon: 'GoldMedal', label: t('nav.vip') },
+  { path: '/download', icon: 'Cellphone', label: t('nav.download') }
+])
 
 // 底部标签（高频入口）
-const tabs = [
-  { path: '/', icon: 'Lightning', label: '大厅' },
-  { path: '/courses', icon: 'MapLocation', label: '关卡' },
-  { path: '/progress', icon: 'DataLine', label: '战绩' },
-  { path: '/community', icon: 'ChatDotRound', label: '社区' }
-]
+const tabs = computed(() => [
+  { path: '/', icon: 'Lightning', label: t('nav.dashboard') },
+  { path: '/courses', icon: 'MapLocation', label: t('nav.courses') },
+  { path: '/progress', icon: 'DataLine', label: t('nav.progress') },
+  { path: '/community', icon: 'ChatDotRound', label: t('nav.community') }
+])
 
 // 抽屉中的次级入口
-const moreMenus = [
-  { path: '/recommend', icon: 'MagicStick', label: '智能推荐' },
-  { path: '/achievements', icon: 'Trophy', label: '成就殿堂' },
-  { path: '/download', icon: 'Cellphone', label: 'APP 下载' }
-]
+const moreMenus = computed(() => [
+  { path: '/translate', icon: 'Promotion', label: t('nav.translate') },
+  { path: '/recommend', icon: 'MagicStick', label: t('nav.recommend') },
+  { path: '/vip', icon: 'GoldMedal', label: t('nav.vip') },
+  { path: '/achievements', icon: 'Trophy', label: t('nav.achievements') },
+  { path: '/download', icon: 'Cellphone', label: t('nav.download') }
+])
 
 const drawerVisible = ref(false)
 
@@ -176,10 +230,10 @@ const activeMenu = computed(() => {
 
 const greeting = computed(() => {
   const hour = new Date().getHours()
-  if (hour < 6) return '夜猫子模式启动 🌙'
-  if (hour < 12) return '今日能量已充满，开一把！ ⚡'
-  if (hour < 18) return '下午茶时间，来局单词消消乐 🍵'
-  return '晚间训练场已开放 🎮'
+  if (hour < 6) return t('greet.night')
+  if (hour < 12) return t('greet.morning')
+  if (hour < 18) return t('greet.afternoon')
+  return t('greet.evening')
 })
 
 function go(path) {
@@ -311,6 +365,86 @@ function onCommand(cmd) {
 .header-greeting {
   font-size: 14px;
   color: var(--ll-text-muted);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(120, 150, 255, 0.28);
+  color: var(--ll-text);
+  font-size: 13px;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.lang-chip:hover {
+  border-color: rgba(120, 150, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.lang-code {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.lang-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-menu-flag {
+  font-size: 15px;
+}
+
+:deep(.lang-active) {
+  color: var(--ll-cyan, #22d3ee);
+  font-weight: 700;
+}
+
+.drawer-lang {
+  padding: 4px 0;
+}
+
+.drawer-lang-label {
+  font-size: 12px;
+  color: var(--ll-text-muted);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.drawer-lang-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lang-chip-btn {
+  border: 1px solid rgba(120, 150, 255, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ll-text);
+  border-radius: 18px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.lang-chip-btn.active {
+  border-color: var(--ll-cyan, #22d3ee);
+  color: var(--ll-cyan, #22d3ee);
+  background: rgba(34, 211, 238, 0.08);
 }
 
 .user-chip {

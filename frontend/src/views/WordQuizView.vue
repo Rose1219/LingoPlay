@@ -12,15 +12,16 @@
           v-for="lang in languages"
           :key="lang.code"
           class="lang-card"
-          :class="{ default: lang.code === 'en' }"
+          :class="{ default: lang.code === 'en', locked: isLocked(lang) }"
           @click="startGame(lang)"
         >
           <div class="lang-icon">{{ lang.icon }}</div>
           <div class="lang-name">{{ lang.nameCn }}</div>
-          <div class="lang-words" v-if="wordCounts[lang.code] !== undefined">
+          <div class="lang-words" v-if="isLocked(lang)">👑 VIP 专属</div>
+          <div class="lang-words" v-else-if="wordCounts[lang.code] !== undefined">
             {{ wordCounts[lang.code] }} 个单词
           </div>
-          <div class="lang-play">开始 →</div>
+          <div class="lang-play">{{ isLocked(lang) ? '🔒 开通解锁' : '开始 →' }}</div>
           <div class="default-tag" v-if="lang.code === 'en'">默认</div>
         </div>
       </div>
@@ -58,10 +59,14 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import { ElMessage } from 'element-plus'
+import { useRouter } from 'vue-router'
 import { languageApi, gameApi } from '../api'
+import { useUserStore } from '../store/user'
 import WordQuiz from '../components/learn/WordQuiz.vue'
 import PageBack from '../components/PageBack.vue'
 
+const router = useRouter()
+const userStore = useUserStore()
 const step = ref('select') // select | playing
 const languages = ref([])
 const currentLang = ref(null)
@@ -85,6 +90,8 @@ const locale = computed(() => {
 
 async function loadCounts() {
   for (const lang of languages.value) {
+    // VIP 语种对非会员静默跳过，避免 403 报错
+    if (isLocked(lang)) continue
     try {
       const list = await gameApi.quizWords(lang.code)
       wordCounts.value = { ...wordCounts.value, [lang.code]: list.length }
@@ -94,7 +101,16 @@ async function loadCounts() {
   }
 }
 
+function isLocked(lang) {
+  return !!lang.vipOnly && !(userStore.user && userStore.user.vip)
+}
+
 async function startGame(lang) {
+  if (isLocked(lang)) {
+    ElMessage.warning('该语种为 VIP 专属，开通会员后即可学习')
+    router.push('/vip')
+    return
+  }
   currentLang.value = lang
   try {
     const list = await gameApi.quizWords(lang.code)
@@ -187,6 +203,15 @@ onMounted(async () => {
 .lang-card.default {
   border-color: rgba(79, 124, 255, 0.45);
   background: linear-gradient(160deg, rgba(79, 124, 255, 0.1), rgba(34, 211, 238, 0.04));
+}
+
+.lang-card.locked {
+  border-color: rgba(255, 184, 79, 0.3);
+  background: linear-gradient(160deg, rgba(255, 184, 79, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.lang-card.locked .lang-play {
+  color: #ffb84f;
 }
 
 .default-tag {

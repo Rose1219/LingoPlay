@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "一",
+      "phonetic": "yī",
+      "meaning": "数字一",
+      "example": "买一笼汤包。",
+      "translation": "买一笼汤包。"
+    },
+    {
+      "word": "两",
+      "phonetic": "liǎng",
+      "meaning": "数字二（量词前用两）",
+      "example": "来两碗素椒杂酱。",
+      "translation": "来两碗素椒杂酱面。"
+    },
+    {
+      "word": "三",
+      "phonetic": "sān",
+      "meaning": "数字三",
+      "example": "等三分钟就好。",
+      "translation": "等三分钟就好。"
+    },
+    {
+      "word": "屋头",
+      "phonetic": "wú tóu",
+      "meaning": "家里（也说屋里头）",
+      "example": "我屋头种了盆黄桷兰。",
+      "translation": "我家里种了一盆黄桷兰。"
+    },
+    {
+      "word": "赶场",
+      "phonetic": "gǎn chǎng",
+      "meaning": "赶集（乡镇逢场日）",
+      "example": "礼拜天陪婆婆去赶场。",
+      "translation": "星期天陪奶奶去赶集。"
+    },
+    {
+      "word": "打堆堆",
+      "phonetic": "dǎ duī duī",
+      "meaning": "凑在一起 / 扎堆",
+      "example": "放学到河边打堆堆耍水。",
+      "translation": "放学后聚在河边玩水。"
+    },
+    {
+      "word": "摆龙门阵",
+      "phonetic": "bǎi lóng mén zhèn",
+      "meaning": "聊天、闲谈（川人社交灵魂）",
+      "example": "晚饭后在院坝头摆龙门阵。",
+      "translation": "晚饭后在院子里聊天。"
+    },
+    {
+      "word": "吃饭",
+      "phonetic": "chī fàn（川音：cī fàn）",
+      "meaning": "吃饭",
+      "example": "走，吃饭去，喊起三哥。",
+      "translation": "走，吃饭去，把三哥也叫上。"
+    },
+    {
+      "word": "睡觉",
+      "phonetic": "shuì jiào",
+      "meaning": "睡觉",
+      "example": "莫耍手机了，早点睡觉。",
+      "translation": "别玩手机了，早点睡觉。"
+    },
+    {
+      "word": "上学",
+      "phonetic": "shàng xué",
+      "meaning": "上学",
+      "example": "幺儿背起书包上学去。",
+      "translation": "孩子背起书包上学去。"
+    },
+    {
+      "word": "上班",
+      "phonetic": "shàng bān",
+      "meaning": "上班",
+      "example": "早高峰挤地铁上班。",
+      "translation": "早高峰挤地铁上班。"
+    },
+    {
+      "word": "外头",
+      "phonetic": "wài tóu",
+      "meaning": "外面",
+      "example": "外头落雨，拿把伞去。",
+      "translation": "外面下雨，拿把伞去。"
+    },
+    {
+      "word": "快点些",
+      "phonetic": "kuài diǎn xiē",
+      "meaning": "快一点（带语气词「些」）",
+      "example": "快点些，牌局等你上桌。",
+      "translation": "快点，牌局等你上桌。"
+    },
+    {
+      "word": "好久",
+      "phonetic": "hǎo jiǔ",
+      "meaning": "什么时候 / 很久",
+      "example": "你好久回来哦？",
+      "translation": "你什么时候回来呀？"
+    },
+    {
+      "word": "都回来了",
+      "phonetic": "dōu huí lái le",
+      "meaning": "家人团聚的说法",
+      "example": "过年了，一屋人都回来了。",
+      "translation": "过年了，一屋子人都回来了。"
+    }
+  ]
+}

@@ -55,11 +55,11 @@ public class SeedService implements CommandLineRunner {
         SeedMeta meta = objectMapper.readValue(readResource("seed/meta.json"), SeedMeta.class);
         boolean firstInit = languageRepository.count() == 0;
 
+        // 语种每次启动都做增量同步：新上线的语种（法/西/阿/中/方言）自动补进老库，
+        // 已有语种只刷新展示字段，不动主键与关联数据（幂等）
+        syncLanguages(meta);
+
         if (firstInit) {
-            // 语种
-            for (Language lang : meta.getLanguages()) {
-                languageRepository.save(lang);
-            }
             // 成就定义
             List<Achievement> achievements = objectMapper.readValue(
                     readResource("seed/achievements.json"), new TypeReference<List<Achievement>>() {
@@ -98,6 +98,26 @@ public class SeedService implements CommandLineRunner {
 
         // 课程内容增量同步：新增的课程/单元/课时自动补齐，已有的不动（幂等）
         syncCourses(meta);
+    }
+
+    /** 语种增量同步：缺失即插入；已存在则刷新名称/描述/排序/VIP 标记 */
+    private void syncLanguages(SeedMeta meta) {
+        for (Language seed : meta.getLanguages()) {
+            Language existing = languageRepository.findByCode(seed.getCode()).orElse(null);
+            if (existing == null) {
+                languageRepository.save(seed);
+                continue;
+            }
+            existing.setName(seed.getName());
+            existing.setNameCn(seed.getNameCn());
+            existing.setIcon(seed.getIcon());
+            existing.setDescription(seed.getDescription());
+            existing.setSortOrder(seed.getSortOrder());
+            existing.setVipOnly(Boolean.TRUE.equals(seed.getVipOnly()));
+            existing.setTtsApproximate(Boolean.TRUE.equals(seed.getTtsApproximate()));
+            existing.setFallbackTo(seed.getFallbackTo());
+            languageRepository.save(existing);
+        }
     }
 
     /**

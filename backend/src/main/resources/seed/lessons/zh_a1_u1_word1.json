@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "你好",
+      "phonetic": "nǐ hǎo",
+      "meaning": "最常用的问候语，白天或初次见面时说",
+      "example": "你好，我叫王明。",
+      "translation": "Hello, my name is Wang Ming."
+    },
+    {
+      "word": "谢谢",
+      "phonetic": "xiè xie",
+      "meaning": "表达感谢",
+      "example": "谢谢你的帮助。",
+      "translation": "Thank you for your help."
+    },
+    {
+      "word": "对不起",
+      "phonetic": "duì bu qǐ",
+      "meaning": "表示歉意",
+      "example": "对不起，我迟到了。",
+      "translation": "Sorry, I'm late."
+    },
+    {
+      "word": "再见",
+      "phonetic": "zài jiàn",
+      "meaning": "分别时的客套话",
+      "example": "再见，明天见。",
+      "translation": "Goodbye, see you tomorrow."
+    },
+    {
+      "word": "请",
+      "phonetic": "qǐng",
+      "meaning": "礼貌地提出请求",
+      "example": "请给我一杯咖啡。",
+      "translation": "A cup of coffee, please."
+    },
+    {
+      "word": "不客气",
+      "phonetic": "bù kè qi",
+      "meaning": "回应别人的感谢",
+      "example": "不客气，这是我应该做的。",
+      "translation": "You're welcome, it's my pleasure."
+    },
+    {
+      "word": "是",
+      "phonetic": "shì",
+      "meaning": "表示肯定",
+      "example": "是，我同意。",
+      "translation": "Yes, I agree."
+    },
+    {
+      "word": "不",
+      "phonetic": "bù",
+      "meaning": "表示否定",
+      "example": "不，谢谢。",
+      "translation": "No, thank you."
+    },
+    {
+      "word": "早上好",
+      "phonetic": "zǎo shang hǎo",
+      "meaning": "早晨见面时的问候",
+      "example": "早上好，大家！",
+      "translation": "Good morning, everyone!"
+    },
+    {
+      "word": "你好吗",
+      "phonetic": "nǐ hǎo ma",
+      "meaning": "询问对方的近况",
+      "example": "你好吗？我很好。",
+      "translation": "How are you? I'm fine."
+    }
+  ]
+}

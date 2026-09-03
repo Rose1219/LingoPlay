@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "一",
+      "phonetic": "yī",
+      "meaning": "数字 1",
+      "example": "我有一个哥哥。",
+      "translation": "I have one older brother."
+    },
+    {
+      "word": "二",
+      "phonetic": "èr",
+      "meaning": "数字 2",
+      "example": "请给我两杯咖啡。",
+      "translation": "Two coffees, please."
+    },
+    {
+      "word": "三",
+      "phonetic": "sān",
+      "meaning": "数字 3",
+      "example": "他三岁了。",
+      "translation": "He is three years old."
+    },
+    {
+      "word": "红色",
+      "phonetic": "hóng sè",
+      "meaning": "像火一样的颜色",
+      "example": "我喜欢这条红裙子。",
+      "translation": "I like this red dress."
+    },
+    {
+      "word": "蓝色",
+      "phonetic": "lán sè",
+      "meaning": "晴朗天空的颜色",
+      "example": "天空是蓝色的。",
+      "translation": "The sky is blue."
+    },
+    {
+      "word": "绿色",
+      "phonetic": "lǜ sè",
+      "meaning": "草和树叶的颜色",
+      "example": "我有一个绿色的包。",
+      "translation": "I have a green bag."
+    },
+    {
+      "word": "黑色",
+      "phonetic": "hēi sè",
+      "meaning": "夜晚的颜色",
+      "example": "他穿着一件黑色大衣。",
+      "translation": "He wears a black coat."
+    },
+    {
+      "word": "白色",
+      "phonetic": "bái sè",
+      "meaning": "雪的颜色",
+      "example": "我想要白米饭。",
+      "translation": "I'd like white rice."
+    },
+    {
+      "word": "黄色",
+      "phonetic": "huáng sè",
+      "meaning": "香蕉的颜色",
+      "example": "黄色的花很漂亮。",
+      "translation": "The yellow flowers are beautiful."
+    },
+    {
+      "word": "小",
+      "phonetic": "xiǎo",
+      "meaning": "体积或年纪不大",
+      "example": "这是一只小猫。",
+      "translation": "This is a small cat."
+    }
+  ]
+}

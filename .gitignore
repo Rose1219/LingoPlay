@@ -31,3 +31,6 @@ logs
 
 # ===== 小程序 =====
 miniprogram/miniprogram_npm
+
+# ===== WorkBuddy 本地工作区数据 =====
+.workbuddy/

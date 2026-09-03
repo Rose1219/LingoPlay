@@ -16,4 +16,13 @@ public class SubmitResponse {
 
     /** 本次解锁的成就 */
     private List<AchievementVO> newAchievements;
+
+    /** 课程内是否还有下一关（通关弹窗「进入下一关」用） */
+    private Boolean hasNextLesson;
+
+    /** 下一关课时 ID（hasNextLesson=true 时可用） */
+    private Long nextLessonId;
+
+    /** 下一关课时标题 */
+    private String nextLessonTitle;
 }

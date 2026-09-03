@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "我哋",
+      "phonetic": "ngo5 dei6",
+      "meaning": "我们（粤语用「哋」表复数）",
+      "example": "我哋一齐去食饭啦。",
+      "translation": "我们一起去吃饭吧。"
+    },
+    {
+      "word": "你哋",
+      "phonetic": "nei5 dei6",
+      "meaning": "你们",
+      "example": "你哋慢慢倾，我先行。",
+      "translation": "你们慢慢聊，我先走了。"
+    },
+    {
+      "word": "佢",
+      "phonetic": "keoi5",
+      "meaning": "他 / 她 / 它",
+      "example": "佢係我阿哥。",
+      "translation": "他是我哥哥。"
+    },
+    {
+      "word": "老豆",
+      "phonetic": "lou5 dau6",
+      "meaning": "爸爸（口语）",
+      "example": "老豆带我去咗公园。",
+      "translation": "爸爸带我去公园了。"
+    },
+    {
+      "word": "阿妈",
+      "phonetic": "aa3 maa1",
+      "meaning": "妈妈",
+      "example": "阿妈叫我返屋企食饭。",
+      "translation": "妈妈叫我回家吃饭。"
+    },
+    {
+      "word": "细路",
+      "phonetic": "sai3 lou6",
+      "meaning": "小孩子（也叫细路仔）",
+      "example": "个细路好得意。",
+      "translation": "这个小孩很可爱。"
+    },
+    {
+      "word": "点解",
+      "phonetic": "dim2 gaai2",
+      "meaning": "为什么（高频问句）",
+      "example": "点解你今日冇返工？",
+      "translation": "为什么你今天没上班？"
+    },
+    {
+      "word": "乜嘢",
+      "phonetic": "mat1 je5",
+      "meaning": "什么",
+      "example": "你讲乜嘢呀？我听唔明。",
+      "translation": "你说什么呀？我听不明白。"
+    },
+    {
+      "word": "边度",
+      "phonetic": "bin1 dou6",
+      "meaning": "哪里",
+      "example": "你喺边度等我？",
+      "translation": "你在哪里等我？"
+    },
+    {
+      "word": "几多",
+      "phonetic": "gei2 do1",
+      "meaning": "多少 / 多少钱",
+      "example": "呢本书几多钱？",
+      "translation": "这本书多少钱？"
+    },
+    {
+      "word": "而家",
+      "phonetic": "ji4 gaa1",
+      "meaning": "现在",
+      "example": "而家几点钟？",
+      "translation": "现在几点了？"
+    },
+    {
+      "word": "听日",
+      "phonetic": "ting1 jat6",
+      "meaning": "明天",
+      "example": "听日我哋去行街。",
+      "translation": "明天我们去逛街。"
+    },
+    {
+      "word": "寻日",
+      "phonetic": "cam4 jat6",
+      "meaning": "昨天",
+      "example": "寻日落咗成日雨。",
+      "translation": "昨天下了一整天雨。"
+    },
+    {
+      "word": "好嘢",
+      "phonetic": "hou2 je5",
+      "meaning": "太棒了 / 干得好",
+      "example": "你攞到冠军？好嘢！",
+      "translation": "你拿到冠军？太棒了！"
+    },
+    {
+      "word": "冇问题",
+      "phonetic": "mou5 man6 tai4",
+      "meaning": "没问题",
+      "example": "帮你手？冇问题！",
+      "translation": "帮你忙？没问题！"
+    }
+  ]
+}

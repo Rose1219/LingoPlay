@@ -1,0 +1,64 @@
+<view class="page">
+  <view class="page-title">👑 {{i18n.title}}</view>
+  <view class="page-subtitle">{{i18n.subtitle}}</view>
+
+  <!-- 会员状态卡 -->
+  <view class="vip-hero {{status && status.vip ? 'active' : ''}}" wx:if="{{status}}">
+    <view class="vip-hero-badge">👑</view>
+    <view class="vip-hero-main">
+      <view class="vip-hero-title">
+        <view class="vip-tag">VIP</view>
+        <text wx:if="{{status.vip}}">{{i18n.active}}</text>
+        <text wx:else>{{i18n.never}}</text>
+      </view>
+      <view class="vip-hero-meta" wx:if="{{status.vipExpireAt}}">
+        {{i18n.expireAt}}：{{status.vipExpireAt}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 套餐与权益 -->
+  <view class="plan-card" wx:if="{{status}}">
+    <view class="plan-price-row">
+      <view class="plan-price"><text class="price-symbol">¥</text><text class="price-num">5</text><text class="price-unit">/月</text></view>
+      <view class="plan-name">{{i18n.planName}}</view>
+    </view>
+    <view class="perk-title">{{i18n.perks}}</view>
+    <view class="perk-item">⭐ {{i18n.perk1}}</view>
+    <view class="perk-item">⭐ {{i18n.perk2}}</view>
+    <view class="perk-item">⭐ {{i18n.perk3}}</view>
+  </view>
+
+  <!-- 支付方式 -->
+  <block wx:if="{{status && !status.vip}}">
+    <view class="pay-title">{{i18n.payTitle}}</view>
+    <view class="channel-grid">
+      <view
+        wx:for="{{status.channels}}"
+        wx:key="code"
+        class="channel-card {{channel === item.code ? 'selected' : ''}} {{!item.enabled ? 'disabled' : ''}}"
+        bindtap="pickChannel"
+        data-code="{{item.code}}"
+      >
+        <view class="channel-icon">{{item.icon}}</view>
+        <view class="channel-name">{{item.name}}</view>
+        <view class="channel-note" wx:if="{{item.code === 'MOCK'}}">{{i18n.mockNote}}</view>
+        <view class="channel-note" wx:elif="{{!item.enabled}}">{{i18n.unavailable}}</view>
+      </view>
+    </view>
+
+    <view class="pay-btn {{channel ? '' : 'disabled'}}" bindtap="startPay">
+      {{paying ? '…' : i18n.payNow}}
+    </view>
+  </block>
+
+  <!-- 我的订单 -->
+  <view class="orders" wx:if="{{orders.length}}">
+    <view class="orders-title">{{i18n.orders}}</view>
+    <view class="order-row" wx:for="{{orders}}" wx:key="orderNo">
+      <view class="order-no">{{item.orderNo}}</view>
+      <view class="order-amount">{{item.amount}}</view>
+      <view class="order-status {{item.statusCls}}">{{item.statusLabel}}</view>
+    </view>
+  </view>
+</view>

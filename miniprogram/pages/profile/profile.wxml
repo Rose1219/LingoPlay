@@ -1,22 +1,25 @@
 <view class="page" wx:if="{{user}}">
-  <view class="page-title">个人中心</view>
-  <view class="page-subtitle">管理资料与学习偏好</view>
+  <view class="page-title">{{i18n.title}}</view>
+  <view class="page-subtitle">{{i18n.subtitle}}</view>
 
   <view class="card">
     <view class="profile-head">
       <view class="profile-avatar">{{user.avatar}}</view>
       <view>
-        <view class="profile-nickname">{{user.nickname}}</view>
+        <view class="profile-nickname">
+          {{user.nickname}}
+          <text wx:if="{{user.vip}}" class="vip-badge">👑 VIP</text>
+        </view>
         <view class="text-muted text-sm">@{{user.username}}</view>
       </view>
     </view>
 
-    <view class="form-label">昵称</view>
+    <view class="form-label">{{i18n.nickname}}</view>
     <view class="input">
-      <input placeholder="设置你的昵称" placeholder-class="ph" value="{{nickname}}" bindinput="onNicknameInput" />
+      <input placeholder="{{i18n.nicknamePh}}" placeholder-class="ph" value="{{nickname}}" bindinput="onNicknameInput" />
     </view>
 
-    <view class="form-label">学习语种（影响每日单词与推荐）</view>
+    <view class="form-label">{{i18n.prefLang}}</view>
     <view class="lang-checks">
       <view
         class="lang-check {{selected.indexOf(item.code) >= 0 ? 'checked' : ''}}"
@@ -24,11 +27,23 @@
         wx:key="code"
         bindtap="toggleLang"
         data-code="{{item.code}}"
-      >{{item.icon}} {{item.nameCn}}</view>
+      >{{item.icon}} {{item.nameCn}}<text wx:if="{{item.vipOnly}}" class="check-vip">👑</text></view>
     </view>
 
-    <view class="glass-btn primary" bindtap="save">保存修改</view>
-    <view class="glass-btn" bindtap="goAchievements">🏆 成就殿堂</view>
-    <view class="logout-btn" bindtap="logout">退出登录</view>
+    <view class="form-label">{{i18n.uiLang}}</view>
+    <scroll-view scroll-x class="ui-langs">
+      <view
+        class="ui-lang {{uiLang === item.code ? 'active' : ''}}"
+        wx:for="{{uiLangs}}"
+        wx:key="code"
+        bindtap="switchUiLang"
+        data-code="{{item.code}}"
+      >{{item.flag}} {{item.name}}</view>
+    </scroll-view>
+
+    <view class="glass-btn primary" bindtap="save">{{i18n.save}}</view>
+    <view class="glass-btn" bindtap="goVip">👑 VIP · ¥5/月</view>
+    <view class="glass-btn" bindtap="goAchievements">{{i18n.achievements}}</view>
+    <view class="logout-btn" bindtap="logout">{{i18n.logout}}</view>
   </view>
 </view>

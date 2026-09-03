@@ -1,0 +1,236 @@
+.page {
+  padding: 24rpx 28rpx calc(40rpx + env(safe-area-inset-bottom, 0px));
+}
+
+.page-title {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #e8ecf8;
+  margin-top: 12rpx;
+}
+
+.page-subtitle {
+  font-size: 24rpx;
+  color: #8a97b8;
+  margin: 8rpx 0 24rpx;
+}
+
+/* 会员状态卡 */
+.vip-hero {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 30rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid rgba(120, 150, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  margin-bottom: 22rpx;
+}
+
+.vip-hero.active {
+  background: linear-gradient(120deg, rgba(255, 200, 90, 0.16), rgba(255, 160, 60, 0.05));
+  border-color: rgba(255, 200, 90, 0.4);
+}
+
+.vip-hero-badge {
+  font-size: 64rpx;
+}
+
+.vip-hero-title {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #e8ecf8;
+}
+
+.vip-tag {
+  background: linear-gradient(90deg, #ffb84f, #ff9a3c);
+  color: #2b1a00;
+  font-size: 20rpx;
+  font-weight: 800;
+  padding: 4rpx 16rpx;
+  border-radius: 18rpx;
+}
+
+.vip-hero-meta {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #8a97b8;
+}
+
+/* 套餐卡 */
+.plan-card {
+  border-radius: 28rpx;
+  border: 1rpx solid rgba(255, 200, 90, 0.35);
+  background: radial-gradient(120% 160% at 0% 0%, rgba(255, 184, 79, 0.16), rgba(255, 255, 255, 0.03) 55%);
+  padding: 30rpx;
+  margin-bottom: 26rpx;
+}
+
+.plan-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 18rpx;
+  margin-bottom: 18rpx;
+}
+
+.plan-price {
+  color: #ffb84f;
+  font-weight: 800;
+}
+
+.price-symbol {
+  font-size: 34rpx;
+}
+
+.price-num {
+  font-size: 72rpx;
+  line-height: 1;
+}
+
+.price-unit {
+  font-size: 24rpx;
+  color: #8a97b8;
+}
+
+.plan-name {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #e8ecf8;
+}
+
+.perk-title {
+  font-size: 22rpx;
+  color: #8a97b8;
+  margin-bottom: 10rpx;
+}
+
+.perk-item {
+  font-size: 26rpx;
+  color: #e8ecf8;
+  padding: 8rpx 0;
+}
+
+/* 渠道 */
+.pay-title {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #e8ecf8;
+  margin-bottom: 16rpx;
+}
+
+.channel-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  margin-bottom: 26rpx;
+}
+
+.channel-card {
+  width: calc(50% - 8rpx);
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(120, 150, 255, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 22rpx;
+}
+
+.channel-card.selected {
+  border-color: #22d3ee;
+  background: rgba(34, 211, 238, 0.08);
+}
+
+.channel-card.disabled {
+  opacity: 0.45;
+}
+
+.channel-icon {
+  font-size: 40rpx;
+}
+
+.channel-name {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #e8ecf8;
+  margin: 8rpx 0 4rpx;
+}
+
+.channel-note {
+  font-size: 20rpx;
+  color: #8a97b8;
+  line-height: 1.5;
+}
+
+.pay-btn {
+  text-align: center;
+  padding: 26rpx 0;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  font-weight: 800;
+  color: #2b1a00;
+  background: linear-gradient(90deg, #ffb84f, #ff9a3c);
+  box-shadow: 0 8rpx 32rpx rgba(255, 154, 60, 0.3);
+  margin-bottom: 20rpx;
+}
+
+.pay-btn.disabled {
+  opacity: 0.5;
+}
+
+/* 订单 */
+.orders {
+  margin-top: 10rpx;
+}
+
+.orders-title {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #e8ecf8;
+  margin-bottom: 14rpx;
+}
+
+.order-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 18rpx 22rpx;
+  border: 1rpx solid rgba(120, 150, 255, 0.14);
+  border-radius: 18rpx;
+  margin-bottom: 10rpx;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.order-no {
+  flex: 1;
+  color: #8a97b8;
+  font-size: 22rpx;
+}
+
+.order-amount {
+  font-weight: 700;
+  color: #e8ecf8;
+  font-size: 24rpx;
+}
+
+.order-status {
+  font-size: 22rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 16rpx;
+}
+
+.order-status.pending {
+  color: #ffb84f;
+  background: rgba(255, 184, 79, 0.12);
+}
+
+.order-status.paid {
+  color: #6ee7a0;
+  background: rgba(110, 231, 160, 0.12);
+}
+
+.order-status.failed {
+  color: #8a97b8;
+  background: rgba(138, 151, 184, 0.12);
+}

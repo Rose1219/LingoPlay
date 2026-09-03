@@ -1,0 +1,29 @@
+{
+  "sentences": [
+    {
+      "text": "Bonjour, je m'appelle Marie.",
+      "translation": "你好，我叫玛丽。",
+      "tip": "appelle 中的 ll 发 /j/，je m' 要连读成 /ʒəm/"
+    },
+    {
+      "text": "Je suis étudiante.",
+      "translation": "我是学生。",
+      "tip": "étudiante 词尾发鼻化元音 /ɑ̃t/，气流要从鼻腔出来"
+    },
+    {
+      "text": "J'habite à Paris.",
+      "translation": "我住在巴黎。",
+      "tip": "J'habite 需连读，字母 h 永远不发音"
+    },
+    {
+      "text": "Je parle un peu français.",
+      "translation": "我会说一点法语。",
+      "tip": "français 词尾 -ais 发 /ɛ/，末尾 s 不发音"
+    },
+    {
+      "text": "Enchantée de vous rencontrer.",
+      "translation": "很高兴认识您。",
+      "tip": "女性说话者用 Enchantée，男性用 Enchanté"
+    }
+  ]
+}

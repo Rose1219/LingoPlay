@@ -21,4 +21,10 @@ public class CourseVO {
     private Integer inProgressLessons;
     /** 完成进度百分比 0-100 */
     private Integer progressPercent;
+
+    /** 所属语种是否 VIP 专属（方言课程） */
+    private Boolean vipOnly;
+
+    /** 发音是否为近似（方言暂用普通话发音） */
+    private Boolean ttsApproximate;
 }

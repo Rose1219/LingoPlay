@@ -324,6 +324,49 @@ function warnNativeError(detail) {
   }
 }
 
+/**
+ * 后端 TTS 代理朗读（GET /api/tts，返回 MP3 二进制）。
+ *
+ * 小程序同声传译插件只支持中英，多语种与方言一律走后端代理；
+ * Web 端此前只依赖浏览器语音包，缺包时会被系统默认语音（中文/英文）替代，
+ * 等于「用英语读法语」。这里补上后端代理作为浏览器无匹配语音时的首选降级。
+ *
+ * 响应头 X-Tts-Approximate=1 表示并非目标语种真实发音（方言暂用普通话近似）。
+ * @returns {Promise<'ok'|'fallback'|'failed'>}
+ */
+async function backendTts(text, lang, rate) {
+  try {
+    const qs = `text=${encodeURIComponent(text)}&lang=${encodeURIComponent(lang || 'en')}`
+    const rateQs = rate ? `&rate=${encodeURIComponent(String(rate))}` : ''
+    const res = await fetch(`/api/tts?${qs}${rateQs}`, { credentials: 'omit' })
+    if (!res.ok) return 'failed'
+    const approximate = res.headers.get('x-tts-approximate') === '1'
+    const blob = await res.blob()
+    if (!blob || !blob.size) return 'failed'
+    const objectUrl = URL.createObjectURL(blob)
+    const status = await new Promise((resolve) => {
+      const audio = new Audio(objectUrl)
+      let settled = false
+      const done = (v) => {
+        if (settled) return
+        settled = true
+        try { URL.revokeObjectURL(objectUrl) } catch (e) { /* ignore */ }
+        resolve(v)
+      }
+      audio.onended = () => done(approximate ? 'fallback' : 'ok')
+      audio.onerror = () => done('failed')
+      // 环境不触发事件时按文本长度估算超时
+      const estimate = Math.min(12000, 2500 + text.length * 180)
+      setTimeout(() => done(approximate ? 'fallback' : 'ok'), estimate)
+      audio.play().catch(() => done('failed'))
+    })
+    return status
+  } catch (e) {
+    console.warn('[TTS] backend proxy failed:', e && e.message)
+    return 'failed'
+  }
+}
+
 /** 浏览器 Web Speech API 朗读 */
 async function webSpeak(text, lang, rate) {
   await waitVoices()
@@ -335,7 +378,15 @@ async function webSpeak(text, lang, rate) {
     utterance.voice = voice
     utterance.lang = voice.lang
   } else {
-    // 无匹配语音包时若仍设置目标语言（如 en-US），Chrome 会因找不到
+    // 无匹配语音包：优先走后端 TTS 代理（多语种覆盖更全，且能拿到方言近似标记），
+    // 而不是直接丢给系统默认语音——那会导致用中文/英文朗读法语、阿拉伯语等。
+    const proxy = await backendTts(text, lang, rate)
+    if (proxy !== 'failed') {
+      if (proxy === 'fallback') warnMissingOnce(lang)
+      return proxy
+    }
+    // 代理也不可用：改用系统默认语音兜底，保证至少能出声。
+    // 注意：无匹配语音包时若仍设置目标语言（如 en-US），Chrome 会因找不到
     // 对应语音而静默跳过，必须显式改用系统默认语音兜底朗读。
     const fallback =
       cachedVoices.find((v) => v.default) ||

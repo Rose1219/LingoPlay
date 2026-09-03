@@ -1,0 +1,35 @@
+{
+  "scene": "中餐馆点餐",
+  "turns": [
+    {
+      "role": "ai",
+      "text": "您好！请问您想点什么？",
+      "translation": "Hello! What would you like to order?"
+    },
+    {
+      "role": "user",
+      "text": "我想要一碗牛肉面。",
+      "translation": "I'd like a bowl of beef noodles."
+    },
+    {
+      "role": "ai",
+      "text": "好的，需要喝的吗？",
+      "translation": "Sure, anything to drink?"
+    },
+    {
+      "role": "user",
+      "text": "来一杯茶，谢谢。",
+      "translation": "A cup of tea, please."
+    },
+    {
+      "role": "ai",
+      "text": "一共三十五元。",
+      "translation": "That's 35 yuan in total."
+    },
+    {
+      "role": "user",
+      "text": "给您，谢谢！",
+      "translation": "Here you are, thank you!"
+    }
+  ]
+}

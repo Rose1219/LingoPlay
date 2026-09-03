@@ -1,14 +1,14 @@
 <template>
   <div class="page-container">
-    <PageBack to="/" label="返回游戏大厅" />
-    <h1 class="page-title">课程中心</h1>
-    <p class="page-subtitle">英语 / 日语 / 韩语 · CEFR 分级课程体系，从入门到进阶循序渐进</p>
+    <PageBack to="/" :label="t('courses.backHome')" />
+    <h1 class="page-title">{{ t('courses.title') }}</h1>
+    <p class="page-subtitle">{{ t('courses.subtitle') }}</p>
 
     <el-tabs v-model="activeLang" @tab-change="loadCourses">
-      <el-tab-pane label="全部" name="" />
+      <el-tab-pane :label="t('courses.all')" name="" />
       <el-tab-pane v-for="lang in languages" :key="lang.code" :name="lang.code">
         <template #label>
-          <span>{{ lang.icon }} {{ lang.nameCn }}</span>
+          <span>{{ lang.icon }} {{ lang.nameCn }}<span v-if="lang.vipOnly" class="tab-vip">👑</span></span>
         </template>
       </el-tab-pane>
     </el-tabs>
@@ -17,12 +17,18 @@
       <el-row :gutter="16">
         <el-col :xs="12" :sm="12" :md="8" v-for="course in courses" :key="course.id">
           <el-card shadow="never" class="course-card hover-card" @click="goDetail(course)">
-            <div class="course-cover">{{ course.cover }}</div>
+            <div class="course-cover" :class="{ 'vip-cover': course.vipOnly }">
+              {{ course.cover }}
+              <span v-if="course.vipOnly" class="vip-ribbon">👑 {{ t('courses.vipOnly') }}</span>
+            </div>
             <div class="course-body">
-              <div class="course-title">{{ course.title }}</div>
+              <div class="course-title">
+                {{ course.title }}
+                <span v-if="course.ttsApproximate" class="approx-tag">{{ t('courses.approximate') }}</span>
+              </div>
               <div class="course-meta">
                 <el-tag size="small" type="primary" effect="light">{{ course.level }} · {{ course.levelName }}</el-tag>
-                <span class="text-muted text-sm">{{ course.lessonCount }} 课时</span>
+                <span class="text-muted text-sm">{{ course.lessonCount }} {{ t('courses.lessonUnit') }}</span>
               </div>
               <div class="course-desc ellipsis">{{ course.description }}</div>
               <el-progress
@@ -31,13 +37,13 @@
                 :color="'#4f7cff'"
               />
               <div class="course-progress-text text-muted text-sm">
-                已完成 {{ course.completedLessons }} / {{ course.lessonCount }} 课时
+                {{ t('courses.completed') }} {{ course.completedLessons }} / {{ course.lessonCount }} {{ t('courses.lessonUnit') }}
               </div>
             </div>
           </el-card>
         </el-col>
       </el-row>
-      <el-empty v-if="!loading && !courses.length" description="暂无课程" />
+      <el-empty v-if="!loading && !courses.length" :description="t('courses.noCourses')" />
     </div>
   </div>
 </template>
@@ -45,10 +51,15 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import { ElMessage } from 'element-plus'
 import { languageApi, courseApi } from '../api'
+import { useUserStore } from '../store/user'
 import PageBack from '../components/PageBack.vue'
 
+const { t } = useI18n()
 const router = useRouter()
+const store = useUserStore()
 const languages = ref([])
 const courses = ref([])
 const activeLang = ref('')
@@ -64,11 +75,23 @@ async function loadCourses() {
 }
 
 function goDetail(course) {
+  // VIP 专属语种：非 VIP 用户直接引导去开通，避免点进去吃 403
+  if (course.vipOnly && !(store.user && store.user.vip)) {
+    ElMessage.warning(t('courses.vipLockedMsg'))
+    router.push('/vip')
+    return
+  }
   router.push(`/courses/${course.id}`)
 }
 
 onMounted(async () => {
-  languages.value = await languageApi.list()
+  try {
+    languages.value = await languageApi.list()
+    // 登录态下刷新一次用户信息，保证 user.vip 判断实时
+    if (store.isLoggedIn) {
+      store.fetchMe().catch(() => {})
+    }
+  } catch (e) { /* ignore */ }
   await loadCourses()
 })
 </script>
@@ -81,6 +104,7 @@ onMounted(async () => {
 }
 
 .course-cover {
+  position: relative;
   height: 110px;
   display: flex;
   align-items: center;
@@ -92,6 +116,28 @@ onMounted(async () => {
   filter: drop-shadow(0 4px 14px rgba(79, 124, 255, 0.25));
 }
 
+.course-cover.vip-cover {
+  background: linear-gradient(135deg, rgba(255, 184, 79, 0.24), rgba(255, 154, 60, 0.08));
+  border-color: rgba(255, 184, 79, 0.35);
+}
+
+.vip-ribbon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2b1a00;
+  background: linear-gradient(90deg, #ffb84f, #ff9a3c);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.tab-vip {
+  margin-left: 2px;
+  font-size: 11px;
+}
+
 .course-body {
   padding: 14px 4px 4px;
 }
@@ -100,6 +146,16 @@ onMounted(async () => {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
+}
+
+.approx-tag {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ll-text-muted, #8a97b8);
+  border: 1px solid rgba(120, 150, 255, 0.25);
+  border-radius: 8px;
+  padding: 1px 6px;
+  margin-left: 6px;
 }
 
 .course-meta {

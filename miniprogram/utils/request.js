@@ -22,22 +22,27 @@ function request(options) {
           return
         }
         if (body && body.code !== undefined && body.code !== 0) {
-          wx.showToast({ title: body.message || '请求失败', icon: 'none' })
+          // silent 模式下不弹提示（如 VIP 拦截由页面自行引导），错误仍向上抛
+          if (!options.silent) {
+            wx.showToast({ title: body.message || '请求失败', icon: 'none' })
+          }
           reject(new Error(body.message || '请求失败'))
           return
         }
         resolve(body ? body.data : null)
       },
       fail() {
-        wx.showToast({ title: '网络异常，请稍后再试', icon: 'none' })
+        if (!options.silent) {
+          wx.showToast({ title: '网络异常，请稍后再试', icon: 'none' })
+        }
         reject(new Error('网络异常'))
       }
     })
   })
 }
 
-const get = (url, data) => request({ url, method: 'GET', data })
-const post = (url, data) => request({ url, method: 'POST', data })
-const put = (url, data) => request({ url, method: 'PUT', data })
+const get = (url, data, silent) => request({ url, method: 'GET', data, silent })
+const post = (url, data, silent) => request({ url, method: 'POST', data, silent })
+const put = (url, data, silent) => request({ url, method: 'PUT', data, silent })
 
 module.exports = { request, get, post, put, BASE_URL }

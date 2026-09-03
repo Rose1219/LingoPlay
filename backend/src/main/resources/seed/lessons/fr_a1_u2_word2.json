@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "un",
+      "phonetic": "œ̃",
+      "meaning": "一；一个",
+      "example": "J'ai un frère.",
+      "translation": "我有一个兄弟。"
+    },
+    {
+      "word": "deux",
+      "phonetic": "dø",
+      "meaning": "二",
+      "example": "Deux cafés, s'il vous plaît.",
+      "translation": "请来两杯咖啡。"
+    },
+    {
+      "word": "trois",
+      "phonetic": "tʁwa",
+      "meaning": "三",
+      "example": "Il a trois ans.",
+      "translation": "他三岁了。"
+    },
+    {
+      "word": "rouge",
+      "phonetic": "ʁuʒ",
+      "meaning": "红色",
+      "example": "J'aime cette robe rouge.",
+      "translation": "我喜欢这条红裙子。"
+    },
+    {
+      "word": "bleu",
+      "phonetic": "blø",
+      "meaning": "蓝色",
+      "example": "Le ciel est bleu.",
+      "translation": "天空是蓝色的。"
+    },
+    {
+      "word": "vert",
+      "phonetic": "vɛʁ",
+      "meaning": "绿色",
+      "example": "Elle a les yeux verts.",
+      "translation": "她有一双绿色的眼睛。"
+    },
+    {
+      "word": "noir",
+      "phonetic": "nwaʁ",
+      "meaning": "黑色",
+      "example": "Il porte un manteau noir.",
+      "translation": "他穿着一件黑色大衣。"
+    },
+    {
+      "word": "blanc",
+      "phonetic": "blɑ̃",
+      "meaning": "白色",
+      "example": "Je voudrais du pain blanc.",
+      "translation": "我想要白面包。"
+    },
+    {
+      "word": "jaune",
+      "phonetic": "ʒon",
+      "meaning": "黄色",
+      "example": "Les fleurs jaunes sont jolies.",
+      "translation": "黄色的花很漂亮。"
+    },
+    {
+      "word": "petit",
+      "phonetic": "pəti",
+      "meaning": "小的",
+      "example": "C'est un petit chat.",
+      "translation": "这是一只小猫。"
+    }
+  ]
+}

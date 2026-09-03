@@ -1,0 +1,109 @@
+{
+  "words": [
+    {
+      "word": "我们",
+      "phonetic": "wo men（川音：ǒ men）",
+      "meaning": "四川话「我们」口语常发 o 音",
+      "example": "我们几个一起耍，莫掉单。",
+      "translation": "我们几个一起玩，别落下谁。"
+    },
+    {
+      "word": "你们",
+      "phonetic": "nǐ men",
+      "meaning": "你们",
+      "example": "你们慢慢耍，我先走喽。",
+      "translation": "你们慢慢玩，我先走了。"
+    },
+    {
+      "word": "他",
+      "phonetic": "tā",
+      "meaning": "他 / 她",
+      "example": "他是我表哥。",
+      "translation": "他是我表哥。"
+    },
+    {
+      "word": "老汉儿",
+      "phonetic": "lǎo hànr",
+      "meaning": "爸爸（川味叫法）",
+      "example": "老汉儿喊我回去吃饭。",
+      "translation": "爸爸喊我回去吃饭。"
+    },
+    {
+      "word": "老妈儿",
+      "phonetic": "lǎo mār",
+      "meaning": "妈妈",
+      "example": "老妈儿天不亮就起来忙。",
+      "translation": "妈妈天不亮就起来忙。"
+    },
+    {
+      "word": "幺儿",
+      "phonetic": "yāo ér",
+      "meaning": "对自家小孩的昵称，最亲的叫法",
+      "example": "幺儿，快过来喝汤。",
+      "translation": "乖孩子，快过来喝汤。"
+    },
+    {
+      "word": "啥子",
+      "phonetic": "sà zǐ",
+      "meaning": "什么",
+      "example": "你说啥子哦？我没听清。",
+      "translation": "你说什么呀？我没听清。"
+    },
+    {
+      "word": "啷个",
+      "phonetic": "lǎng gè",
+      "meaning": "怎么 / 为什么",
+      "example": "你啷个又迟到嘛？",
+      "translation": "你怎么又迟到呀？"
+    },
+    {
+      "word": "哪个",
+      "phonetic": "nǎ gè",
+      "meaning": "谁 / 哪一个",
+      "example": "门口是哪个在喊我？",
+      "translation": "门口是谁在喊我？"
+    },
+    {
+      "word": "好多",
+      "phonetic": "hǎo duō",
+      "meaning": "多少（问数量、价钱）",
+      "example": "这筐橘子好多钱一斤？",
+      "translation": "这筐橘子多少钱一斤？"
+    },
+    {
+      "word": "莫得",
+      "phonetic": "mò dé",
+      "meaning": "没有",
+      "example": "冰箱头莫得菜了。",
+      "translation": "冰箱里没有菜了。"
+    },
+    {
+      "word": "要得",
+      "phonetic": "yào dé",
+      "meaning": "好的 / 行（四川人答应的口头禅）",
+      "example": "明天八点集合，要得不？要得！",
+      "translation": "明天八点集合，行不行？行！"
+    },
+    {
+      "word": "不存在",
+      "phonetic": "bú cún zài",
+      "meaning": "没关系 / 没问题（川式客气话）",
+      "example": "撞到你啦？不存在哈。",
+      "translation": "撞到你了？没关系的。"
+    },
+    {
+      "word": "巴心巴肝",
+      "phonetic": "bā xīn bā gān",
+      "meaning": "真心实意、尽心尽力",
+      "example": "老妈儿巴心巴肝为你操劳。",
+      "translation": "妈妈真心实意为你操劳。"
+    },
+    {
+      "word": "将就",
+      "phonetic": "jiāng jiu",
+      "meaning": "凑合、迁就",
+      "example": "菜将就吃一哈，莫嫌弃。",
+      "translation": "菜凑合吃一点，别嫌弃。"
+    }
+  ]
+}

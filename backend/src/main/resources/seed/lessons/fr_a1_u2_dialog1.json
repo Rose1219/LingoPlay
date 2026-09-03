@@ -1,0 +1,35 @@
+{
+  "scene": "咖啡馆点单",
+  "turns": [
+    {
+      "role": "ai",
+      "text": "Bonjour ! Qu'est-ce que je vous sers ?",
+      "translation": "您好！您需要点什么？"
+    },
+    {
+      "role": "user",
+      "text": "Je voudrais un café, s'il vous plaît.",
+      "translation": "我想要一杯咖啡，谢谢。"
+    },
+    {
+      "role": "ai",
+      "text": "Avec du sucre ?",
+      "translation": "要加糖吗？"
+    },
+    {
+      "role": "user",
+      "text": "Non, sans sucre, merci.",
+      "translation": "不用，不加糖，谢谢。"
+    },
+    {
+      "role": "ai",
+      "text": "Ça fait trois euros cinquante.",
+      "translation": "一共三块五欧元。"
+    },
+    {
+      "role": "user",
+      "text": "Voilà. Merci beaucoup !",
+      "translation": "给您，非常感谢！"
+    }
+  ]
+}

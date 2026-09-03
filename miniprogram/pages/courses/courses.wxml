@@ -1,24 +1,37 @@
 <view class="page">
   <view class="page-title">关卡地图</view>
-  <view class="page-subtitle">英语 / 日语 / 韩语 · CEFR 分级，从入门到进阶</view>
+  <view class="page-subtitle">多语种 · CEFR 分级，从入门到进阶</view>
 
   <!-- 语种切换 -->
   <scroll-view scroll-x class="lang-tabs">
-    <view class="lang-tab {{activeLang === '' ? 'active' : ''}}" bindtap="switchTab" data-lang="">全部</view>
+    <view class="lang-tab {{activeLang === '' ? 'active' : ''}}" bindtap="switchTab" data-lang="">{{i18n.all}}</view>
     <view
       class="lang-tab {{activeLang === item.code ? 'active' : ''}}"
       wx:for="{{languages}}"
       wx:key="code"
       bindtap="switchTab"
       data-lang="{{item.code}}"
-    >{{item.icon}} {{item.nameCn}}</view>
+    >{{item.icon}} {{item.nameCn}}<text wx:if="{{item.vipOnly}}" class="tab-vip">👑</text></view>
   </scroll-view>
 
   <!-- 课程卡片 -->
-  <view class="course-card" wx:for="{{courses}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
-    <view class="course-cover">{{item.cover}}</view>
+  <view
+    class="course-card {{item.vipOnly ? 'vip-course' : ''}}"
+    wx:for="{{courses}}"
+    wx:key="id"
+    bindtap="goDetail"
+    data-id="{{item.id}}"
+    data-viponly="{{item.vipOnly ? 1 : 0}}"
+  >
+    <view class="course-cover {{item.vipOnly ? 'vip-cover' : ''}}">
+      {{item.cover}}
+      <view wx:if="{{item.vipOnly}}" class="vip-ribbon">👑 {{i18n.vipOnly}}</view>
+    </view>
     <view class="course-body">
-      <view class="course-title">{{item.title}}</view>
+      <view class="course-title">
+        {{item.title}}
+        <text wx:if="{{item.ttsApproximate}}" class="approx-tag">近似发音</text>
+      </view>
       <view class="course-meta">
         <text class="tag">{{item.level}} · {{item.levelName}}</text>
         <text class="text-muted text-sm">{{item.lessonCount}} 关</text>

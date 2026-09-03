@@ -43,6 +43,24 @@
     <text class="arrow">→</text>
   </view>
 
+  <!-- 翻译 & VIP 快捷入口 -->
+  <view class="quick-entries">
+    <view class="quick-entry" bindtap="goTranslate">
+      <text class="quick-emoji">🌐</text>
+      <view>
+        <text class="quick-title">在线翻译</text>
+        <text class="quick-sub">多语种互译 · 自动检测</text>
+      </view>
+    </view>
+    <view class="quick-entry quick-vip" bindtap="goVip">
+      <text class="quick-emoji">👑</text>
+      <view>
+        <text class="quick-title">VIP 会员</text>
+        <text class="quick-sub">解锁方言课程 · ¥5/月</text>
+      </view>
+    </view>
+  </view>
+
   <!-- 游戏工坊 -->
   <view class="section-title">🎮 游戏工坊</view>
   <view class="game-grid">

@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "bonjour",
+      "phonetic": "bɔ̃ʒuʁ",
+      "meaning": "你好；白天问候",
+      "example": "Bonjour, comment allez-vous ?",
+      "translation": "您好，您好吗？"
+    },
+    {
+      "word": "bonsoir",
+      "phonetic": "bɔ̃swaʁ",
+      "meaning": "晚上好",
+      "example": "Bonsoir, tout le monde.",
+      "translation": "大家晚上好。"
+    },
+    {
+      "word": "merci",
+      "phonetic": "mɛʁsi",
+      "meaning": "谢谢",
+      "example": "Merci beaucoup pour votre aide.",
+      "translation": "非常感谢您的帮助。"
+    },
+    {
+      "word": "au revoir",
+      "phonetic": "o ʁəvwaʁ",
+      "meaning": "再见",
+      "example": "Au revoir, à demain.",
+      "translation": "再见，明天见。"
+    },
+    {
+      "word": "s'il vous plaît",
+      "phonetic": "sil vu plɛ",
+      "meaning": "请（敬称）",
+      "example": "Un café, s'il vous plaît.",
+      "translation": "请给我一杯咖啡。"
+    },
+    {
+      "word": "excusez-moi",
+      "phonetic": "ɛkskyze mwa",
+      "meaning": "打扰一下；对不起",
+      "example": "Excusez-moi, je suis en retard.",
+      "translation": "对不起，我迟到了。"
+    },
+    {
+      "word": "oui",
+      "phonetic": "wi",
+      "meaning": "是；对",
+      "example": "Oui, je suis d'accord.",
+      "translation": "是的，我同意。"
+    },
+    {
+      "word": "non",
+      "phonetic": "nɔ̃",
+      "meaning": "不；不是",
+      "example": "Non, merci.",
+      "translation": "不用了，谢谢。"
+    },
+    {
+      "word": "comment ça va",
+      "phonetic": "kɔmɑ̃ sa va",
+      "meaning": "你好吗（口语）",
+      "example": "Salut ! Comment ça va ?",
+      "translation": "嗨！最近怎么样？"
+    },
+    {
+      "word": "enchanté",
+      "phonetic": "ɑ̃ʃɑ̃te",
+      "meaning": "很高兴认识你（男性说）",
+      "example": "Enchanté, je m'appelle Luc.",
+      "translation": "很高兴认识你，我叫吕克。"
+    }
+  ]
+}

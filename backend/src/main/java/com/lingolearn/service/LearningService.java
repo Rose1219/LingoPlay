@@ -23,16 +23,19 @@ public class LearningService {
     private final UserWordRepository userWordRepository;
     private final StudyRecordRepository studyRecordRepository;
     private final AchievementService achievementService;
+    private final UnitRepository unitRepository;
 
     public LearningService(LessonRepository lessonRepository, LessonProgressRepository progressRepository,
                            UserRepository userRepository, UserWordRepository userWordRepository,
-                           StudyRecordRepository studyRecordRepository, AchievementService achievementService) {
+                           StudyRecordRepository studyRecordRepository, AchievementService achievementService,
+                           UnitRepository unitRepository) {
         this.lessonRepository = lessonRepository;
         this.progressRepository = progressRepository;
         this.userRepository = userRepository;
         this.userWordRepository = userWordRepository;
         this.studyRecordRepository = studyRecordRepository;
         this.achievementService = achievementService;
+        this.unitRepository = unitRepository;
     }
 
     /** 开始学习：标记进行中 */
@@ -141,10 +144,35 @@ public class LearningService {
         // 成就结算
         List<AchievementVO> unlocked = achievementService.evaluateAndUnlock(userId);
 
+        // 课程内下一关（按单元与课时排序取当前课时的下一个）
+        Lesson next = findNextLesson(lesson);
+
         SubmitResponse resp = new SubmitResponse();
         resp.setCompleted(completed);
         resp.setScore(score);
         resp.setNewAchievements(unlocked);
+        resp.setHasNextLesson(next != null);
+        if (next != null) {
+            resp.setNextLessonId(next.getId());
+            resp.setNextLessonTitle(next.getTitle());
+        }
         return resp;
+    }
+
+    /** 找同课程内当前课时的下一个课时（单元排序 -> 课时排序） */
+    private Lesson findNextLesson(Lesson current) {
+        Long courseId = current.getUnit().getCourse().getId();
+        boolean afterCurrent = false;
+        for (Unit unit : unitRepository.findByCourseIdOrderBySortOrderAsc(courseId)) {
+            for (Lesson l : lessonRepository.findByUnitIdOrderBySortOrderAsc(unit.getId())) {
+                if (afterCurrent) {
+                    return l;
+                }
+                if (l.getId().equals(current.getId())) {
+                    afterCurrent = true;
+                }
+            }
+        }
+        return null;
     }
 }

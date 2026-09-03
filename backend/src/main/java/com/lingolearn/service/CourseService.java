@@ -20,16 +20,19 @@ public class CourseService {
     private final UnitRepository unitRepository;
     private final LessonRepository lessonRepository;
     private final LessonProgressRepository progressRepository;
+    private final VipService vipService;
     private final ObjectMapper objectMapper;
 
     public CourseService(LanguageRepository languageRepository, CourseRepository courseRepository,
                          UnitRepository unitRepository, LessonRepository lessonRepository,
-                         LessonProgressRepository progressRepository, ObjectMapper objectMapper) {
+                         LessonProgressRepository progressRepository, VipService vipService,
+                         ObjectMapper objectMapper) {
         this.languageRepository = languageRepository;
         this.courseRepository = courseRepository;
         this.unitRepository = unitRepository;
         this.lessonRepository = lessonRepository;
         this.progressRepository = progressRepository;
+        this.vipService = vipService;
         this.objectMapper = objectMapper;
     }
 
@@ -87,14 +90,18 @@ public class CourseService {
         vo.setInProgressLessons(inProgress);
         int total = vo.getLessonCount() == null || vo.getLessonCount() == 0 ? 1 : vo.getLessonCount();
         vo.setProgressPercent((int) Math.round(completed * 100.0 / total));
+        // 方言语种标记：前端据此显示 VIP 角标与「近似发音」提示
+        vo.setVipOnly(Boolean.TRUE.equals(course.getLanguage().getVipOnly()));
+        vo.setTtsApproximate(Boolean.TRUE.equals(course.getLanguage().getTtsApproximate()));
         return vo;
     }
 
-    /** 课程详情：单元 + 课时 + 我的进度 */
+    /** 课程详情：单元 + 课时 + 我的进度（VIP 专属语种先校验权限） */
     @Transactional(readOnly = true)
     public Map<String, Object> courseDetail(Long courseId, Long userId) {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new BusinessException(404, "课程不存在"));
+        vipService.assertLanguageAccess(userId, course.getLanguage());
         List<UnitVO> unitVOs = new ArrayList<>();
         List<Unit> units = unitRepository.findByCourseIdOrderBySortOrderAsc(courseId);
         for (Unit unit : units) {
@@ -123,11 +130,12 @@ public class CourseService {
         return result;
     }
 
-    /** 课时详情（含学习内容） */
+    /** 课时详情（含学习内容）；VIP 专属语种先校验权限 */
     @Transactional(readOnly = true)
     public LessonDetailVO lessonDetail(Long lessonId, Long userId) {
         Lesson lesson = lessonRepository.findById(lessonId)
                 .orElseThrow(() -> new BusinessException(404, "课时不存在"));
+        vipService.assertLanguageAccess(userId, lesson.getUnit().getCourse().getLanguage());
         LessonDetailVO vo = new LessonDetailVO();
         vo.setId(lesson.getId());
         vo.setTitle(lesson.getTitle());

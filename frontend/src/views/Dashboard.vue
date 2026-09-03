@@ -63,6 +63,24 @@
       </span>
       <span class="play-arrow">→</span>
     </button>
+
+    <!-- 翻译 & VIP 快捷入口 -->
+    <div class="quick-entries">
+      <button class="quick-entry" @click="router.push('/translate')">
+        <span class="quick-emoji">🌐</span>
+        <span class="quick-text">
+          <span class="quick-title">在线翻译</span>
+          <span class="quick-sub">多语种互译 · 自动检测</span>
+        </span>
+      </button>
+      <button class="quick-entry quick-vip" @click="router.push('/vip')">
+        <span class="quick-emoji">👑</span>
+        <span class="quick-text">
+          <span class="quick-title">VIP 会员</span>
+          <span class="quick-sub">解锁方言课程 · ¥5/月</span>
+        </span>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -404,6 +422,71 @@ onMounted(() => {
 @keyframes glass-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* ---- 翻译 & VIP 快捷入口 ---- */
+.quick-entries {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.quick-entry {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(120, 150, 255, 0.22);
+  border-radius: 16px;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ll-text, #e8ecf8);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s;
+}
+
+.quick-entry:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.45);
+  background: rgba(34, 211, 238, 0.06);
+}
+
+.quick-vip {
+  border-color: rgba(255, 184, 79, 0.3);
+  background: rgba(255, 184, 79, 0.06);
+}
+
+.quick-vip:hover {
+  border-color: rgba(255, 184, 79, 0.55);
+  background: rgba(255, 184, 79, 0.1);
+}
+
+.quick-emoji {
+  font-size: 26px;
+}
+
+.quick-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.quick-title {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.quick-sub {
+  font-size: 11px;
+  color: var(--ll-text-muted, #8a97b8);
+}
+
+@media (max-width: 480px) {
+  .quick-entries {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---- 闯关按钮 ---- */
