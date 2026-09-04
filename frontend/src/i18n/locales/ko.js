@@ -16,7 +16,8 @@ export default {
     download: '앱 받기',
     more: '더보기',
     profile: '내 정보',
-    logout: '로그아웃'
+    logout: '로그아웃',
+    guest: '게스트 · 로그인',
   },
   greet: {
     night: '올빼미 모드 시작 🌙',

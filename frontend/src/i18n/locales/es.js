@@ -16,7 +16,8 @@ export default {
     download: 'Obtener la app',
     more: 'Más',
     profile: 'Cuenta',
-    logout: 'Cerrar sesión'
+    logout: 'Cerrar sesión',
+    guest: 'Invitado · Iniciar sesión',
   },
   greet: {
     night: 'Modo nocturno activado 🌙',

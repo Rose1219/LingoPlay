@@ -41,7 +41,13 @@ public class WebConfig implements WebMvcConfigurer {
                 // 发音接口放行：音频组件（InnerAudioContext / <audio>）无法携带自定义请求头，
                 // 服务端靠限长 + 限频 + 配额控制滥用风险
                 // 支付回调放行：第三方渠道通知无法携带 JWT，安全性由验签保证
+                // 游客只读放行：语种列表与课程列表/详情（只含结构与进度占位，不含课时内容），
+                // 让未登录用户能先进主页逛课程，需要学习/翻译时再引导登录
+                // 游客只读放行：每日单词与闯关词库（纯内容，不入单词本/不记成绩），
+                // 主页的每日单词卡片与闯关体验对游客可见，提交成绩时再引导登录
                 .excludePathPatterns("/api/auth/**", "/api/app/**", "/api/tts",
-                        "/api/vip/notify/**", "/api/vip/paypal/return");
+                        "/api/vip/notify/**", "/api/vip/paypal/return",
+                        "/api/languages", "/api/courses", "/api/courses/*",
+                        "/api/game/daily-word", "/api/game/word-quiz");
     }
 }

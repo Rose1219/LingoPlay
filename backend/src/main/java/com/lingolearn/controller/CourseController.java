@@ -20,13 +20,14 @@ public class CourseController {
         this.courseService = courseService;
     }
 
+    // 游客只读：未登录时 userId 为 null，服务端只返回课程结构，不含任何个人进度
     @GetMapping
     public ApiResponse<List<CourseVO>> list(@RequestParam(required = false) String language) {
-        return ApiResponse.ok(courseService.listCourses(language, AuthContext.requireUserId()));
+        return ApiResponse.ok(courseService.listCourses(language, AuthContext.getUserId()));
     }
 
     @GetMapping("/{id}")
     public ApiResponse<Map<String, Object>> detail(@PathVariable Long id) {
-        return ApiResponse.ok(courseService.courseDetail(id, AuthContext.requireUserId()));
+        return ApiResponse.ok(courseService.courseDetail(id, AuthContext.getUserId()));
     }
 }

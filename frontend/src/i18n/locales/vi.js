@@ -16,7 +16,8 @@ export default {
     download: 'Tải ứng dụng',
     more: 'Thêm',
     profile: 'Tài khoản',
-    logout: 'Đăng xuất'
+    logout: 'Đăng xuất',
+    guest: 'Khách · Đăng nhập',
   },
   greet: {
     night: 'Chế độ cú đêm bật 🌙',

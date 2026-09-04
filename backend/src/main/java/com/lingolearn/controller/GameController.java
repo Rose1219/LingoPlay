@@ -28,13 +28,14 @@ public class GameController {
     @GetMapping("/daily-word")
     public ApiResponse<Map<String, Object>> dailyWord(@RequestParam(required = false) String lang,
                                                       @RequestParam(defaultValue = "false") boolean random) {
-        return ApiResponse.ok(gameService.dailyWord(AuthContext.requireUserId(), lang, random));
+        // 游客可看每日单词（内容只读，不入单词本）；登录后自动关联进度
+        return ApiResponse.ok(gameService.dailyWord(AuthContext.getUserId(), lang, random));
     }
 
     /** 单词闯关词库（按语种汇总全部单词） */
     @GetMapping("/word-quiz")
     public ApiResponse<List<Map<String, String>>> quizWords(@RequestParam(required = false) String lang) {
-        return ApiResponse.ok(gameService.quizWords(AuthContext.requireUserId(), lang));
+        return ApiResponse.ok(gameService.quizWords(AuthContext.getUserId(), lang));
     }
 
     /** 单词闯关成绩提交 */

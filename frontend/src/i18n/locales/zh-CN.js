@@ -16,7 +16,8 @@ export default {
     download: 'APP 下载',
     more: '更多',
     profile: '个人中心',
-    logout: '退出登录'
+    logout: '退出登录',
+    guest: '游客 · 登录 / 注册',
   },
   greet: {
     night: '夜猫子模式启动 🌙',

@@ -367,6 +367,10 @@ public class VipService {
 
     @Transactional(readOnly = true)
     public boolean isVip(Long userId) {
+        // 游客（未登录）一律视为非 VIP
+        if (userId == null) {
+            return false;
+        }
         return userRepository.findById(userId).map(this::isVip).orElse(false);
     }
 
@@ -377,6 +381,10 @@ public class VipService {
     @Transactional(readOnly = true)
     public void assertLanguageAccess(Long userId, Language language) {
         if (language == null || !Boolean.TRUE.equals(language.getVipOnly())) {
+            return;
+        }
+        // 游客仅浏览课程结构（不含课时内容），进入课时学习时需先登录，届时再校验
+        if (userId == null) {
             return;
         }
         if (!isVip(userId)) {

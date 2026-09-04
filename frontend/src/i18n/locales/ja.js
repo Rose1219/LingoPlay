@@ -16,7 +16,8 @@ export default {
     download: 'アプリDL',
     more: 'もっと',
     profile: 'マイページ',
-    logout: 'ログアウト'
+    logout: 'ログアウト',
+    guest: 'ゲスト · ログイン',
   },
   greet: {
     night: '夜更かしモード起動 🌙',

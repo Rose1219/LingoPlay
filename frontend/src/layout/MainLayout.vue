@@ -48,7 +48,7 @@
               </el-dropdown-menu>
             </template>
           </el-dropdown>
-          <el-dropdown @command="onCommand">
+          <el-dropdown v-if="store.isLoggedIn" @command="onCommand">
             <span class="user-chip">
               <span class="avatar">{{ store.user ? store.user.avatar || '🙂' : '🙂' }}</span>
               <span class="nickname">{{ store.nickname }}</span>
@@ -61,6 +61,11 @@
               </el-dropdown-menu>
             </template>
           </el-dropdown>
+          <!-- 游客：点击弹出登录/注册 -->
+          <button v-else class="user-chip user-chip-guest" @click="store.requireLogin()">
+            <span class="avatar">🙋</span>
+            <span class="nickname">{{ t('nav.guest') }}</span>
+          </button>
         </div>
       </header>
 
@@ -68,6 +73,9 @@
         <router-view />
       </main>
     </div>
+
+    <!-- 全局登录/注册弹窗（游客触发受保护操作时弹出） -->
+    <LoginDialog />
 
     <!-- 移动端：底部标签导航（5 项，覆盖全部主要入口） -->
     <nav v-if="isMobile" class="tabbar">
@@ -149,6 +157,7 @@ import { useI18n } from 'vue-i18n'
 import { useUserStore } from '../store/user'
 import { SUPPORTED_LANGS, setLocale, currentLocale } from '../i18n'
 import { checkUpdateOnLaunch } from '../utils/updater'
+import LoginDialog from '../components/LoginDialog.vue'
 
 const { t } = useI18n()
 const route = useRoute()
@@ -462,6 +471,19 @@ function onCommand(cmd) {
 .user-chip:hover {
   border-color: rgba(120, 150, 255, 0.35);
   background: rgba(255, 255, 255, 0.04);
+}
+
+/* 游客登录入口（button 元素需要重置默认样式） */
+.user-chip-guest {
+  background: none;
+  border: 1px solid rgba(120, 150, 255, 0.35);
+  font-family: inherit;
+  outline: none;
+}
+
+.user-chip-guest:hover {
+  border-color: rgba(34, 211, 238, 0.55);
+  background: rgba(34, 211, 238, 0.08);
 }
 
 .avatar {

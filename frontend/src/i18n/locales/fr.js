@@ -16,7 +16,8 @@ export default {
     download: 'Télécharger l’app',
     more: 'Plus',
     profile: 'Compte',
-    logout: 'Déconnexion'
+    logout: 'Déconnexion',
+    guest: 'Invité · Se connecter',
   },
   greet: {
     night: 'Mode noctambule activé 🌙',

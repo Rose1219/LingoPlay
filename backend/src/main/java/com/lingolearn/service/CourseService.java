@@ -76,7 +76,9 @@ public class CourseService {
         vo.setUnitCount(course.getUnitCount());
         vo.setLessonCount(course.getLessonCount() != null && course.getLessonCount() > 0
                 ? course.getLessonCount() : (int) lessonRepository.countByUnitCourseId(course.getId()));
-        List<LessonProgress> progresses = progressRepository.findByUserIdAndLessonUnitCourseId(userId, course.getId());
+        // 游客（未登录）没有学习进度
+        List<LessonProgress> progresses = userId == null ? new ArrayList<>()
+                : progressRepository.findByUserIdAndLessonUnitCourseId(userId, course.getId());
         int completed = 0;
         int inProgress = 0;
         for (LessonProgress p : progresses) {
@@ -160,6 +162,9 @@ public class CourseService {
 
     private LessionProgressHolder findProgress(Long userId, Long lessonId) {
         LessionProgressHolder holder = new LessionProgressHolder();
+        if (userId == null) {
+            return holder;
+        }
         progressRepository.findByUserIdAndLessonId(userId, lessonId).ifPresent(p -> {
             holder.status = p.getStatus();
             holder.bestScore = p.getBestScore();

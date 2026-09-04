@@ -125,8 +125,10 @@ public class GameService {
             throw new BusinessException(404, "该语种暂无单词内容");
         }
 
-        // 2. 用户该语种已入本的词（出现过的词不再重复推）
-        List<UserWord> userWords = userWordRepository.findByUserIdAndLanguageId(userId, lang.getId());
+        // 2. 用户该语种已入本的词（出现过的词不再重复推）；游客无单词本，视为空
+        List<UserWord> userWords = userId == null
+                ? new ArrayList<>()
+                : userWordRepository.findByUserIdAndLanguageId(userId, lang.getId());
         Set<String> learned = new HashSet<>();
         for (UserWord uw : userWords) {
             learned.add(uw.getWord());
@@ -182,23 +184,25 @@ public class GameService {
             chosen = pool.get(Math.abs(daySeed) % pool.size());
         }
 
-        // 6. 自动收入单词本：新词建档 mastery=0，全部词汇随之沉淀
+        // 6. 自动收入单词本：新词建档 mastery=0，全部词汇随之沉淀（游客只看不入本）
         boolean isNew = false;
-        UserWord existing = userWordRepository
-                .findByUserIdAndLanguageIdAndWord(userId, lang.getId(), chosen.word)
-                .orElse(null);
-        if (existing == null) {
-            UserWord uw = new UserWord();
-            uw.setUser(userRepository.getReferenceById(userId));
-            uw.setLanguage(lang);
-            uw.setWord(chosen.word);
-            uw.setMeaning(chosen.meaning);
-            uw.setMastery(0);
-            uw.setReviewCount(0);
-            uw.setCorrectStreak(0);
-            uw.setLastReviewedAt(LocalDateTime.now());
-            userWordRepository.save(uw);
-            isNew = true;
+        if (userId != null) {
+            UserWord existing = userWordRepository
+                    .findByUserIdAndLanguageIdAndWord(userId, lang.getId(), chosen.word)
+                    .orElse(null);
+            if (existing == null) {
+                UserWord uw = new UserWord();
+                uw.setUser(userRepository.getReferenceById(userId));
+                uw.setLanguage(lang);
+                uw.setWord(chosen.word);
+                uw.setMeaning(chosen.meaning);
+                uw.setMastery(0);
+                uw.setReviewCount(0);
+                uw.setCorrectStreak(0);
+                uw.setLastReviewedAt(LocalDateTime.now());
+                userWordRepository.save(uw);
+                isNew = true;
+            }
         }
 
         return buildDailyResult(chosen, lang, isNew, learned.size(), all.size());
@@ -228,6 +232,10 @@ public class GameService {
         if (langParam != null && !langParam.trim().isEmpty()) {
             return languageRepository.findByCode(langParam.trim())
                     .orElseGet(this::firstLanguage);
+        }
+        // 游客没有偏好语种，返回默认语种
+        if (userId == null) {
+            return firstLanguage();
         }
         User user = userRepository.findById(userId).orElse(null);
         if (user != null && user.getPreferredLanguages() != null

@@ -67,6 +67,13 @@ Page({
     wx.setStorageSync('token', data.token)
     wx.setStorageSync('user', data.user)
     getApp().globalData.user = data.user
-    wx.reLaunch({ url: '/pages/index/index' })
+    // 从游客引导弹窗进入时（页面栈有来源页），登录后返回原页并自动刷新；
+    // 直接启动进入登录页时，回主页
+    const pages = getCurrentPages()
+    if (pages.length > 1) {
+      wx.navigateBack()
+    } else {
+      wx.reLaunch({ url: '/pages/index/index' })
+    }
   }
 })

@@ -32,11 +32,18 @@ const router = createRouter({
   routes
 })
 
-// 登录守卫
+// 路由守卫：游客可自由浏览主页/课程/翻译/社区等页面，
+// 进入需要身份的页面（学习、统计、推荐、成就、VIP、个人中心）时弹出登录弹窗，
+// 登录成功后自动跳回目标页
+const PROTECTED_ROUTES = ['learn', 'progress', 'recommend', 'achievements', 'vip', 'profile']
+
 router.beforeEach((to) => {
   const store = useUserStore()
-  if (to.name !== 'login' && to.name !== 'register' && !store.isLoggedIn) {
-    return { name: 'login', query: { redirect: to.fullPath } }
+  if (PROTECTED_ROUTES.includes(to.name) && !store.isLoggedIn) {
+    // 重定向回主页并弹出登录弹窗（弹窗挂在 MainLayout 内，
+    // 直接取消首次导航会导致空白页）；登录成功后自动跳回目标页
+    store.requireLogin(to.fullPath)
+    return { name: 'dashboard' }
   }
   if ((to.name === 'login' || to.name === 'register') && store.isLoggedIn) {
     return { name: 'dashboard' }

@@ -16,7 +16,8 @@ export default {
     download: 'Get the App',
     more: 'More',
     profile: 'Account',
-    logout: 'Sign out'
+    logout: 'Sign out',
+    guest: 'Guest · Sign in',
   },
   greet: {
     night: 'Night owl mode on 🌙',
