@@ -51,6 +51,8 @@ const warnedLangs = new Set()
 let engineLanguages = null // 原生引擎支持的语言列表（成功获取后缓存）
 // 朗读中的 utterance 强引用（防 GC：避免被提前回收导致事件丢失、朗读中断）
 let activeUtterance = null
+// 两条发音路径都失败时只提示一次，避免连点发音刷屏
+let webFailedWarned = false
 
 /** 是否支持语音合成（原生插件或 Web Speech API） */
 export function ttsSupported() {
@@ -120,13 +122,21 @@ function pickVoice(lang) {
   )
 }
 
-/** 该语言缺失语音包时提示一次（不重复打扰） */
-function warnMissingOnce(lang, tip) {
-  const key = `${lang}|${tip ? 'tip' : ''}`
+/** 该语言缺失语音包时提示一次（不重复打扰）；approximate=true 表示方言用普通话近似 */
+function warnMissingOnce(lang, tip, approximate) {
+  const key = `${lang}|${tip ? 'tip' : approximate ? 'dialect' : ''}`
   if (warnedLangs.has(key)) return
   warnedLangs.add(key)
   const names = { 'en-US': '英语', 'ja-JP': '日语', 'ko-KR': '韩语' }
   const name = names[lang] || lang
+  if (approximate) {
+    ElMessage({
+      type: 'info',
+      duration: 4000,
+      message: '该方言发音开发中，当前为普通话发音'
+    })
+    return
+  }
   if (tip) {
     // 原生路径：可操作弹窗 + 一键跳转系统 TTS 设置安装语音数据
     ElMessageBox.confirm(
@@ -326,11 +336,27 @@ function warnNativeError(detail) {
 }
 
 /**
+ * 共享的 <audio> 元素。
+ * 复用同一个元素有两个好处：① Chrome 的自动播放策略按元素/来源累积"媒体参与度"，
+ * 首次用户点击解锁后，后续连续朗读（如闯关自动念下一个词）不会再被拦截；
+ * ② 避免每次朗读都新建 Audio 实例导致的对象泄漏。
+ */
+let sharedAudio = null
+function getAudioEl() {
+  if (!sharedAudio) {
+    sharedAudio = new Audio()
+    sharedAudio.preload = 'auto'
+  }
+  return sharedAudio
+}
+
+/**
  * 后端 TTS 代理朗读（GET /api/tts，返回 MP3 二进制）。
  *
- * 小程序同声传译插件只支持中英，多语种与方言一律走后端代理；
- * Web 端此前只依赖浏览器语音包，缺包时会被系统默认语音（中文/英文）替代，
- * 等于「用英语读法语」。这里补上后端代理作为浏览器无匹配语音时的首选降级。
+ * 这是 Web 端的**首选**发音源：语种覆盖全（16 种标准语言 + 方言用普通话近似），
+ * 且不依赖用户本机装了哪些语音包。此前优先用浏览器 Web Speech，
+ * 但 Chrome 的英文语音多为「Google 网络语音」，需要访问 Google 服务取音频，
+ * 在国内常常静默失败（点了没声音），因此改为后端优先、浏览器语音兜底。
  *
  * 响应头 X-Tts-Approximate=1 表示并非目标语种真实发音（方言暂用普通话近似）。
  * @returns {Promise<'ok'|'fallback'|'failed'>}
@@ -349,7 +375,7 @@ async function backendTts(text, lang, rate) {
     if (!blob || !blob.size) return 'failed'
     const objectUrl = URL.createObjectURL(blob)
     const status = await new Promise((resolve) => {
-      const audio = new Audio(objectUrl)
+      const audio = getAudioEl()
       let settled = false
       const done = (v) => {
         if (settled) return
@@ -371,27 +397,33 @@ async function backendTts(text, lang, rate) {
   }
 }
 
-/** 浏览器 Web Speech API 朗读 */
+/**
+ * 浏览器朗读（Web 端入口）
+ *
+ * 顺序调整（v1.0.7）：**后端 TTS 优先，浏览器 Web Speech 兜底**。
+ * 原因：Chrome 的 en-US 语音多为「Google 网络语音」，发声需要访问 Google 服务，
+ * 在国内普遍取不到音频，表现为点了发音完全没声音；而后端代理走有道，稳定可用。
+ * 后端不可用（网络异常 / 限流 429 / 语种不支持 501）时才退回浏览器语音。
+ */
 async function webSpeak(text, lang, rate) {
+  // 1) 后端代理：主发音源，返回 'fallback' 表示方言用普通话近似
+  const proxy = await backendTts(text, lang, rate)
+  if (proxy !== 'failed') {
+    if (proxy === 'fallback') warnMissingOnce(lang, false, true)
+    return proxy
+  }
+
+  // 2) 浏览器 Web Speech 兜底
   await waitVoices()
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.rate = rate
   const voice = pickVoice(lang)
   if (voice) {
-    // 找到匹配语音：标准朗读
     utterance.voice = voice
     utterance.lang = voice.lang
   } else {
-    // 无匹配语音包：优先走后端 TTS 代理（多语种覆盖更全，且能拿到方言近似标记），
-    // 而不是直接丢给系统默认语音——那会导致用中文/英文朗读法语、阿拉伯语等。
-    const proxy = await backendTts(text, lang, rate)
-    if (proxy !== 'failed') {
-      if (proxy === 'fallback') warnMissingOnce(lang)
-      return proxy
-    }
-    // 代理也不可用：改用系统默认语音兜底，保证至少能出声。
-    // 注意：无匹配语音包时若仍设置目标语言（如 en-US），Chrome 会因找不到
-    // 对应语音而静默跳过，必须显式改用系统默认语音兜底朗读。
+    // 无匹配语音包时必须显式改用系统默认语音：
+    // 若仍设置目标语言（如 en-US），Chrome 会因找不到对应语音而静默跳过。
     const fallback =
       cachedVoices.find((v) => v.default) ||
       cachedVoices[0] ||
@@ -404,7 +436,7 @@ async function webSpeak(text, lang, rate) {
   // Chrome 已知 bug：cancel() 后立即 speak() 会偶发完全无声，加短延迟规避
   window.speechSynthesis.cancel()
   await new Promise((resolve) => setTimeout(resolve, 60))
-  return new Promise((resolve) => {
+  const result = await new Promise((resolve) => {
     let status = voice ? 'ok' : 'fallback'
     let settled = false
     // 防 GC：朗读期间保持 utterance 引用，避免被提前回收导致事件丢失
@@ -429,6 +461,21 @@ async function webSpeak(text, lang, rate) {
     window.speechSynthesis.speak(utterance)
     // 兜底：环境不触发事件时按文本长度估算超时
     setTimeout(() => finish(status), 5000 + text.length * 150)
+  })
+  if (result === 'failed') {
+    warnWebFailed()
+  }
+  return result
+}
+
+/** 后端与浏览器两条路都失败时给一次明确提示，避免用户「点了却毫无反应」 */
+function warnWebFailed() {
+  if (webFailedWarned) return
+  webFailedWarned = true
+  ElMessage({
+    type: 'warning',
+    duration: 6000,
+    message: '发音播放被浏览器拦截或无可用的语音服务，请再点一次发音按钮（或检查系统音量）'
   })
 }
 
@@ -455,6 +502,14 @@ export async function speak(text, lang, rate = 0.9) {
 
 /** 停止朗读 */
 export function stopSpeak() {
+  if (sharedAudio) {
+    try {
+      sharedAudio.pause()
+      sharedAudio.currentTime = 0
+    } catch (e) {
+      /* ignore */
+    }
+  }
   if (checkNative()) {
     TextToSpeech.stop().catch(() => {})
     return
