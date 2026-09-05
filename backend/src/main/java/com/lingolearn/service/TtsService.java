@@ -213,7 +213,16 @@ public class TtsService {
         if (!s.matches("[a-z]{2,3}(-[a-z]{2,4})?")) {
             return "en";
         }
-        return s;
+        // 方言标签（zh-yue / zh-sc / zh-nan …）必须保留完整：
+        // 内置音频资源与「普通话近似 + approximate 标记」都依赖完整标签识别
+        if (ASSET_LANGS.contains(s) || DIALECT_FALLBACK.containsKey(s)) {
+            return s;
+        }
+        // 其余一律截断到主语言子标签：en-US → en、ja-JP → ja、ko-KR → ko、fr-FR → fr。
+        // 有道等免费端点只认主语言码，Web/App 前端传的却是 BCP-47 地区码（en-US），
+        // 此前直接透传会被判为「不支持的语种」返回 501，导致前端发音全程静音。
+        int dash = s.indexOf('-');
+        return dash > 0 ? s.substring(0, dash) : s;
     }
 
     // ------------------------------------------------------------------ 限流

@@ -14,6 +14,7 @@
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Capacitor } from '@capacitor/core'
 import { TextToSpeech } from '@capacitor-community/text-to-speech'
+import { NATIVE_API_BASE } from '../api/http'
 
 /**
  * 跳转系统「文字转语音（TTS）」设置页（仅 Android 原生环境）。
@@ -338,7 +339,10 @@ async function backendTts(text, lang, rate) {
   try {
     const qs = `text=${encodeURIComponent(text)}&lang=${encodeURIComponent(lang || 'en')}`
     const rateQs = rate ? `&rate=${encodeURIComponent(String(rate))}` : ''
-    const res = await fetch(`/api/tts?${qs}${rateQs}`, { credentials: 'omit' })
+    // 原生 App 的页面跑在 https://localhost（Capacitor 本地服务），相对路径 /api/tts
+    // 会打到 App 自身而不是服务器，必须改用线上绝对地址（后端已放开 CORS）。
+    const endpoint = checkNative() ? `${NATIVE_API_BASE}/tts` : '/api/tts'
+    const res = await fetch(`${endpoint}?${qs}${rateQs}`, { credentials: 'omit' })
     if (!res.ok) return 'failed'
     const approximate = res.headers.get('x-tts-approximate') === '1'
     const blob = await res.blob()
