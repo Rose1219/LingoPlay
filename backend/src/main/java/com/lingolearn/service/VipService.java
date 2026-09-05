@@ -84,7 +84,7 @@ public class VipService {
         data.put("vipMonths", user.getVipMonths() == null ? 0 : user.getVipMonths());
         // 前端据此区分「未开通」与「已过期」：有过购买记录但现在过期
         data.put("expired", user.getVipExpireAt() != null
-                && user.getVipExpireAt().isBefore(LocalDateTime.now()));
+                && !user.getVipExpireAt().isAfter(LocalDateTime.now()));
 
         List<Map<String, Object>> plans = new ArrayList<>();
         Map<String, Object> plan = new LinkedHashMap<>();

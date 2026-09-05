@@ -40,7 +40,7 @@ public class User {
     private String preferredLanguages;
 
     /** 微信小程序 openid（授权登录用，非小程序用户为空） */
-    @Column(name = "openid", length = 64)
+    @Column(name = "openid", length = 64, unique = true)
     private String openid;
 
     /**
