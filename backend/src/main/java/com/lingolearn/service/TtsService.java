@@ -26,7 +26,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  * <pre>
  * 1. assets  项目内置音频资源（方言唯一可行的零成本方案：预录好的 MP3）
  * 2. youdao  有道公开 dictvoice 端点（免 key，覆盖 15 种标准语言）
- * 3. premium 付费云 TTS（讯飞/阿里云，支持粤语等方言音色，配置后自动优先）
+ * 3. baidu   百度翻译 gettts 端点（免 key，实测仅 en/zh/ja/ko 可用）：
+ *            有道对个别短句确定性 500（如 "My father drives to work."），
+ *            没有第二发音源时该句直接 501、前端静音
+ * 4. premium 付费云 TTS（讯飞/阿里云，支持粤语等方言音色，配置后自动优先）
  * </pre>
  *
  * 微信同声传译插件只支持 zh_CN / en_US，日韩法西阿会退化成英语朗读，
@@ -72,6 +75,22 @@ public class TtsService {
     }
 
     private static final String YOUDAO_URL = "https://dict.youdao.com/dictvoice";
+
+    /** 百度翻译 TTS 端点：作为有道的兜底源（有道对部分短句确定性 500） */
+    private static final String BAIDU_URL = "https://fanyi.baidu.com/gettts";
+
+    /**
+     * 百度 gettts 实测可用语种（2026-09 实测，均返回真实 MP3 帧头 0xFFFx）：
+     * en / zh / jp(=ja) / kor(=ko)。其余语种（fra/spa/de/ru/pt/ara/th/vie/yue…）
+     * 一律 403，不写进来，避免白打一次请求。
+     */
+    private static final Map<String, String> BAIDU_LANG_MAP = new java.util.HashMap<>();
+    static {
+        BAIDU_LANG_MAP.put("en", "en");
+        BAIDU_LANG_MAP.put("zh", "zh");
+        BAIDU_LANG_MAP.put("ja", "jp");
+        BAIDU_LANG_MAP.put("ko", "kor");
+    }
 
     @Value("${tts.enabled:true}")
     private boolean enabled;
@@ -185,7 +204,19 @@ public class TtsService {
             }
         }
 
-        // 3) 方言兜底：用普通话近似，但明确标记为"近似发音"
+        // 3) 百度兜底：有道对个别短句确定性 500（如 "My father drives to work."），
+        //    没有第二发音源时该句会直接 501、前端全程静音
+        if (BAIDU_LANG_MAP.containsKey(normLang)) {
+            byte[] audio = fetchBaidu(normLang, content);
+            if (audio != null && audio.length > 0) {
+                usedToday.incrementAndGet();
+                TtsResult r = new TtsResult(audio, "audio/mpeg", "baidu", false);
+                cache.put(cacheKey, r);
+                return r;
+            }
+        }
+
+        // 4) 方言兜底：用普通话近似，但明确标记为"近似发音"
         String mandarin = DIALECT_FALLBACK.get(normLang);
         if (mandarin != null) {
             byte[] audio = fetchYoudao(mandarin, content);
@@ -195,9 +226,17 @@ public class TtsService {
                 cache.put(cacheKey, r);
                 return r;
             }
+            // 普通话近似同样走百度兜底：zh 在百度实测可用
+            byte[] audio2 = fetchBaidu(mandarin, content);
+            if (audio2 != null && audio2.length > 0) {
+                usedToday.incrementAndGet();
+                TtsResult r = new TtsResult(audio2, "audio/mpeg", "mandarin-approx", true);
+                cache.put(cacheKey, r);
+                return r;
+            }
         }
 
-        // 4) 确实无解
+        // 5) 确实无解
         if (ASSET_LANGS.contains(normLang)) {
             throw new TtsUnavailableException("该方言暂无发音资源：" + normLang);
         }
@@ -330,6 +369,50 @@ public class TtsService {
             }
         } catch (Exception e) {
             log.warn("youdao tts failed: {}", e.getMessage());
+            return null;
+        }
+    }
+
+    // ------------------------------------------------------------------ 百度
+
+    /**
+     * 百度翻译 gettts 兜底源。实测仅 en/zh/jp/kor 四个 lan 值可用，
+     * 其余一律 403（语种映射见 BAIDU_LANG_MAP）。出错时可能返回
+     * 200 + JSON/HTML 文本，因此除长度外还要校验内容开头。
+     */
+    private byte[] fetchBaidu(String lang, String text) {
+        String lan = BAIDU_LANG_MAP.get(lang);
+        if (lan == null) return null;
+        try {
+            String url = BAIDU_URL
+                    + "?lan=" + URLEncoder.encode(lan, "UTF-8")
+                    + "&text=" + URLEncoder.encode(text, "UTF-8")
+                    + "&spd=3&source=web";
+            java.net.HttpURLConnection conn = (java.net.HttpURLConnection) new java.net.URL(url).openConnection();
+            conn.setRequestMethod("GET");
+            conn.setConnectTimeout(5000);
+            conn.setReadTimeout(8000);
+            conn.setRequestProperty("User-Agent",
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36");
+            conn.setRequestProperty("Referer", "https://fanyi.baidu.com/");
+            int code = conn.getResponseCode();
+            if (code != 200) {
+                log.debug("baidu tts {} -> {}", lang, code);
+                return null;
+            }
+            try (InputStream in = conn.getInputStream();
+                 ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+                byte[] buf = new byte[8192];
+                int n;
+                while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
+                byte[] data = out.toByteArray();
+                if (data.length <= 512) return null;
+                // 200 也可能夹带错误 JSON/HTML；真实 MP3 以 ID3 标签或 0xFF 帧头开始
+                if (data[0] == '{' || data[0] == '<') return null;
+                return data;
+            }
+        } catch (Exception e) {
+            log.warn("baidu tts failed: {}", e.getMessage());
             return null;
         }
     }
