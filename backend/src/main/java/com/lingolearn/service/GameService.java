@@ -81,12 +81,12 @@ public class GameService {
         }
     }
 
-    /** 按已入本词数决定难度上限：词量越多解锁越高的难度档位（20/50/85 档位对应 A2/B1/B2） */
+    /** 按已入本词数决定难度上限：词量越多解锁越高的难度档位（更渐进的解锁曲线） */
     private static int difficultyCap(int learnedCount) {
-        if (learnedCount < 20) return 1;   // 起步只出 A1
-        if (learnedCount < 50) return 2;   // 解锁 A2
-        if (learnedCount < 85) return 3;   // 解锁 B1
-        return 4;                          // 解锁 B2
+        if (learnedCount < 10) return 1;   // 起步阶段专注 A1
+        if (learnedCount < 25) return 2;   // 早期引入 A2
+        if (learnedCount < 45) return 3;   // 中等阶段引入 B1
+        return 4;                          // 45词以后开放所有级别（B2及以下）
     }
 
     /**
