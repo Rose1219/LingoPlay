@@ -6,11 +6,4 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <!-- Secondary brand color for accents -->
     <color name="colorAccent">#03DAC5</color>
-
-    <!-- Optional: background and text colors for dark theme -->
-    <color name="android:colorBackground">#121212</color>
-    <color name="android:colorSystemDefault">#121212</color>
-    <color name="android:colorPrimaryText">#FFFFFF</color>
-    <color name="android:colorSecondaryText">#CFD8DC</color>
-    <color name="android:colorDisabledText">#666666</color>
-    <color name="android:colorDivider">#333333</color>
+</resources>

@@ -75,10 +75,10 @@ pay:
 # App 客户端最新版本信息（发新版时同步更新，客户端据此检查更新）
 app:
   latest:
-    version-name: 1.0.5
-    version-code: 6
+    version-name: 1.0.6
+    version-code: 7
     # 更新说明（换行用 \n）
-    update-notes: "1. 新增「检查更新」功能：个人中心可手动检查，启动时自动提醒\n2. 提升发音与整体稳定性"
+    update-notes: "1. 修复 VIP 会员到期判断问题\n2. 每日单词难度递进更平滑，不易重复出简单词\n3. 提升整体稳定性"
     force-update: false
-    android-file: LingoPlay-v1.0.5-android.apk
-    ios-file: LingoPlay-v1.0.5-ios-project.zip
+    android-file: LingoPlay-v1.0.6-android.apk
+    ios-file: LingoPlay-v1.0.6-ios-project.zip

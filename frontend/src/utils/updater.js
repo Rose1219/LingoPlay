@@ -14,7 +14,7 @@ import { appApi } from '../api'
 import { NATIVE_API_BASE } from '../api/http'
 
 /** Web 环境展示用版本号（与 Android versionName 保持同步） */
-export const APP_VERSION = '1.0.5'
+export const APP_VERSION = '1.0.6'
 
 /** 忽略提醒的版本号存储键（用户点“暂不更新”后，该版本不再自动弹窗） */
 const IGNORED_KEY = 'lingoplay_ignored_version'
