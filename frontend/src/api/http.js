@@ -51,6 +51,14 @@ http.interceptors.response.use(
     return body ? body.data : response.data
   },
   (error) => {
+    // 检查是否为网络错误或超时（可能后端服务器休眠）
+    if (!error.response) {
+      const message = error.message || ''
+      if (message.includes('Network Error') || error.code === 'ECONNABORTED' || message.includes('timeout')) {
+        ElMessage.error('后端服务可能已休眠或无法连接，请稍后再试')
+        return Promise.reject(error)
+      }
+    }
     const status = error.response ? error.response.status : 0
     const bodyCode = error.response && error.response.data && error.response.data.code
     const msg = error.response && error.response.data && error.response.data.message

@@ -22,6 +22,11 @@ public class AuthContext {
         return id;
     }
 
+    /** 获取当前用户，未登录返回 null */
+    public static Long optionalUserId() {
+        return USER_ID.get();
+    }
+
     public static void clear() {
         USER_ID.remove();
     }

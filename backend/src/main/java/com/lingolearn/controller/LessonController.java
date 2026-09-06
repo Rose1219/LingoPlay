@@ -24,7 +24,7 @@ public class LessonController {
 
     @GetMapping("/{id}")
     public ApiResponse<LessonDetailVO> detail(@PathVariable Long id) {
-        return ApiResponse.ok(courseService.lessonDetail(id, AuthContext.requireUserId()));
+        return ApiResponse.ok(courseService.lessonDetail(id, AuthContext.optionalUserId()));
     }
 
     @PostMapping("/{id}/start")

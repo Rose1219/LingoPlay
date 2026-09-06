@@ -26,7 +26,7 @@ public class CommunityController {
                                                  @RequestParam(defaultValue = "10") int size,
                                                  @RequestParam(required = false) String language) {
         return ApiResponse.ok(communityService.posts(
-                Math.max(1, page), Math.min(50, Math.max(1, size)), language, AuthContext.requireUserId()));
+                Math.max(1, page), Math.min(50, Math.max(1, size)), language, AuthContext.getUserId()));
     }
 
     @PostMapping
@@ -36,7 +36,7 @@ public class CommunityController {
 
     @GetMapping("/{id}")
     public ApiResponse<PostDetailVO> detail(@PathVariable Long id) {
-        return ApiResponse.ok(communityService.postDetail(id, AuthContext.requireUserId()));
+        return ApiResponse.ok(communityService.postDetail(id, AuthContext.getUserId()));
     }
 
     @PostMapping("/{id}/comments")

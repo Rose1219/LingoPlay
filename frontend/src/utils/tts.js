@@ -13,7 +13,6 @@
 
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Capacitor } from '@capacitor/core'
-import { TextToSpeech } from '@capacitor-community/text-to-speech'
 import { NATIVE_API_BASE } from '../api/http'
 
 /**
@@ -183,10 +182,15 @@ async function waitNativeEngine(maxMs = 3000) {
   let lastErr = null
   while (Date.now() - start < maxMs) {
     try {
-      const { languages } = await TextToSpeech.getSupportedLanguages()
-      if (languages && languages.length) {
-        engineLanguages = languages
-        return languages
+      const plugin = Capacitor.Plugins.AndroidTts
+      if (!plugin) {
+        lastErr = new Error('AndroidTts plugin not available')
+      } else {
+        const { languages } = await plugin.getSupportedLanguages()
+        if (languages && languages.length) {
+          engineLanguages = languages
+          return languages
+        }
       }
     } catch (e) {
       lastErr = e
@@ -195,10 +199,13 @@ async function waitNativeEngine(maxMs = 3000) {
   }
   // 慢引擎兜底：再试最后一次（可能恰好在窗口边界初始化完成）
   try {
-    const { languages } = await TextToSpeech.getSupportedLanguages()
-    if (languages && languages.length) {
-      engineLanguages = languages
-      return languages
+    const plugin = Capacitor.Plugins.AndroidTts
+    if (plugin) {
+      const { languages } = await plugin.getSupportedLanguages()
+      if (languages && languages.length) {
+        engineLanguages = languages
+        return languages
+      }
     }
   } catch (e) {
     lastErr = e
@@ -257,7 +264,7 @@ async function nativeSpeak(text, lang, rate) {
   // 3. 朗读（超时按完成处理，不阻塞对话流程）
   try {
     await withTimeout(
-      TextToSpeech.speak({
+      Capacitor.Plugins.AndroidTts.speak({
         text,
         lang: finalLang,
         rate: rate || 1,
@@ -278,7 +285,7 @@ async function nativeSpeak(text, lang, rate) {
     if (msg.includes('not supported')) {
       try {
         await withTimeout(
-          TextToSpeech.speak({
+          Capacitor.Plugins.AndroidTts.speak({
             text,
             lang: supported[0],
             rate: rate || 1,
@@ -511,7 +518,7 @@ export function stopSpeak() {
     }
   }
   if (checkNative()) {
-    TextToSpeech.stop().catch(() => {})
+    Capacitor.Plugins.AndroidTts.stop().catch(() => {})
     return
   }
   if (ttsSupported()) {

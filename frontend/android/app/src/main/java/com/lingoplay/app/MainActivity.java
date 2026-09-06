@@ -11,5 +11,7 @@ public class MainActivity extends BridgeActivity {
         super.onCreate(savedInstanceState);
         // 一键跳转系统 TTS 语音设置（发音无声时引导用户安装语音数据）
         registerPlugin(TtsSettingsPlugin.class);
+        // Android TTS plugin for native text-to-speech
+        registerPlugin(AndroidTtsPlugin.class);
     }
 }
