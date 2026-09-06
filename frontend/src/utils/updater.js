@@ -63,11 +63,12 @@ export function appPlatform() {
   return Capacitor.getPlatform()
 }
 
-/** 按平台拼出安装包下载地址 */
+/** 按平台拼出安装包下载地址（?v= 版本参数绕过 CDN 对同名文件的缓存） */
 export function downloadUrl(latest) {
   if (!latest) return ''
   const file = appPlatform() === 'ios' ? latest.iosFile : latest.androidFile
-  return file ? `${DL_BASE}/downloads/${file}` : ''
+  const v = latest.versionCode || latest.versionName
+  return file ? `${DL_BASE}/downloads/${file}?v=${v}` : ''
 }
 
 /** 打开下载页：原生用内置浏览器（Chrome Custom Tab / SFSafariViewController），Web 新标签页 */

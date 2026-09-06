@@ -122,14 +122,16 @@ import { ElMessage } from 'element-plus'
 import { NATIVE_API_BASE } from '../api/http'
 
 const APP_VERSION = '1.0.6'
+const APP_VERSION_CODE = 7
 const APK_FILE = 'LingoPlay-v1.0.6-android.apk'
 const IOS_FILE = 'LingoPlay-v1.0.6-ios-project.zip'
 
 // 原生 App 内访问时无同源服务，下载地址指向线上后端；Web 环境走同源相对路径
 const isNative = typeof window !== 'undefined' && window.Capacitor && window.Capacitor.isNativePlatform()
 const DL_BASE = isNative ? NATIVE_API_BASE.replace(/\/api\/?$/, '') : ''
-const APK_URL = `${DL_BASE}/downloads/${APK_FILE}`
-const IOS_URL = `${DL_BASE}/downloads/${IOS_FILE}`
+// ?v= 版本参数绕过 CDN 对同名文件的缓存（平台边缘缓存 max-age=4h 且无清除入口）
+const APK_URL = `${DL_BASE}/downloads/${APK_FILE}?v=${APP_VERSION_CODE}`
+const IOS_URL = `${DL_BASE}/downloads/${IOS_FILE}?v=${APP_VERSION_CODE}`
 
 const apk = reactive({ ready: false, size: 0 })
 const ios = reactive({ ready: false, size: 0 })
